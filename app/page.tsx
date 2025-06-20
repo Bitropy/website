@@ -29,10 +29,10 @@ function HexdotLogo({ className = "h-8 w-8" }: { className?: string }) {
 
 export default function ConsultingLandingPage() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <div className="w-full max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <HexdotLogo />
             <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
@@ -90,7 +90,7 @@ export default function ConsultingLandingPage() {
         {/* Glowing orb effect */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-100/50 to-violet-100/50 rounded-full blur-3xl"></div>
 
-        <div className="container px-4 md:px-6 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <Badge variant="secondary" className="w-fit mx-auto bg-purple-100 text-purple-700 border-purple-200">
               🚀 Technology Consulting • Web3 • AI Solutions
@@ -143,7 +143,7 @@ export default function ConsultingLandingPage() {
 
       {/* Services Section */}
       <section id="services" className="py-20 md:py-32 relative bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-black">
               Comprehensive Technology
@@ -157,7 +157,7 @@ export default function ConsultingLandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mx-auto">
             <Card className="bg-white border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300 group">
               <CardHeader className="text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-r from-purple-100 to-violet-100 group-hover:from-purple-200 group-hover:to-violet-200 transition-all">
@@ -206,7 +206,7 @@ export default function ConsultingLandingPage() {
 
       {/* Expertise Section */}
       <section id="expertise" className="py-20 md:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
@@ -281,7 +281,7 @@ export default function ConsultingLandingPage() {
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 md:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-black">
               Trusted by
@@ -295,7 +295,7 @@ export default function ConsultingLandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mx-auto">
             <Card className="bg-white border-gray-200 p-6 hover:shadow-lg hover:border-purple-200 transition-all">
               <CardContent className="space-y-4">
                 <div className="flex space-x-1">
@@ -382,7 +382,7 @@ export default function ConsultingLandingPage() {
 
       {/* Engagement Models Section */}
       <section className="py-20 md:py-32 bg-white">
-        <div className="container px-4 md:px-6">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-black">
               Flexible
@@ -396,7 +396,7 @@ export default function ConsultingLandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto w-full">
             <Card className="bg-white border-gray-200 p-6 hover:border-purple-300 hover:shadow-lg transition-all">
               <CardHeader>
                 <CardTitle className="text-2xl text-black">Strategic Advisory</CardTitle>
@@ -531,7 +531,7 @@ export default function ConsultingLandingPage() {
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-50 via-gray-50 to-violet-50"></div>
 
-        <div className="container px-4 md:px-6 text-center relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10">
           <div className="space-y-8 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-black">
               Ready to Scale Your
@@ -570,7 +570,7 @@ export default function ConsultingLandingPage() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-16">
-        <div className="container px-4 md:px-6">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
