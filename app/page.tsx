@@ -68,13 +68,13 @@ export default function ConsultingLandingPage() {
             <Button
               variant="ghost"
               className="hidden md:inline-flex text-gray-700 hover:text-purple-600 hover:bg-purple-50"
-              onClick={() => window.open("https://calendly.com/your-calendly-link", "_blank")}
+              onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
             >
               Schedule Call
             </Button>
             <Button
               className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
-              onClick={() => window.open("https://calendly.com/your-calendly-link", "_blank")}
+              onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
             >
               Get Started
             </Button>
@@ -113,7 +113,7 @@ export default function ConsultingLandingPage() {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
-                onClick={() => window.open("https://calendly.com/your-calendly-link", "_blank")}
+                onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
               >
                 Book Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -411,7 +411,7 @@ export default function ConsultingLandingPage() {
               <CardContent className="space-y-4">
                 <Button
                   className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
-                  onClick={() => window.open("https://calendly.com/your-calendly-link", "_blank")}
+                  onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
                 >
                   Get Started
                 </Button>
@@ -453,7 +453,7 @@ export default function ConsultingLandingPage() {
               <CardContent className="space-y-4">
                 <Button
                   className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
-                  onClick={() => window.open("https://calendly.com/your-calendly-link", "_blank")}
+                  onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
                 >
                   Get Started
                 </Button>
@@ -548,7 +548,7 @@ export default function ConsultingLandingPage() {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white"
-                onClick={() => window.open("https://calendly.com/your-calendly-link", "_blank")}
+                onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
               >
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -656,7 +656,7 @@ export default function ConsultingLandingPage() {
                 </li>
                 <li>
                   <Link
-                    href="https://calendly.com/your-calendly-link"
+                    href="https://calendly.com/darekd/30min"
                     className="hover:text-purple-600 transition-colors"
                     target="_blank"
                   >
