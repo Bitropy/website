@@ -43,7 +43,7 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-3">
             <BitropyLogo />
-            <span className="text-xl font-bold text-gray-800">bitropy.io</span>
+            <span className="text-xl font-bold text-gray-800">Bitropy</span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
