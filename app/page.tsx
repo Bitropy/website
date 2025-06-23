@@ -65,7 +65,7 @@ export default function ConsultingLandingPage() {
             <Button
               variant="ghost"
               className="hidden md:inline-flex text-gray-700 hover:text-black hover:bg-gray-50"
-              onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+              onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
             >
               Schedule Call
             </Button>
@@ -157,7 +157,7 @@ export default function ConsultingLandingPage() {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-black hover:bg-gray-800 text-white"
-                onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+                onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
               >
                 Book Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -443,7 +443,7 @@ export default function ConsultingLandingPage() {
               <CardContent className="space-y-4">
                 <Button
                   className="w-full bg-black hover:bg-gray-800 text-white"
-                  onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+                  onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
                 >
                   Get Started
                 </Button>
@@ -485,7 +485,7 @@ export default function ConsultingLandingPage() {
               <CardContent className="space-y-4">
                 <Button
                   className="w-full bg-black hover:bg-gray-800 text-white"
-                  onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+                  onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
                 >
                   Get Started
                 </Button>
@@ -580,7 +580,7 @@ export default function ConsultingLandingPage() {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-black hover:bg-gray-800 text-white"
-                onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+                onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
               >
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -664,7 +664,7 @@ export default function ConsultingLandingPage() {
                 </li>
                 <li>
                   <Link
-                    href="https://calendly.com/darekd/30min"
+                    href="https://calendly.com/darek-bitropy/call"
                     className="hover:text-black transition-colors"
                     target="_blank"
                   >
