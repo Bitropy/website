@@ -19,8 +19,8 @@ function BitropyLogo({ className = "h-8 w-8" }: { className?: string }) {
       <svg viewBox="0 0 32 32" className="w-full h-full">
         <defs>
           <linearGradient id="bitropyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#1f2937" />
-            <stop offset="100%" stopColor="#111827" />
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="100%" stopColor="#3b0764" />
           </linearGradient>
         </defs>
         {/* Background square */}
@@ -101,29 +101,29 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60">
         <div className="w-full max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center space-x-3">
             <BitropyLogo />
-            <span className="text-xl font-bold text-gray-800">Bitropy</span>
+            <span className="text-xl font-bold text-purple-400">Bitropy</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/#services" className="text-sm font-medium text-gray-700 hover:text-black transition-colors">
+            <Link href="/#services" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
               Services
             </Link>
-            <Link href="/#expertise" className="text-sm font-medium text-gray-700 hover:text-black transition-colors">
+            <Link href="/#expertise" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
               Expertise
             </Link>
             <Link
               href="/#testimonials"
-              className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
             >
               Testimonials
             </Link>
-            <Link href="/contact" className="text-sm font-medium text-black">
+            <Link href="/contact" className="text-sm font-medium text-white">
               Contact
             </Link>
           </nav>
@@ -131,7 +131,7 @@ export default function ContactPage() {
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
-              className="hidden md:inline-flex text-gray-700 hover:text-black hover:bg-gray-50"
+              className="hidden md:inline-flex text-gray-300 hover:text-white hover:bg-gray-800"
               onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
             >
               Schedule Call
@@ -142,7 +142,7 @@ export default function ContactPage() {
 
       {/* Back to Home Link */}
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6 pt-8">
-        <Link href="/" className="inline-flex items-center text-gray-600 hover:text-black transition-colors">
+        <Link href="/" className="inline-flex items-center text-gray-300 hover:text-white transition-colors">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Home
         </Link>
@@ -152,11 +152,14 @@ export default function ContactPage() {
       <section className="py-16 md:py-24">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-black">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white">
               Get In
-              <span className="bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent"> Touch</span>
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                {" "}
+                Touch
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-[600px] mx-auto">
+            <p className="text-xl text-gray-300 max-w-[600px] mx-auto">
               Ready to scale your technology? Let's discuss how our expert teams can help accelerate your growth.
             </p>
           </div>
@@ -165,7 +168,7 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Profile Card */}
-              <Card className="bg-white border-gray-200 p-6">
+              <Card className="bg-gray-800 border-gray-700 p-6">
                 <CardContent className="flex items-center space-x-6">
                   <div className="relative">
                     <Image
@@ -173,13 +176,13 @@ export default function ContactPage() {
                       alt="Darek Dwornikowski - CEO"
                       width={120}
                       height={120}
-                      className="rounded-full border-4 border-gray-100"
+                      className="rounded-full border-4 border-gray-700"
                     />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-black">Darek Dwornikowski</h3>
-                    <p className="text-lg text-gray-600">Technology Consultant & Fractional CTO</p>
-                    <p className="text-gray-500">Founder, CEO, Bitropy.io</p>
+                    <h3 className="text-2xl font-bold text-white">Darek Dwornikowski</h3>
+                    <p className="text-lg text-gray-300">Technology Consultant & Fractional CTO</p>
+                    <p className="text-gray-400">Founder, CEO, Bitropy.io</p>
                   </div>
                 </CardContent>
               </Card>
@@ -187,12 +190,12 @@ export default function ContactPage() {
               {/* Contact Details */}
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
-                    <MapPin className="h-6 w-6 text-gray-800" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50">
+                    <MapPin className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-black mb-1">Office Address</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-white mb-1">Office Address</h3>
+                    <p className="text-gray-300">
                       Poznań, Poland, EU
                       <br />
                       Poland, 🇪🇺
@@ -201,58 +204,58 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
-                    <Mail className="h-6 w-6 text-gray-800" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50">
+                    <Mail className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-black mb-1">Email</h3>
-                    <p className="text-gray-600">info@bitropy.io</p>
+                    <h3 className="font-semibold text-white mb-1">Email</h3>
+                    <p className="text-gray-300">info@bitropy.io</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
-                    <Clock className="h-6 w-6 text-gray-800" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50">
+                    <Clock className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-black mb-1">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM CET</p>
+                    <h3 className="font-semibold text-white mb-1">Business Hours</h3>
+                    <p className="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM CET</p>
                   </div>
                 </div>
               </div>
 
               {/* Quick Actions */}
               <div className="space-y-4">
-                <h3 className="font-semibold text-black">Prefer to schedule a call?</h3>
+                <h3 className="font-semibold text-white">Prefer to schedule a call?</h3>
                 <Button
                   size="lg"
-                  className="w-full bg-black hover:bg-gray-800 text-white"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white"
                   onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
                 >
                   Schedule Free Consultation
                 </Button>
-                <p className="text-sm text-gray-500 text-center">
+                <p className="text-sm text-gray-400 text-center">
                   Free 30-minute consultation • No commitment required
                 </p>
               </div>
             </div>
 
             {/* Contact Form */}
-            <Card className="bg-white border-gray-200">
+            <Card className="bg-gray-800 border-gray-700">
               <CardHeader>
-                <CardTitle className="text-2xl text-black">Send us a message</CardTitle>
-                <CardDescription className="text-gray-600">
+                <CardTitle className="text-2xl text-white">Send us a message</CardTitle>
+                <CardDescription className="text-gray-300">
                   Fill out the form below and we'll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 {/* Success Message */}
                 {submitStatus === "success" && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
+                  <div className="mb-6 p-4 bg-green-900/50 border border-green-700 rounded-lg flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
                     <div>
-                      <p className="text-green-800 font-medium">Message sent successfully!</p>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-green-300 font-medium">Message sent successfully!</p>
+                      <p className="text-green-400 text-sm">
                         We'll get back to you within 24 hours. Check your email for confirmation.
                       </p>
                     </div>
@@ -261,11 +264,11 @@ export default function ContactPage() {
 
                 {/* Error Message */}
                 {submitStatus === "error" && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3">
-                    <AlertCircle className="h-5 w-5 text-red-600" />
+                  <div className="mb-6 p-4 bg-red-900/50 border border-red-700 rounded-lg flex items-center space-x-3">
+                    <AlertCircle className="h-5 w-5 text-red-400" />
                     <div>
-                      <p className="text-red-800 font-medium">Failed to send message</p>
-                      <p className="text-red-700 text-sm">{errorMessage}</p>
+                      <p className="text-red-300 font-medium">Failed to send message</p>
+                      <p className="text-red-400 text-sm">{errorMessage}</p>
                     </div>
                   </div>
                 )}
@@ -273,7 +276,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-black">
+                      <Label htmlFor="name" className="text-white">
                         Full Name *
                       </Label>
                       <Input
@@ -285,11 +288,11 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="border-gray-300 focus:border-black focus:ring-black"
+                        className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-black">
+                      <Label htmlFor="email" className="text-white">
                         Email Address *
                       </Label>
                       <Input
@@ -301,13 +304,13 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="border-gray-300 focus:border-black focus:ring-black"
+                        className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="company" className="text-black">
+                    <Label htmlFor="company" className="text-white">
                       Company
                     </Label>
                     <Input
@@ -318,12 +321,12 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       disabled={isSubmitting}
-                      className="border-gray-300 focus:border-black focus:ring-black"
+                      className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-black">
+                    <Label htmlFor="subject" className="text-white">
                       Subject *
                     </Label>
                     <Input
@@ -335,12 +338,12 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="border-gray-300 focus:border-black focus:ring-black"
+                      className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-black">
+                    <Label htmlFor="message" className="text-white">
                       Message *
                     </Label>
                     <Textarea
@@ -352,20 +355,20 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="border-gray-300 focus:border-black focus:ring-black resize-none"
+                      className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500 resize-none"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-black hover:bg-gray-800 text-white disabled:opacity-50"
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
 
-                  <p className="text-sm text-gray-500 text-center">
+                  <p className="text-sm text-gray-400 text-center">
                     We respect your privacy. Your information will never be shared with third parties.
                   </p>
                 </form>
@@ -376,44 +379,44 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-16">
+      <footer className="bg-gray-900 border-t border-gray-800 py-16">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <BitropyLogo />
-                <span className="text-xl font-bold text-gray-800">bitropy.io</span>
+                <span className="text-xl font-bold text-purple-400">bitropy.io</span>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Strategic technology consulting for the modern enterprise. Fractional CTO, Web3, and AI expertise.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-semibold text-black">Services</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="font-semibold text-white">Services</h3>
+              <ul className="space-y-2 text-gray-300">
                 <li>
-                  <Link href="/#services" className="hover:text-black transition-colors">
+                  <Link href="/#services" className="hover:text-white transition-colors">
                     Fractional CTO
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="hover:text-black transition-colors">
+                  <Link href="/#services" className="hover:text-white transition-colors">
                     Product Strategy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="hover:text-black transition-colors">
+                  <Link href="/#services" className="hover:text-white transition-colors">
                     Company Scaling
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="hover:text-black transition-colors">
+                  <Link href="/#services" className="hover:text-white transition-colors">
                     Web3 & Blockchain
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="hover:text-black transition-colors">
+                  <Link href="/#services" className="hover:text-white transition-colors">
                     AI & Data Solutions
                   </Link>
                 </li>
@@ -421,20 +424,20 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-semibold text-black">Company</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="font-semibold text-white">Company</h3>
+              <ul className="space-y-2 text-gray-300">
                 <li>
-                  <Link href="/" className="hover:text-black transition-colors">
+                  <Link href="/" className="hover:text-white transition-colors">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#testimonials" className="hover:text-black transition-colors">
+                  <Link href="/#testimonials" className="hover:text-white transition-colors">
                     Case Studies
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-black transition-colors">
+                  <Link href="/contact" className="hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -442,17 +445,17 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-semibold text-black">Connect</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="font-semibold text-white">Connect</h3>
+              <ul className="space-y-2 text-gray-300">
                 <li>
-                  <Link href="#" className="hover:text-black transition-colors">
+                  <Link href="#" className="hover:text-white transition-colors">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="https://calendly.com/darekd/30min"
-                    className="hover:text-black transition-colors"
+                    className="hover:text-white transition-colors"
                     target="_blank"
                   >
                     Schedule Call
@@ -462,10 +465,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500">© {new Date().getFullYear()} bitropy.io. All rights reserved.</p>
+          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400">© {new Date().getFullYear()} bitropy.io. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-gray-500 hover:text-black transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">LinkedIn</span>
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                   <path

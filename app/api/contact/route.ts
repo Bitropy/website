@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
     const { data: businessEmail, error: businessError } = await resend.emails.send({
       from: "Contact Form <noreply@bitropy.io>", // Use your verified domain
       to: ["info@bitropy.io"], // Your email address
+      reply-to: [email],
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
