@@ -1,13 +1,14 @@
 "use client"
 
-import Footer from "@/components/layout/Footer"
-import Header from "@/components/layout/Header"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import FlexibleEngagementModels from "@/components/ui/FlexibleEngagementModels"
-import { ArrowRight, Brain, Check, Code, Database, Shield, TrendingUp, Zap } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Check, Brain, Code, Database, Shield, ArrowRight, Zap, TrendingUp, Target, Users } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
+import FlexibleEngagementModels from "@/components/ui/FlexibleEngagementModels"
 
 export default function ConsultingLandingPage() {
   return (

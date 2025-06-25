@@ -1,0 +1,94 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+    
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#3b0764"/>
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#f3f4f6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Geometric background elements -->
+  <circle cx="100" cy="100" r="50" fill="url(#purpleGradient)" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="80" fill="url(#purpleGradient)" opacity="0.1"/>
+  <rect x="1000" y="80" width="60" height="60" rx="8" fill="url(#purpleGradient)" opacity="0.1"/>
+  <rect x="140" y="450" width="40" height="40" rx="6" fill="url(#purpleGradient)" opacity="0.1"/>
+  
+  <!-- Grid pattern overlay -->
+  <g opacity="0.05">
+    <rect x="50" y="50" width="8" height="8" rx="2" fill="white"/>
+    <rect x="66" y="50" width="8" height="8" rx="2" fill="white"/>
+    <rect x="82" y="50" width="8" height="8" rx="2" fill="white"/>
+    <rect x="50" y="66" width="8" height="8" rx="2" fill="white"/>
+    <rect x="66" y="66" width="8" height="8" rx="2" fill="white"/>
+    <rect x="82" y="66" width="8" height="8" rx="2" fill="white"/>
+    <rect x="50" y="82" width="8" height="8" rx="2" fill="white"/>
+    <rect x="66" y="82" width="8" height="8" rx="2" fill="white"/>
+    <rect x="82" y="82" width="8" height="8" rx="2" fill="white"/>
+  </g>
+  
+  <!-- Main content area -->
+  <g transform="translate(100, 150)">
+    <!-- Bitropy Logo (simplified version) -->
+    <g transform="translate(0, 0)">
+      <rect width="80" height="80" rx="8" fill="url(#purpleGradient)"/>
+      <rect x="12" y="12" width="8" height="8" rx="1" fill="white"/>
+      <rect x="28" y="12" width="8" height="8" rx="1" fill="white"/>
+      <rect x="44" y="12" width="8" height="8" rx="1" fill="white"/>
+      <rect x="12" y="28" width="8" height="8" rx="1" fill="white"/>
+      <rect x="28" y="28" width="8" height="8" rx="1" fill="white"/>
+      <rect x="44" y="28" width="8" height="8" rx="1" fill="white"/>
+      <rect x="12" y="44" width="8" height="8" rx="1" fill="white"/>
+      <rect x="28" y="44" width="8" height="8" rx="1" fill="white"/>
+      <rect x="44" y="44" width="8" height="8" rx="1" fill="white"/>
+    </g>
+    
+    <!-- Main title -->
+    <text x="100" y="35" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="url(#textGradient)">
+      Bitropy
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="100" y="70" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#9ca3af">
+      Technology Consulting • Web3 • AI Services
+    </text>
+    
+    <!-- Services list -->
+    <g transform="translate(0, 120)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Fractional CTO</text>
+      <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Product Strategy</text>
+      <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Web3 & Blockchain</text>
+      <text x="0" y="90" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">AI & Data Solutions</text>
+    </g>
+    
+    <g transform="translate(300, 120)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Scaling Advisory</text>
+      <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Technology Leadership</text>
+      <text x="0" y="60" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Strategic Planning</text>
+      <text x="0" y="90" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white">Team Optimization</text>
+    </g>
+  </g>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="580" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="500" fill="#6b7280">
+    Scale Your Technology With Expert Teams
+  </text>
+  
+  <!-- URL -->
+  <text x="600" y="610" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="400" fill="#4b5563">
+    bitropy.io
+  </text>
+</svg> 
