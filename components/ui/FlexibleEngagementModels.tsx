@@ -119,8 +119,9 @@ export default function FlexibleEngagementModels() {
               <Button
                 variant="outline"
                 className="w-full border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
+                onClick={() => window.open("/contact", "_self")}
               >
-                Contact Sales
+                Contact Us
               </Button>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
