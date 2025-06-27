@@ -55,7 +55,7 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
           <Button
             variant="ghost"
             className="hidden md:inline-flex text-gray-300 hover:text-white hover:bg-gray-800"
-            onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+            onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
           >
             Schedule Call
           </Button>

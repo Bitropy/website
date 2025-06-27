@@ -1,14 +1,13 @@
 "use client"
 
+import Footer from "@/components/layout/Footer"
+import Header from "@/components/layout/Header"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Check, Brain, Code, Database, Shield, ArrowRight, Zap, TrendingUp, Target, Users } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import Header from "@/components/layout/Header"
-import Footer from "@/components/layout/Footer"
 import FlexibleEngagementModels from "@/components/ui/FlexibleEngagementModels"
+import { ArrowRight, Brain, Check, Code, Database, Shield, TrendingUp, Zap } from "lucide-react"
+import Image from "next/image"
 
 export default function ConsultingLandingPage() {
   return (
@@ -98,7 +97,7 @@ export default function ConsultingLandingPage() {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-purple-600 hover:bg-purple-700 text-white"
-                onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+                onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
               >
                 Book Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -400,7 +399,7 @@ export default function ConsultingLandingPage() {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6 bg-purple-600 hover:bg-purple-700 text-white"
-                onClick={() => window.open("https://calendly.com/darekd/30min", "_blank")}
+                onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
               >
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
