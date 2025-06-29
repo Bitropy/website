@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 interface HeaderProps {
-  currentPage?: "home" | "contact"
+  currentPage?: "home" | "contact" | "privacy"
 }
 
 export default function Header({ currentPage = "home" }: HeaderProps) {
