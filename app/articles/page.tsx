@@ -1,12 +1,12 @@
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { getAllArticles } from "@/lib/mdx"
+import { ArrowRight, Calendar, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { getAllArticles } from "@/lib/mdx"
 
 export default function ArticlesPage() {
   const articles = getAllArticles()
@@ -126,7 +126,7 @@ export default function ArticlesPage() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="mt-20 text-center">
+          {/* <div className="mt-20 text-center">
             <Card className="bg-gray-900 border-gray-700 max-w-2xl mx-auto">
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Stay Updated</CardTitle>
@@ -141,13 +141,13 @@ export default function ArticlesPage() {
                     placeholder="Enter your email"
                     className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
                   />
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                  <Button className="bg-purple-600 hover:bg-p qurple-700 text-white">
                     Subscribe
                   </Button>
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
         </div>
       </section>
 
