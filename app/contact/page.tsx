@@ -134,9 +134,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-white mb-1">Office Address</h3>
                     <p className="text-gray-300">
-                      Poznań, Poland, EU
+                      Bitropy sp. zoo (in organisation)
                       <br />
-                      Remote-first company
+                      Hanny Malewskiej 24/1
+                      <br />
+                      60-461 Poznań, Poland
                     </p>
                   </div>
                 </div>
@@ -148,8 +150,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-white mb-1">Email</h3>
                     <p className="text-gray-300">
-                      <a href="mailto:darek@bitropy.io" className="hover:text-purple-400 transition-colors">
-                        darek@bitropy.io
+                      <a href="mailto:info@bitropy.io" className="hover:text-purple-400 transition-colors">
+                        info@bitropy.io
                       </a>
                     </p>
                   </div>

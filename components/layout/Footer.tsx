@@ -12,9 +12,16 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <BitropyLogo />
             </div>
-            <p className="text-gray-300">
-              Strategic technology consulting for the modern enterprise. Fractional CTO, Web3, and AI expertise.
-            </p>
+            <div className="space-y-2">
+              <p className="text-gray-300">
+                Strategic technology consulting for the modern enterprise. Fractional CTO, Web3, and AI expertise.
+              </p>
+              <div className="text-gray-400 text-sm">
+                <p>Bitropy sp. zoo (in organisation)</p>
+                <p>Hanny Malewskiej 24/1</p>
+                <p>60-461 Poznań, Poland</p>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -94,7 +101,7 @@ export default function Footer() {
             <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="https://calendly.com/darek-bitropy/call" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="https://www.linkedin.com/company/bitropy/" className="text-gray-400 hover:text-white transition-colors">
               <span className="sr-only">LinkedIn</span>
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                 <path
