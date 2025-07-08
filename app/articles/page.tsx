@@ -7,6 +7,39 @@ import { getAllArticles } from "@/lib/mdx"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Articles & Insights",
+  description: "Expert insights on Web3, AI, technology leadership, and enterprise solutions. Stay ahead with our latest articles and industry analysis.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://bitropy.io/articles",
+    siteName: "Bitropy",
+    title: "Articles & Insights | Bitropy",
+    description: "Expert insights on Web3, AI, technology leadership, and enterprise solutions. Stay ahead with our latest articles and industry analysis.",
+    images: [
+      {
+        url: "https://bitropy.io/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Bitropy Articles & Insights",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bitropy",
+    creator: "@bitropy",
+    title: "Articles & Insights | Bitropy",
+    description: "Expert insights on Web3, AI, technology leadership, and enterprise solutions.",
+    images: ["https://bitropy.io/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://bitropy.io/articles",
+  },
+}
 
 export default function ArticlesPage() {
   const articles = getAllArticles()

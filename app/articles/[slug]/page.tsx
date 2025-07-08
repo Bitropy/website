@@ -9,6 +9,58 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getArticleById, getRelatedArticles } from "@/lib/mdx"
 import ShareButtons from "@/components/ShareButtons"
+import type { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const article = getArticleById(slug)
+  
+  if (!article) {
+    return {
+      title: "Article Not Found",
+      description: "The article you're looking for could not be found."
+    }
+  }
+
+  const articleUrl = `https://bitropy.io/articles/${article.id}`
+  const imageUrl = article.image.startsWith('http') ? article.image : `https://bitropy.io${article.image}`
+
+  return {
+    title: article.title,
+    description: article.description,
+    authors: [{ name: article.author }],
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url: articleUrl,
+      siteName: "Bitropy",
+      title: article.title,
+      description: article.description,
+      publishedTime: article.publishDate,
+      authors: [article.author],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@bitropy",
+      creator: "@bitropy",
+      title: article.title,
+      description: article.description,
+      images: [imageUrl],
+    },
+    alternates: {
+      canonical: articleUrl,
+    },
+    keywords: article.tags?.join(", ") || "",
+  }
+}
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
