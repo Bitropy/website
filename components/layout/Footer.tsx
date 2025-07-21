@@ -17,7 +17,7 @@ export default function Footer() {
                 Strategic technology consulting for the modern enterprise. Fractional CTO, Web3, and AI expertise.
               </p>
               <div className="text-gray-400 text-sm">
-                <p>Bitropy sp. zoo (in organisation)</p>
+                <p>Bitropy sp. z o.o.</p>
                 <p>Hanny Malewskiej 24/1</p>
                 <p>60-461 Poznań, Poland</p>
               </div>
