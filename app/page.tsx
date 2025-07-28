@@ -4,8 +4,9 @@ import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Brain, Code, Database, Shield, TrendingUp, Zap, Users, FileSearch, UserCheck } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import AnimatedBitropyDots from "@/components/ui/AnimatedBitropyDots"
+import { ArrowRight, Brain, Code, Database, Shield } from "lucide-react"
 import Image from "next/image"
 
 export default function ConsultingLandingPage() {
@@ -77,19 +78,19 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <Badge variant="secondary" className="w-fit mx-auto bg-purple-900/50 text-purple-300 border-purple-700">
-              🚀 Technology Consulting • Web3 • AI Solutions
+              Strategic Technology Architecture for Modern Enterprises
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white">
-              Scale Your Technology
+              Strategic Technology Architecture
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                With T-shaped Services
+                for Modern Enterprises
               </span>
             </h1>
 
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto leading-relaxed">
-            We architect secure, scalable systems—with no full-time hire.
+              High-Value Technology Advisory • AI & Developer Productivity • Enterprise Blockchain • DevSecOps & AIOps
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -98,7 +99,7 @@ export default function ConsultingLandingPage() {
                 className="text-lg px-8 py-6 bg-purple-600 hover:bg-purple-700 text-white"
                 onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
               >
-                Book Consultation
+                Schedule Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -150,107 +151,171 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-              Comprehensive Technology
+              Our Four
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                Services
+                Pillars
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto">
-              End-to-end technology solutions delivered by specialized individuals and teams
+              Strategic technology architecture delivered through four specialized service areas
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-full max-w-7xl mx-auto">
-            {/* 1. Fractional CTO */}
+          <div className="grid gap-8 md:grid-cols-2 w-full max-w-7xl mx-auto">
+            {/* 1. High-Value Technology Advisory */}
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
-                  <Brain className="h-8 w-8 text-purple-400" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
+                    <Brain className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <CardTitle className="text-white text-xl">High-Value Technology Advisory</CardTitle>
                 </div>
-                <CardTitle className="text-white">Fractional CTO</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-center">
-                  Product strategy, roadmap governance, team scaling, architecture reviews
-                </CardDescription>
+              <CardContent className="space-y-4">
+                <p className="text-gray-300">
+                  We guide enterprises to optimal technology decisions that balance innovation, security, and speed to market.
+                </p>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Fractional CTO/CISO leadership</li>
+                    <li>• Technology strategy and architecture roadmaps</li>
+                    <li>• M&A technical due diligence</li>
+                    <li>• Board-level technology advisory</li>
+                  </ul>
+                </div>
+                <p className="text-purple-300 text-sm font-medium">
+                  Perfect for: Companies facing critical technology decisions or preparing for scale
+                </p>
               </CardContent>
             </Card>
 
-            {/* 2. Web3 & Blockchain */}
+            {/* 2. AI & Developer Productivity */}
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
-                  <Code className="h-8 w-8 text-purple-400" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
+                    <Database className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <CardTitle className="text-white text-xl">AI & Developer Productivity</CardTitle>
                 </div>
-                <CardTitle className="text-white">Web3 & Blockchain</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-center">
-                  Smart contracts, DeFi, secure infrastructure
-                </CardDescription>
+              <CardContent className="space-y-4">
+                <p className="text-gray-300">
+                  We transform engineering teams with AI-powered workflows and comprehensive enablement programs.
+                </p>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• AI-augmented development environments</li>
+                    <li>• Developer productivity automation</li>
+                    <li>• AI governance frameworks</li>
+                    <li>• Custom training and enablement programs</li>
+                  </ul>
+                </div>
+                <p className="text-purple-300 text-sm font-medium">
+                  Perfect for: Organizations looking to 10x their development velocity
+                </p>
               </CardContent>
             </Card>
 
-            {/* 3. AI & Data */}
+            {/* 3. Enterprise Blockchain */}
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
-                  <Database className="h-8 w-8 text-purple-400" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
+                    <Code className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <CardTitle className="text-white text-xl">Enterprise Blockchain</CardTitle>
                 </div>
-                <CardTitle className="text-white">AI & Data</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-center">
-                  AI pipelines, analytics, automation, agentic workflows
-                </CardDescription>
+              <CardContent className="space-y-4">
+                <p className="text-gray-300">
+                  We architect secure blockchain solutions for real business value, not hype.
+                </p>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• Smart contract architecture and audits</li>
+                    <li>• DeFi infrastructure and protocols</li>
+                    <li>• Real World Asset (RWA) tokenization</li>
+                    <li>• Web3 compliance and security</li>
+                  </ul>
+                </div>
+                <p className="text-purple-300 text-sm font-medium">
+                  Perfect for: Companies exploring blockchain for actual utility
+                </p>
               </CardContent>
             </Card>
 
-            {/* 4. Startup Founder Advisory */}
+            {/* 4. DevSecOps, AIOps & Cloud */}
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
-                  <Users className="h-8 w-8 text-purple-400" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
+                    <Shield className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <CardTitle className="text-white text-xl">DevSecOps, AIOps & Cloud</CardTitle>
                 </div>
-                <CardTitle className="text-white">Startup Founder Advisory</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-center">
-                  Strategic guidance for founders, external vendor intermediation, value creation partnerships
-                </CardDescription>
+              <CardContent className="space-y-4">
+                <p className="text-gray-300">
+                  We build intelligent, secure, and compliant infrastructure that scales effortlessly.
+                </p>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <ul className="text-gray-300 space-y-1 text-sm">
+                    <li>• DevSecOps transformation and automation</li>
+                    <li>• AIOps implementation for intelligent operations</li>
+                    <li>• Cloud architecture and FinOps optimization</li>
+                    <li>• SOC 2 and ISO 27001 implementation</li>
+                  </ul>
+                </div>
+                <p className="text-purple-300 text-sm font-medium">
+                  Perfect for: Companies needing rock-solid infrastructure with AI-driven operations
+                </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
 
-            {/* 5. Architecture Review & Build Up */}
-            <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
-                  <FileSearch className="h-8 w-8 text-purple-400" />
-                </div>
-                <CardTitle className="text-white">Architecture Review & Build Up</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-center">
-                  System architecture assessment, scalability planning, technical infrastructure development
-                </CardDescription>
-              </CardContent>
-            </Card>
+      {/* Who We Serve Section */}
+      <section className="py-20 md:py-32 bg-gray-900">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
+              Who We
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                {" "}
+                Serve
+              </span>
+            </h2>
+          </div>
 
-            {/* 6. Board Technology Advisory */}
-            <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
-                  <UserCheck className="h-8 w-8 text-purple-400" />
-                </div>
-                <CardTitle className="text-white">Board Technology Advisory</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-300 text-center">
-                  Executive technology guidance, strategic planning, board-level technical expertise
-                </CardDescription>
-              </CardContent>
-            </Card>
+          <div className="grid gap-8 md:grid-cols-3 w-full max-w-6xl mx-auto">
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold text-white">SaaS Companies (Seed to Series C)</h3>
+              <p className="text-gray-300">
+                Architecture for multi-tenancy, AI feature integration, SOC 2 compliance, and M&A readiness
+              </p>
+            </div>
+
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold text-white">Enterprise Technology Teams</h3>
+              <p className="text-gray-300">
+                Modernization initiatives, AI adoption, blockchain pilots, and DevSecOps transformation
+              </p>
+            </div>
+
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold text-white">High-Growth Startups</h3>
+              <p className="text-gray-300">
+                Technical leadership, scalable architecture, and preparing for enterprise customers
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -262,55 +327,57 @@ export default function ConsultingLandingPage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-                  Proven Team
+                  Why
                   <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                     {" "}
-                    Expertise
+                    Bitropy?
                   </span>
                 </h2>
-                <p className="text-xl text-gray-300">
-                  Our experienced teams have built and scaled technology organizations across startups and growing
-                  companies.
-                </p>
               </div>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-900/50">
-                    <TrendingUp className="h-4 w-4 text-purple-400" />
-                  </div>
+                  <div className="text-purple-400 font-bold text-xl">✓</div>
                   <div>
-                    <h3 className="font-semibold text-white mb-2">Strategic Technology Planning</h3>
-                    <p className="text-gray-300">
-                      Technology roadmaps, architecture decisions, and scalability planning aligned with business
-                      objectives.
-                    </p>
+                    <h3 className="font-semibold text-white mb-2">
+                      <span className="text-purple-300 font-bold">Exit-proven leadership</span> - Led by executives from two 9-figure exits (Nordcloud to IBM, Worksuite)
+                    </h3>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-900/50">
-                    <Shield className="h-4 w-4 text-purple-400" />
-                  </div>
+                  <div className="text-purple-400 font-bold text-xl">✓</div>
                   <div>
-                    <h3 className="font-semibold text-white mb-2">Security & Compliance</h3>
-                    <p className="text-gray-300">
-                      Enterprise security frameworks, compliance strategies, and risk management for modern
-                      applications.
-                    </p>
+                    <h3 className="font-semibold text-white mb-2">
+                      <span className="text-purple-300 font-bold">Scale expertise</span> - Built and scaled engineering teams from 0 to 400+ employees
+                    </h3>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-900/50">
-                    <Zap className="h-4 w-4 text-purple-400" />
-                  </div>
+                  <div className="text-purple-400 font-bold text-xl">✓</div>
                   <div>
-                    <h3 className="font-semibold text-white mb-2">Team & Process Optimization</h3>
-                    <p className="text-gray-300">
-                      Building high-performing engineering teams, implementing DevOps practices, and optimizing
-                      development workflows.
-                    </p>
+                    <h3 className="font-semibold text-white mb-2">
+                      <span className="text-purple-300 font-bold">M&A ready</span> - Active technical due diligence advisor for VC/PE funds
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="text-purple-400 font-bold text-xl">✓</div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      <span className="text-purple-300 font-bold">Full-stack excellence</span> - From blockchain to AI to enterprise infrastructure
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="text-purple-400 font-bold text-xl">✓</div>
+                  <div>
+                    <h3 className="font-semibold text-white mb-2">
+                      <span className="text-purple-300 font-bold">Builder's mindset</span> - We've built SaaS businesses from scratch and know what works
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -318,14 +385,66 @@ export default function ConsultingLandingPage() {
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg blur-xl"></div>
-              <Image
-                src="/placeholder.svg?height=500&width=600"
-                alt="Technology Consulting"
-                width={600}
-                height={500}
-                className="rounded-lg relative z-10 border border-gray-700"
-              />
+              <div className="relative z-10 h-96 flex items-center justify-center rounded-lg border border-gray-700 bg-gray-900/50 backdrop-blur-sm">
+                <AnimatedBitropyDots />
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Engage Section */}
+      <section className="py-20 md:py-32 bg-gray-800">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
+              How We
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                {" "}
+                Engage
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 w-full max-w-6xl mx-auto">
+            <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+              <CardHeader className="text-center">
+                <CardTitle className="text-white text-xl">Strategic Advisory</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="text-gray-300 space-y-2">
+                  <li>• Ongoing CTO/CISO guidance</li>
+                  <li>• Continuous architecture evolution</li>
+                  <li>• Strategic technology planning</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+              <CardHeader className="text-center">
+                <CardTitle className="text-white text-xl">Transformation Projects</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="text-gray-300 space-y-2">
+                  <li>• Complete implementations</li>
+                  <li>• Architecture overhauls</li>
+                  <li>• Compliance certifications</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+              <CardHeader className="text-center">
+                <CardTitle className="text-white text-xl">Enablement Programs</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="text-gray-300 space-y-2">
+                  <li>• Team training and workshops</li>
+                  <li>• AI adoption programs</li>
+                  <li>• Technology bootcamps</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -346,11 +465,15 @@ export default function ConsultingLandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 w-full max-w-7xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 w-full max-w-6xl mx-auto">
             <Card className="bg-gray-900 border-gray-700 p-6 hover:shadow-lg hover:shadow-purple-500/20 hover:border-gray-600 transition-all">
               <CardContent className="space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-white" />
+                </div>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">Technology Advisory</Badge>
+                  <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">DevSecOps</Badge>
                 </div>
                 <h3 className="font-semibold text-white mb-2">SaaS Security & Acquisition Readiness</h3>
                 <p className="text-gray-300 leading-relaxed">
@@ -365,6 +488,9 @@ export default function ConsultingLandingPage() {
               <CardContent className="space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg flex items-center justify-center mb-4">
                   <Brain className="h-6 w-6 text-white" />
+                </div>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">AI & Developer Productivity</Badge>
                 </div>
                 <h3 className="font-semibold text-white mb-2">AI Startup Technical Leadership</h3>
                 <p className="text-gray-300 leading-relaxed">
@@ -381,10 +507,13 @@ export default function ConsultingLandingPage() {
                 <div className="w-12 h-12 bg-gradient-to-r from-gray-800 to-black rounded-lg flex items-center justify-center mb-4">
                   <Code className="h-6 w-6 text-white" />
                 </div>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">Enterprise Blockchain</Badge>
+                </div>
                 <h3 className="font-semibold text-white mb-2">Web3 Strategy & Smart Contract Development</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Led comprehensive technological strategy for a Web3 company and successfully implemented
-                  proof-of-concept smart contracts on Ethereum blockchain. Delivered complete Web3 DevOps pipeline with
+                  proof-of-concept smart contracts on Ethereum blockchain. Delivered complete Web3 DevSecOps pipeline with
                   automated testing, deployment, and monitoring systems for decentralized applications.
                 </p>
               </CardContent>
@@ -394,6 +523,9 @@ export default function ConsultingLandingPage() {
               <CardContent className="space-y-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-gray-500 to-gray-600 rounded-lg flex items-center justify-center mb-4">
                   <Database className="h-6 w-6 text-white" />
+                </div>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">AI & Developer Productivity</Badge>
                 </div>
                 <h3 className="font-semibold text-white mb-2">Fashion Retail Data & AI Strategy</h3>
                 <p className="text-gray-300 leading-relaxed">
@@ -431,18 +563,22 @@ export default function ConsultingLandingPage() {
                 className="text-lg px-8 py-6 bg-purple-600 hover:bg-purple-700 text-white"
                 onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
               >
-                Schedule Free Consultation
+                Discuss Your Technology Strategy
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
-            <p className="text-sm text-gray-400">
-              Free 30-minute consultation • No commitment required • Immediate insights
-            </p>
           </div>
         </div>
       </section>
 
       <Footer />
+
+      {/* Bottom Tagline */}
+      <div className="bg-gray-900 py-8 text-center border-t border-gray-800">
+        <p className="text-gray-400 text-sm max-w-4xl mx-auto px-4">
+          We help ambitious companies make the right technology decisions and implement them flawlessly.
+        </p>
+      </div>
     </div>
   )
 }

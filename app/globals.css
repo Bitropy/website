@@ -10,6 +10,11 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* Offset scroll position for sticky header */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

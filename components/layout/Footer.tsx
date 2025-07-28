@@ -7,14 +7,14 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 border-t border-gray-800 py-16">
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="space-y-4">
+        <div className="grid gap-8 md:grid-cols-6">
+          <div className="space-y-4 md:col-span-2">
             <div className="flex items-center space-x-3">
               <BitropyLogo />
             </div>
             <div className="space-y-2">
               <p className="text-gray-300">
-                Strategic technology consulting for the modern enterprise. Fractional CTO, Web3, and AI expertise.
+                Strategic Technology Architecture for Modern Enterprises
               </p>
               <div className="text-gray-400 text-sm">
                 <p>Bitropy sp. z o.o.</p>
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">Services</h3>
+            <h3 className="font-semibold text-white">Technology Advisory</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/#services" className="hover:text-white transition-colors">
@@ -34,38 +34,75 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#services" className="hover:text-white transition-colors">
-                  Product Strategy
+                  M&A Readiness
                 </Link>
               </li>
               <li>
                 <Link href="/#services" className="hover:text-white transition-colors">
-                  Company Scaling
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Web3 & Blockchain
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  AI & Data Solutions
+                  Tech Due Diligence
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">Company</h3>
+            <h3 className="font-semibold text-white">AI Solutions</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link href="/#testimonials" className="hover:text-white transition-colors">
-                  Case Studies
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  AI Strategy
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Developer Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  AI Training
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-semibold text-white">Enterprise Blockchain</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Smart Contracts
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  DeFi Solutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Tokenization
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-semibold text-white">Infrastructure</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  DevSecOps
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  AIOps
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Cloud & FinOps
                 </Link>
               </li>
             </ul>
@@ -80,12 +117,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#testimonials" className="hover:text-white transition-colors">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
                 <Link
                   href="https://calendly.com/darek-bitropy/call"
                   className="hover:text-white transition-colors"
                   target="_blank"
                 >
-                  Schedule Call
+                  Schedule Consultation
                 </Link>
               </li>
             </ul>

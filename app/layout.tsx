@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Bitropy – Technology Consulting, Web3 & AI Services",
+    default: "Bitropy - Strategic Technology Architecture Consulting | AI, DevSecOps, Blockchain",
     template: "%s | Bitropy"
   },
-  description: "Expert technology consulting teams specializing in fractional leadership, Web3 & blockchain development, and AI/data solutions. Scale your technology with dedicated specialists.",
-  keywords: "technology consulting, fractional CTO, Web3, blockchain, AI, data solutions, technology leadership",
+  description: "High-value technology consulting led by executives from 9-figure exits. Specializing in AI, DevSecOps, AIOps, Enterprise Blockchain, and M&A readiness.",
+  keywords: "strategic technology consulting, fractional CTO, AI consulting, DevSecOps, AIOps, enterprise blockchain, M&A readiness, technology architecture",
   authors: [{ name: "Darek Dwornikowski" }],
   creator: "Bitropy",
   openGraph: {
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bitropy.io",
     siteName: "Bitropy",
-    title: "Bitropy – Technology Consulting, Web3 & AI Services",
-    description: "Expert technology consulting teams specializing in fractional leadership, Web3 & blockchain development, and AI/data solutions. Scale your technology with dedicated specialists.",
+    title: "Bitropy - Strategic Technology Architecture Consulting | AI, DevSecOps, Blockchain",
+    description: "High-value technology consulting led by executives from 9-figure exits. Specializing in AI, DevSecOps, AIOps, Enterprise Blockchain, and M&A readiness.",
     images: [
       {
         url: "https://bitropy.io/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Bitropy - Technology Consulting, Web3 & AI Services",
+        alt: "Bitropy - Strategic Technology Architecture Consulting | AI, DevSecOps, Blockchain",
       },
     ],
   },
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@bitropy",
     creator: "@bitropy",
-    title: "Bitropy – Technology Consulting, Web3 & AI Services",
-    description: "Expert technology consulting teams specializing in fractional leadership, Web3 & blockchain development, and AI/data solutions.",
+    title: "Bitropy - Strategic Technology Architecture Consulting | AI, DevSecOps, Blockchain",
+    description: "High-value technology consulting led by executives from 9-figure exits. Specializing in AI, DevSecOps, AIOps, Enterprise Blockchain, and M&A readiness.",
     images: ["https://bitropy.io/og-image.svg"],
   },
   robots: {

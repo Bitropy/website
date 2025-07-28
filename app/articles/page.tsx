@@ -11,14 +11,14 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Articles & Insights",
-  description: "Expert insights on Web3, AI, technology leadership, and enterprise solutions. Stay ahead with our latest articles and industry analysis.",
+  description: "Strategic insights on AI, DevSecOps, Enterprise Blockchain, and technology leadership from executives with 9-figure exit experience. Expert analysis for ambitious companies.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://bitropy.io/articles",
     siteName: "Bitropy",
     title: "Articles & Insights | Bitropy",
-    description: "Expert insights on Web3, AI, technology leadership, and enterprise solutions. Stay ahead with our latest articles and industry analysis.",
+    description: "Strategic insights on AI, DevSecOps, Enterprise Blockchain, and technology leadership from executives with 9-figure exit experience. Expert analysis for ambitious companies.",
     images: [
       {
         url: "https://bitropy.io/og-image.png",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     site: "@bitropy",
     creator: "@bitropy",
     title: "Articles & Insights | Bitropy",
-    description: "Expert insights on Web3, AI, technology leadership, and enterprise solutions.",
+    description: "Strategic insights on AI, DevSecOps, Enterprise Blockchain, and technology leadership from executives with 9-figure exit experience.",
     images: ["https://bitropy.io/og-image.png"],
   },
   alternates: {
@@ -67,11 +67,11 @@ export default function ArticlesPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <Badge variant="secondary" className="w-fit mx-auto bg-purple-900/50 text-purple-300 border-purple-700">
-              📚 Technology Insights & Expertise
+              📚 Strategic Technology Insights
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white">
-              Technology
+              Strategic Technology
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Articles & Insights
@@ -79,7 +79,7 @@ export default function ArticlesPage() {
             </h1>
 
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto leading-relaxed">
-              Expert insights on Web3, AI, technology leadership, and enterprise solutions. Stay ahead with our latest articles and industry analysis.
+              Strategic insights on AI, DevSecOps, Enterprise Blockchain, and technology leadership from executives with 9-figure exit experience. Expert analysis for ambitious companies.
             </p>
 
             <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
@@ -89,7 +89,7 @@ export default function ArticlesPage() {
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4 text-purple-400" />
-                <span>Expert Insights</span>
+                <span>Exit-Proven Insights</span>
               </div>
               <div className="flex items-center space-x-2">
                 <ArrowRight className="h-4 w-4 text-purple-400" />
