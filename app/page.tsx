@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import AnimatedBitropyDots from "@/components/ui/AnimatedBitropyDots"
 import { ArrowRight, Brain, Code, Database, Shield } from "lucide-react"
 import Image from "next/image"
 
@@ -384,13 +385,9 @@ export default function ConsultingLandingPage() {
 
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg blur-xl"></div>
-              <Image
-                src="/placeholder.svg?height=500&width=600"
-                alt="Technology Consulting"
-                width={600}
-                height={500}
-                className="rounded-lg relative z-10 border border-gray-700"
-              />
+              <div className="relative z-10 h-96 flex items-center justify-center rounded-lg border border-gray-700 bg-gray-900/50 backdrop-blur-sm">
+                <AnimatedBitropyDots />
+              </div>
             </div>
           </div>
         </div>
