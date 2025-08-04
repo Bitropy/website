@@ -1,6 +1,7 @@
 "use client"
 
 import BitropyLogo from "@/components/ui/BitropyLogo"
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -147,7 +148,8 @@ export default function Footer({ dict }: FooterProps) {
             <p className="text-gray-400">{footerData.copyright.replace('{year}', new Date().getFullYear().toString())}</p>
             <p className="text-gray-500 text-sm mt-2">{footerData.made_with_love}</p>
           </div>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex items-center space-x-6 mt-4 md:mt-0">
+            <LanguageSwitcher />
             <Link href={`/${currentLang}/privacy`} className="text-gray-400 hover:text-white transition-colors">
               {footerData.privacy_policy}
             </Link>
