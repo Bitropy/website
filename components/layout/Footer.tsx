@@ -2,8 +2,48 @@
 
 import BitropyLogo from "@/components/ui/BitropyLogo"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-export default function Footer() {
+interface FooterProps {
+  dict?: any
+}
+
+export default function Footer({ dict }: FooterProps) {
+  const pathname = usePathname()
+  const currentLang = pathname.split('/')[1] || 'en'
+  
+  // Default English values as fallback
+  const footerData = dict?.footer || {
+    tagline: "Strategic Technology Architecture for Modern Enterprises",
+    company_info: {
+      name: "Bitropy sp. z o.o.",
+      address_line1: "Hanny Malewskiej 24/1",
+      address_line2: "60-461 Poznań, Poland"
+    },
+    technology_advisory: {
+      title: "Technology Advisory",
+      services: ["Fractional CTO", "M&A Readiness", "Tech Due Diligence"]
+    },
+    ai_solutions: {
+      title: "AI Solutions", 
+      services: ["AI Strategy", "Developer Tools", "AI Training"]
+    },
+    enterprise_blockchain: {
+      title: "Enterprise Blockchain",
+      services: ["Smart Contracts", "DeFi Solutions", "Tokenization"]
+    },
+    infrastructure: {
+      title: "Infrastructure",
+      services: ["DevSecOps", "AIOps", "Cloud & FinOps"]
+    },
+    connect: {
+      title: "Connect",
+      links: ["LinkedIn", "Case Studies", "Schedule Consultation"]
+    },
+    copyright: "© {year} bitropy.io. All rights reserved.",
+    made_with_love: "Made in Europe 🇪🇺 with love ❤️",
+    privacy_policy: "Privacy Policy"
+  }
   return (
     <footer className="bg-gray-900 border-t border-gray-800 py-16">
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
@@ -14,111 +54,79 @@ export default function Footer() {
             </div>
             <div className="space-y-2">
               <p className="text-gray-300">
-                Strategic Technology Architecture for Modern Enterprises
+                {footerData.tagline}
               </p>
               <div className="text-gray-400 text-sm">
-                <p>Bitropy sp. z o.o.</p>
-                <p>Hanny Malewskiej 24/1</p>
-                <p>60-461 Poznań, Poland</p>
+                <p>{footerData.company_info.name}</p>
+                <p>{footerData.company_info.address_line1}</p>
+                <p>{footerData.company_info.address_line2}</p>
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">Technology Advisory</h3>
+            <h3 className="font-semibold text-white">{footerData.technology_advisory.title}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Fractional CTO
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  M&A Readiness
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Tech Due Diligence
-                </Link>
-              </li>
+              {footerData.technology_advisory.services.map((service: string, index: number) => (
+                <li key={index}>
+                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
+                    {service}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">AI Solutions</h3>
+            <h3 className="font-semibold text-white">{footerData.ai_solutions.title}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  AI Strategy
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Developer Tools
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  AI Training
-                </Link>
-              </li>
+              {footerData.ai_solutions.services.map((service: string, index: number) => (
+                <li key={index}>
+                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
+                    {service}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">Enterprise Blockchain</h3>
+            <h3 className="font-semibold text-white">{footerData.enterprise_blockchain.title}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Smart Contracts
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  DeFi Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Tokenization
-                </Link>
-              </li>
+              {footerData.enterprise_blockchain.services.map((service: string, index: number) => (
+                <li key={index}>
+                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
+                    {service}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">Infrastructure</h3>
+            <h3 className="font-semibold text-white">{footerData.infrastructure.title}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  DevSecOps
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  AIOps
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="hover:text-white transition-colors">
-                  Cloud & FinOps
-                </Link>
-              </li>
+              {footerData.infrastructure.services.map((service: string, index: number) => (
+                <li key={index}>
+                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
+                    {service}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-white">Connect</h3>
+            <h3 className="font-semibold text-white">{footerData.connect.title}</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="https://www.linkedin.com/company/bitropy" className="hover:text-white transition-colors">
-                  LinkedIn
+                  {footerData.connect.links[0]}
                 </Link>
               </li>
               <li>
-                <Link href="/#testimonials" className="hover:text-white transition-colors">
-                  Case Studies
+                <Link href={`/${currentLang}/#testimonials`} className="hover:text-white transition-colors">
+                  {footerData.connect.links[1]}
                 </Link>
               </li>
               <li>
@@ -127,7 +135,7 @@ export default function Footer() {
                   className="hover:text-white transition-colors"
                   target="_blank"
                 >
-                  Schedule Consultation
+                  {footerData.connect.links[2]}
                 </Link>
               </li>
             </ul>
@@ -136,12 +144,12 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col items-center md:items-start">
-            <p className="text-gray-400">© {new Date().getFullYear()} bitropy.io. All rights reserved.</p>
-            <p className="text-gray-500 text-sm mt-2">Made in Europe 🇪🇺 with love ❤️</p>
+            <p className="text-gray-400">{footerData.copyright.replace('{year}', new Date().getFullYear().toString())}</p>
+            <p className="text-gray-500 text-sm mt-2">{footerData.made_with_love}</p>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
-              Privacy Policy
+            <Link href={`/${currentLang}/privacy`} className="text-gray-400 hover:text-white transition-colors">
+              {footerData.privacy_policy}
             </Link>
             <Link href="https://www.linkedin.com/company/bitropy/" className="text-gray-400 hover:text-white transition-colors">
               <span className="sr-only">LinkedIn</span>

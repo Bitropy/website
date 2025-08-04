@@ -1,18 +1,23 @@
-"use client"
-
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
+import { getDictionary } from "@/lib/dictionaries"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import ClientButton from "@/components/ui/ClientButton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import AnimatedBitropyDots from "@/components/ui/AnimatedBitropyDots"
 import { ArrowRight, Brain, Code, Database, Shield } from "lucide-react"
 import Image from "next/image"
 
-export default function ConsultingLandingPage() {
+export default async function ConsultingLandingPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>
+}) {
+  const { lang } = await params
+  const dict = await getDictionary(lang as 'en' | 'pl')
   return (
     <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
-      <Header currentPage="home" />
+      <Header currentPage="home" dict={dict} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
@@ -78,72 +83,33 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <Badge variant="secondary" className="w-fit mx-auto bg-purple-900/50 text-purple-300 border-purple-700">
-              Strategic Technology Architecture for Modern Enterprises
+              {dict.hero.badge}
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-white">
-              Strategic Technology Architecture
+              {dict.hero.title_part1}
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                for Modern Enterprises
+                {dict.hero.title_part2}
               </span>
             </h1>
 
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto leading-relaxed">
-              High-Value Technology Advisory • AI & Developer Productivity • Enterprise Blockchain • DevSecOps & AIOps
+              {dict.hero.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+              <ClientButton
                 size="lg"
                 className="text-lg px-8 py-6 bg-purple-600 hover:bg-purple-700 text-white"
-                onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
+                href="https://calendly.com/darek-bitropy/call"
               >
-                Schedule Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+                {dict.hero.cta_button}
+              </ClientButton>
             </div>
           </div>
         </div>
 
-        {/* Custom CSS for animations */}
-        <style jsx>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-          }
-          
-          @keyframes float-delayed {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(-180deg); }
-          }
-          
-          @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-          
-          @keyframes pulse-slow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-          }
-          
-          .animate-float {
-            animation: float 6s ease-in-out infinite;
-          }
-          
-          .animate-float-delayed {
-            animation: float-delayed 8s ease-in-out infinite;
-          }
-          
-          .animate-spin-slow {
-            animation: spin-slow 20s linear infinite;
-          }
-          
-          .animate-pulse-slow {
-            animation: pulse-slow 4s ease-in-out infinite;
-          }
-        `}</style>
       </section>
 
       {/* Services Section */}
@@ -151,14 +117,14 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-              Our Four
+              {dict.services.section_title.split(' ').slice(0, -1).join(' ')}
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                Pillars
+                {dict.services.section_title.split(' ').slice(-1)[0]}
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto">
-              Strategic technology architecture delivered through four specialized service areas
+              {dict.services.section_subtitle}
             </p>
           </div>
 
@@ -170,24 +136,23 @@ export default function ConsultingLandingPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
                     <Brain className="h-6 w-6 text-purple-400" />
                   </div>
-                  <CardTitle className="text-white text-xl">High-Value Technology Advisory</CardTitle>
+                  <CardTitle className="text-white text-xl">{dict.services.advisory.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-300">
-                  We guide enterprises to optimal technology decisions that balance innovation, security, and speed to market.
+                  {dict.services.advisory.description}
                 </p>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <h4 className="font-semibold text-white mb-2">{dict.services.advisory.what_we_deliver}</h4>
                   <ul className="text-gray-300 space-y-1 text-sm">
-                    <li>• Fractional CTO/CISO leadership</li>
-                    <li>• Technology strategy and architecture roadmaps</li>
-                    <li>• M&A technical due diligence</li>
-                    <li>• Board-level technology advisory</li>
+                    {dict.services.advisory.services.map((service, index) => (
+                      <li key={index}>• {service}</li>
+                    ))}
                   </ul>
                 </div>
                 <p className="text-purple-300 text-sm font-medium">
-                  Perfect for: Companies facing critical technology decisions or preparing for scale
+                  {dict.services.advisory.perfect_for}
                 </p>
               </CardContent>
             </Card>
@@ -199,24 +164,23 @@ export default function ConsultingLandingPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
                     <Database className="h-6 w-6 text-purple-400" />
                   </div>
-                  <CardTitle className="text-white text-xl">AI & Developer Productivity</CardTitle>
+                  <CardTitle className="text-white text-xl">{dict.services.ai_productivity.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-300">
-                  We transform engineering teams with AI-powered workflows and comprehensive enablement programs.
+                  {dict.services.ai_productivity.description}
                 </p>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <h4 className="font-semibold text-white mb-2">{dict.services.advisory.what_we_deliver}</h4>
                   <ul className="text-gray-300 space-y-1 text-sm">
-                    <li>• AI-augmented development environments</li>
-                    <li>• Developer productivity automation</li>
-                    <li>• AI governance frameworks</li>
-                    <li>• Custom training and enablement programs</li>
+                    {dict.services.ai_productivity.services.map((service, index) => (
+                      <li key={index}>• {service}</li>
+                    ))}
                   </ul>
                 </div>
                 <p className="text-purple-300 text-sm font-medium">
-                  Perfect for: Organizations looking to 10x their development velocity
+                  {dict.services.ai_productivity.perfect_for}
                 </p>
               </CardContent>
             </Card>
@@ -228,24 +192,23 @@ export default function ConsultingLandingPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
                     <Code className="h-6 w-6 text-purple-400" />
                   </div>
-                  <CardTitle className="text-white text-xl">Enterprise Blockchain</CardTitle>
+                  <CardTitle className="text-white text-xl">{dict.services.blockchain.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-300">
-                  We architect secure blockchain solutions for real business value, not hype.
+                  {dict.services.blockchain.description}
                 </p>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <h4 className="font-semibold text-white mb-2">{dict.services.advisory.what_we_deliver}</h4>
                   <ul className="text-gray-300 space-y-1 text-sm">
-                    <li>• Smart contract architecture and audits</li>
-                    <li>• DeFi infrastructure and protocols</li>
-                    <li>• Real World Asset (RWA) tokenization</li>
-                    <li>• Web3 compliance and security</li>
+                    {dict.services.blockchain.services.map((service, index) => (
+                      <li key={index}>• {service}</li>
+                    ))}
                   </ul>
                 </div>
                 <p className="text-purple-300 text-sm font-medium">
-                  Perfect for: Companies exploring blockchain for actual utility
+                  {dict.services.blockchain.perfect_for}
                 </p>
               </CardContent>
             </Card>
@@ -257,24 +220,23 @@ export default function ConsultingLandingPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50 group-hover:bg-purple-800/50 transition-all">
                     <Shield className="h-6 w-6 text-purple-400" />
                   </div>
-                  <CardTitle className="text-white text-xl">DevSecOps, AIOps & Cloud</CardTitle>
+                  <CardTitle className="text-white text-xl">{dict.services.infrastructure.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-300">
-                  We build intelligent, secure, and compliant infrastructure that scales effortlessly.
+                  {dict.services.infrastructure.description}
                 </p>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">What we deliver:</h4>
+                  <h4 className="font-semibold text-white mb-2">{dict.services.advisory.what_we_deliver}</h4>
                   <ul className="text-gray-300 space-y-1 text-sm">
-                    <li>• DevSecOps transformation and automation</li>
-                    <li>• AIOps implementation for intelligent operations</li>
-                    <li>• Cloud architecture and FinOps optimization</li>
-                    <li>• SOC 2 and ISO 27001 implementation</li>
+                    {dict.services.infrastructure.services.map((service, index) => (
+                      <li key={index}>• {service}</li>
+                    ))}
                   </ul>
                 </div>
                 <p className="text-purple-300 text-sm font-medium">
-                  Perfect for: Companies needing rock-solid infrastructure with AI-driven operations
+                  {dict.services.infrastructure.perfect_for}
                 </p>
               </CardContent>
             </Card>
@@ -287,33 +249,33 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-              Who We
+              {dict.who_serve.title.split(' ').slice(0, -1).join(' ')}
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                Serve
+                {dict.who_serve.title.split(' ').slice(-1)[0]}
               </span>
             </h2>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3 w-full max-w-6xl mx-auto">
             <div className="text-center space-y-4">
-              <h3 className="text-xl font-semibold text-white">SaaS Companies (Seed to Series C)</h3>
+              <h3 className="text-xl font-semibold text-white">{dict.who_serve.saas_companies.title}</h3>
               <p className="text-gray-300">
-                Architecture for multi-tenancy, AI feature integration, SOC 2 compliance, and M&A readiness
+                {dict.who_serve.saas_companies.description}
               </p>
             </div>
 
             <div className="text-center space-y-4">
-              <h3 className="text-xl font-semibold text-white">Enterprise Technology Teams</h3>
+              <h3 className="text-xl font-semibold text-white">{dict.who_serve.enterprise_teams.title}</h3>
               <p className="text-gray-300">
-                Modernization initiatives, AI adoption, blockchain pilots, and DevSecOps transformation
+                {dict.who_serve.enterprise_teams.description}
               </p>
             </div>
 
             <div className="text-center space-y-4">
-              <h3 className="text-xl font-semibold text-white">High-Growth Startups</h3>
+              <h3 className="text-xl font-semibold text-white">{dict.who_serve.startups.title}</h3>
               <p className="text-gray-300">
-                Technical leadership, scalable architecture, and preparing for enterprise customers
+                {dict.who_serve.startups.description}
               </p>
             </div>
           </div>
@@ -327,59 +289,25 @@ export default function ConsultingLandingPage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-                  Why
+                  {dict.why_bitropy.title.split(' ').slice(0, -1).join(' ')}
                   <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                     {" "}
-                    Bitropy?
+                    {dict.why_bitropy.title.split(' ').slice(-1)[0]}
                   </span>
                 </h2>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="text-purple-400 font-bold text-xl">✓</div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-2">
-                      <span className="text-purple-300 font-bold">Exit-proven leadership</span> - Led by executives from two 9-figure exits (Nordcloud to IBM, Worksuite)
-                    </h3>
+                {dict.why_bitropy.points.map((point, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="text-purple-400 font-bold text-xl">✓</div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-2">
+                        <span className="text-purple-300 font-bold">{point.highlight}</span> - {point.description}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="text-purple-400 font-bold text-xl">✓</div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-2">
-                      <span className="text-purple-300 font-bold">Scale expertise</span> - Built and scaled engineering teams from 0 to 400+ employees
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="text-purple-400 font-bold text-xl">✓</div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-2">
-                      <span className="text-purple-300 font-bold">M&A ready</span> - Active technical due diligence advisor for VC/PE funds
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="text-purple-400 font-bold text-xl">✓</div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-2">
-                      <span className="text-purple-300 font-bold">Full-stack excellence</span> - From blockchain to AI to enterprise infrastructure
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="text-purple-400 font-bold text-xl">✓</div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-2">
-                      <span className="text-purple-300 font-bold">Builder's mindset</span> - We've built SaaS businesses from scratch and know what works
-                    </h3>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -398,10 +326,10 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-              How We
+              {dict.how_we_engage.title.split(' ').slice(0, -1).join(' ')}
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                Engage
+                {dict.how_we_engage.title.split(' ').slice(-1)[0]}
               </span>
             </h2>
           </div>
@@ -409,39 +337,39 @@ export default function ConsultingLandingPage() {
           <div className="grid gap-8 md:grid-cols-3 w-full max-w-6xl mx-auto">
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
               <CardHeader className="text-center">
-                <CardTitle className="text-white text-xl">Strategic Advisory</CardTitle>
+                <CardTitle className="text-white text-xl">{dict.how_we_engage.strategic_advisory.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="text-gray-300 space-y-2">
-                  <li>• Ongoing CTO/CISO guidance</li>
-                  <li>• Continuous architecture evolution</li>
-                  <li>• Strategic technology planning</li>
+                  {dict.how_we_engage.strategic_advisory.services.map((service, index) => (
+                    <li key={index}>• {service}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
               <CardHeader className="text-center">
-                <CardTitle className="text-white text-xl">Transformation Projects</CardTitle>
+                <CardTitle className="text-white text-xl">{dict.how_we_engage.transformation.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="text-gray-300 space-y-2">
-                  <li>• Complete implementations</li>
-                  <li>• Architecture overhauls</li>
-                  <li>• Compliance certifications</li>
+                  {dict.how_we_engage.transformation.services.map((service, index) => (
+                    <li key={index}>• {service}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-gray-900 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
               <CardHeader className="text-center">
-                <CardTitle className="text-white text-xl">Enablement Programs</CardTitle>
+                <CardTitle className="text-white text-xl">{dict.how_we_engage.enablement.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="text-gray-300 space-y-2">
-                  <li>• Team training and workshops</li>
-                  <li>• AI adoption programs</li>
-                  <li>• Technology bootcamps</li>
+                  {dict.how_we_engage.enablement.services.map((service, index) => (
+                    <li key={index}>• {service}</li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -454,14 +382,14 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-              Real
+              {dict.case_studies.title.split(' ').slice(0, -1).join(' ')}
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                Results
+                {dict.case_studies.title.split(' ').slice(-1)[0]}
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto">
-              Case studies from our technology consulting engagements
+              {dict.case_studies.subtitle}
             </p>
           </div>
 
@@ -475,11 +403,9 @@ export default function ConsultingLandingPage() {
                   <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">Technology Advisory</Badge>
                   <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">DevSecOps</Badge>
                 </div>
-                <h3 className="font-semibold text-white mb-2">SaaS Security & Acquisition Readiness</h3>
+                <h3 className="font-semibold text-white mb-2">{dict.case_studies.saas_security.title}</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Transformed a growing SaaS company's security posture and operational processes to prepare for
-                  acquisition. Implemented comprehensive security frameworks resulting in successful SOC 2 Type II and
-                  ISO 27001 certifications, significantly increasing company valuation and acquisition appeal.
+                  {dict.case_studies.saas_security.description}
                 </p>
               </CardContent>
             </Card>
@@ -492,12 +418,9 @@ export default function ConsultingLandingPage() {
                 <div className="flex flex-wrap gap-2 mb-3">
                   <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">AI & Developer Productivity</Badge>
                 </div>
-                <h3 className="font-semibold text-white mb-2">AI Startup Technical Leadership</h3>
+                <h3 className="font-semibold text-white mb-2">{dict.case_studies.ai_startup.title}</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Served as Fractional CTO for an innovative AI startup, designing scalable architecture and overseeing
-                  end-to-end technical delivery of advanced software solutions with Large Language Model integrations.
-                  Established robust development practices and guided the technical team through rapid product
-                  iterations.
+                  {dict.case_studies.ai_startup.description}
                 </p>
               </CardContent>
             </Card>
@@ -510,11 +433,9 @@ export default function ConsultingLandingPage() {
                 <div className="flex flex-wrap gap-2 mb-3">
                   <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">Enterprise Blockchain</Badge>
                 </div>
-                <h3 className="font-semibold text-white mb-2">Web3 Strategy & Smart Contract Development</h3>
+                <h3 className="font-semibold text-white mb-2">{dict.case_studies.web3_strategy.title}</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Led comprehensive technological strategy for a Web3 company and successfully implemented
-                  proof-of-concept smart contracts on Ethereum blockchain. Delivered complete Web3 DevSecOps pipeline with
-                  automated testing, deployment, and monitoring systems for decentralized applications.
+                  {dict.case_studies.web3_strategy.description}
                 </p>
               </CardContent>
             </Card>
@@ -527,11 +448,9 @@ export default function ConsultingLandingPage() {
                 <div className="flex flex-wrap gap-2 mb-3">
                   <Badge className="bg-purple-900/50 text-purple-300 border-purple-700">AI & Developer Productivity</Badge>
                 </div>
-                <h3 className="font-semibold text-white mb-2">Fashion Retail Data & AI Strategy</h3>
+                <h3 className="font-semibold text-white mb-2">{dict.case_studies.fashion_retail.title}</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Developed comprehensive data and AI strategy for an emerging fashion retail brand, implementing
-                  intelligent recommendation systems, inventory optimization algorithms, and customer behavior
-                  analytics. Created data-driven insights that improved conversion rates and operational efficiency.
+                  {dict.case_studies.fashion_retail.description}
                 </p>
               </CardContent>
             </Card>
@@ -547,36 +466,34 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10">
           <div className="space-y-8 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-              Ready to Scale Your
+              {dict.final_cta.title_part1}
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                Technology?
+                {dict.final_cta.title_part2}
               </span>
             </h2>
             <p className="text-xl text-gray-300">
-              Let's discuss how our technology consulting teams can accelerate your growth without the overhead of
-              full-time leadership.
+              {dict.final_cta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+              <ClientButton
                 size="lg"
                 className="text-lg px-8 py-6 bg-purple-600 hover:bg-purple-700 text-white"
-                onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
+                href="https://calendly.com/darek-bitropy/call"
               >
-                Discuss Your Technology Strategy
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+                {dict.final_cta.cta_button}
+              </ClientButton>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <Footer dict={dict} />
 
       {/* Bottom Tagline */}
       <div className="bg-gray-900 py-8 text-center border-t border-gray-800">
         <p className="text-gray-400 text-sm max-w-4xl mx-auto px-4">
-          We help ambitious companies make the right technology decisions and implement them flawlessly.
+          {dict.bottom_tagline}
         </p>
       </div>
     </div>

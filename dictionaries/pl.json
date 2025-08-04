@@ -1,0 +1,432 @@
+{
+  "navigation": {
+    "schedule_consultation": "Umów konsultację",
+    "home": "Strona główna",
+    "about": "O nas",
+    "articles": "Artykuły",
+    "contact": "Kontakt",
+    "privacy": "Prywatność",
+    "services": "Usługi",
+    "why_bitropy": "Dlaczego Bitropy",
+    "case_studies": "Studia przypadków"
+  },
+  "header": {
+    "services": "Usługi",
+    "why_bitropy": "Dlaczego Bitropy",
+    "case_studies": "Studia przypadków",
+    "articles": "Artykuły",
+    "about": "O nas",
+    "schedule_consultation": "Umów konsultację",
+    "services_dropdown": {
+      "technology_advisory": "Doradztwo technologiczne",
+      "ai_developer_productivity": "AI i produktywność programistów",
+      "enterprise_blockchain": "Blockchain korporacyjny",
+      "devsecops_aiops": "DevSecOps i AIOps"
+    }
+  },
+  "hero": {
+    "badge": "Strategiczna architektura technologiczna dla nowoczesnych przedsiębiorstw",
+    "title_part1": "Strategiczna architektura technologiczna",
+    "title_part2": "dla nowoczesnych przedsiębiorstw",
+    "subtitle": "Doradztwo technologiczne wysokiej wartości • AI i produktywność programistów • Blockchain korporacyjny • DevSecOps i AIOps",
+    "cta_button": "Umów konsultację"
+  },
+  "services": {
+    "section_title": "Nasze cztery filary",
+    "section_subtitle": "Strategiczna architektura technologiczna realizowana przez cztery wyspecjalizowane obszary usług",
+    "advisory": {
+      "title": "Doradztwo technologiczne wysokiej wartości",
+      "description": "Prowadzimy przedsiębiorstwa do optymalnych decyzji technologicznych, które równoważą innowacje, bezpieczeństwo i szybkość wprowadzenia na rynek.",
+      "what_we_deliver": "Co dostarczamy:",
+      "services": [
+        "Przywództwo ułamkowego CTO/CISO",
+        "Strategia technologiczna i mapy drogowe architektury",
+        "Techniczna due diligence M&A",
+        "Doradztwo technologiczne na poziomie zarządu"
+      ],
+      "perfect_for": "Idealne dla: Firm stojących przed krytycznymi decyzjami technologicznymi lub przygotowujących się do skalowania"
+    },
+    "ai_productivity": {
+      "title": "AI i produktywność programistów",
+      "description": "Transformujemy zespoły inżynierskie za pomocą przepływów pracy wspomaganych przez AI i kompleksowych programów rozwoju kompetencji.",
+      "services": [
+        "Środowiska programistyczne wspomagane przez AI",
+        "Automatyzacja produktywności programistów",
+        "Struktury zarządzania AI",
+        "Spersonalizowane programy szkoleniowe i rozwoju kompetencji"
+      ],
+      "perfect_for": "Idealne dla: Organizacji dążących do 10-krotnego zwiększenia prędkości rozwoju"
+    },
+    "blockchain": {
+      "title": "Blockchain korporacyjny",
+      "description": "Projektujemy bezpieczne rozwiązania blockchain dla rzeczywistej wartości biznesowej, nie dla szumu medialnego.",
+      "services": [
+        "Architektura i audyty inteligentnych kontraktów",
+        "Infrastruktura i protokoły DeFi",
+        "Tokenizacja aktywów rzeczywistych (RWA)",
+        "Zgodność i bezpieczeństwo Web3"
+      ],
+      "perfect_for": "Idealne dla: Firm eksplorujących blockchain dla praktycznego zastosowania"
+    },
+    "infrastructure": {
+      "title": "DevSecOps, AIOps i chmura",
+      "description": "Budujemy inteligentną, bezpieczną i zgodną z przepisami infrastrukturę, która skaluje się bez wysiłku.",
+      "services": [
+        "Transformacja i automatyzacja DevSecOps",
+        "Implementacja AIOps dla inteligentnych operacji",
+        "Architektura chmury i optymalizacja FinOps",
+        "Implementacja SOC 2 i ISO 27001"
+      ],
+      "perfect_for": "Idealne dla: Firm potrzebujących solidnej infrastruktury z operacjami napędzanymi przez AI"
+    }
+  },
+  "who_serve": {
+    "title": "Komu służymy",
+    "saas_companies": {
+      "title": "Firmy SaaS (od Seed do Series C)",
+      "description": "Architektura dla wielodostępności, integracji funkcji AI, zgodności SOC 2 i gotowości do M&A"
+    },
+    "enterprise_teams": {
+      "title": "Zespoły technologiczne przedsiębiorstw",
+      "description": "Inicjatywy modernizacji, adopcja AI, pilotaże blockchain i transformacja DevSecOps"
+    },
+    "startups": {
+      "title": "Szybko rozwijające się startupy",
+      "description": "Przywództwo techniczne, skalowalna architektura i przygotowanie na klientów korporacyjnych"
+    }
+  },
+  "why_bitropy": {
+    "title": "Dlaczego Bitropy?",
+    "points": [
+      {
+        "highlight": "Przywództwo potwierdzone exitami",
+        "description": "Prowadzone przez kadry zarządzające z dwóch exitów o wartości dziewięciu cyfr (Nordcloud do IBM, Worksuite)"
+      },
+      {
+        "highlight": "Doświadczenie w skalowaniu",
+        "description": "Zbudowaliśmy i przeskalowaliśmy zespoły inżynierskie od 0 do 400+ pracowników"
+      },
+      {
+        "highlight": "Gotowość do M&A",
+        "description": "Aktywny doradca w zakresie technicznej due diligence dla funduszy VC/PE"
+      },
+      {
+        "highlight": "Doskonałość full-stack",
+        "description": "Od blockchain przez AI po infrastrukturę korporacyjną"
+      },
+      {
+        "highlight": "Mentalność buildera",
+        "description": "Zbudowaliśmy biznesy SaaS od podstaw i wiemy, co działa"
+      }
+    ]
+  },
+  "how_we_engage": {
+    "title": "Jak współpracujemy",
+    "strategic_advisory": {
+      "title": "Doradztwo strategiczne",  
+      "services": [
+        "Ciągłe wsparcie CTO/CISO",
+        "Ciągła ewolucja architektury",
+        "Strategiczne planowanie technologiczne"
+      ]
+    },
+    "transformation": {
+      "title": "Projekty transformacji",
+      "services": [
+        "Kompletne implementacje",
+        "Przebudowy architektury",
+        "Certyfikacje zgodności"
+      ]
+    },
+    "enablement": {
+      "title": "Programy rozwoju kompetencji",
+      "services": [
+        "Szkolenia zespołowe i warsztaty",
+        "Programy adopcji AI",
+        "Bootcampy technologiczne"
+      ]
+    }
+  },
+  "case_studies": {
+    "title": "Rzeczywiste rezultaty",
+    "subtitle": "Studia przypadków z naszych projektów doradztwa technologicznego",
+    "saas_security": {
+      "title": "Bezpieczeństwo SaaS i gotowość do przejęcia",
+      "description": "Przekształciliśmy stan bezpieczeństwa i procesy operacyjne rozwijającej się firmy SaaS, aby przygotować ją do przejęcia. Wdrożyliśmy kompleksowe ramy bezpieczeństwa, co zaowocowało sukcesem w uzyskaniu certyfikatów SOC 2 Type II i ISO 27001, znacząco zwiększając wycenę firmy i atrakcyjność dla przejęcia."
+    },
+    "ai_startup": {
+      "title": "Przywództwo techniczne startupu AI",
+      "description": "Pełniliśmy funkcję ułamkowego CTO dla innowacyjnego startupu AI, projektując skalowalną architekturę i nadzorując kompleksową realizację zaawansowanych rozwiązań programistycznych z integracjami dużych modeli językowych. Ustanowiliśmy solidne praktyki programistyczne i prowadziśmy zespół techniczny przez szybkie iteracje produktu."
+    },
+    "web3_strategy": {
+      "title": "Strategia Web3 i rozwój inteligentnych kontraktów",
+      "description": "Kierowaliśmy kompleksową strategią technologiczną dla firmy Web3 i z sukcesem zaimplementowaliśmy proof-of-concept inteligentnych kontraktów na blockchainie Ethereum. Dostarczyliśmy kompletny pipeline Web3 DevSecOps z automatyzowanymi systemami testowania, wdrażania i monitorowania dla aplikacji zdecentralizowanych."
+    },
+    "fashion_retail": {
+      "title": "Strategia danych i AI dla handlu modą",
+      "description": "Opracowaliśmy kompleksową strategię danych i AI dla wyłaniającej się marki mody detalicznej, implementując inteligentne systemy rekomendacji, algorytmy optymalizacji zapasów i analitykę zachowań klientów. Stworzyliśmy wgląd oparty na danych, który poprawił współczynniki konwersji i efektywność operacyjną."
+    }
+  },
+  "final_cta": {
+    "title_part1": "Gotowy na skalowanie swojej",
+    "title_part2": "technologii?",
+    "subtitle": "Porozmawiajmy o tym, jak nasze zespoły doradztwa technologicznego mogą przyspieszyć Twój rozwój bez kosztów stałego przywództwa.",
+    "cta_button": "Omów swoją strategię technologiczną"
+  },
+  "bottom_tagline": "Pomagamy ambitnym firmom podejmować właściwe decyzje technologiczne i wdrażać je bezbłędnie.",
+  "footer": {
+    "tagline": "Strategiczna architektura technologiczna dla nowoczesnych przedsiębiorstw",
+    "company_info": {
+      "name": "Bitropy sp. z o.o.",
+      "address_line1": "Hanny Malewskiej 24/1",
+      "address_line2": "60-461 Poznań, Polska"
+    },
+    "technology_advisory": {
+      "title": "Doradztwo technologiczne",
+      "services": [
+        "Ułamkowy CTO",
+        "Gotowość do M&A",
+        "Techniczna due diligence"
+      ]
+    },
+    "ai_solutions": {
+      "title": "Rozwiązania AI",
+      "services": [
+        "Strategia AI",
+        "Narzędzia programistyczne",
+        "Szkolenia AI"
+      ]
+    },
+    "enterprise_blockchain": {
+      "title": "Blockchain korporacyjny",
+      "services": [
+        "Inteligentne kontrakty",
+        "Rozwiązania DeFi",
+        "Tokenizacja"
+      ]
+    },
+    "infrastructure": {
+      "title": "Infrastruktura",
+      "services": [
+        "DevSecOps",
+        "AIOps",
+        "Chmura i FinOps"
+      ]
+    },
+    "connect": {
+      "title": "Kontakt",
+      "links": [
+        "LinkedIn",
+        "Studia przypadków",
+        "Umów konsultację"
+      ]
+    },
+    "copyright": "© {year} bitropy.io. Wszelkie prawa zastrzeżone.",
+    "made_with_love": "Stworzone w Europie 🇪🇺 z miłością ❤️",
+    "privacy_policy": "Polityka prywatności"
+  },
+  "about": {
+    "title": "O Bitropy",
+    "subtitle": "Nasza misja, wartości i wizjoner stojący za naszą historią sukcesu.",
+    "back_to_home": "Powrót do strony głównej",
+    "why_created": {
+      "title": "Dlaczego powstała Bitropy",
+      "content": [
+        "Jako założyciel z obszernym doświadczeniem w budowaniu i skalowaniu organizacji technologicznych, dostrzegłem krytyczną lukę na rynku. Wiele firm ma trudności z wykorzystaniem najlepszych dostępnych technologii do napędzania swojego wzrostu i innowacji. Często brakuje im ekspertyzy, zasobów lub strategicznego wsparcia potrzebnego do podejmowania świadomych decyzji technologicznych, które mogą naprawdę transformować ich biznes.",
+        "Bitropy narodziła się z mojego pragnienia pomocy firmom w najlepszy możliwy sposób wykorzystania najnowocześniejszych rozwiązań technologicznych. Będąc świadkiem z pierwszej ręki transformacyjnej mocy dobrze wdrożonych strategii technologicznych poprzez moją pracę w Nordcloud, Worksuite i innych przedsięwzięciach, chciałem stworzyć konsultingi, który mógłby wypełnić tę lukę dla firm każdej wielkości.",
+        "Naszą misją jest demokratyzacja dostępu do światowej klasy ekspertyzy technologicznej, zapewniając, że każda firma - niezależnie od wielkości czy branży - może wykorzystać najskuteczniejsze technologie do osiągnięcia swoich celów i pozostania konkurencyjną w dzisiejszym szybko zmieniającym się cyfrowym krajobrazie."
+      ]
+    },
+    "values": {
+      "title": "Nasze wartości",
+      "meritocracy": {
+        "title": "Merytokracja",
+        "description": "Wierzymy, że najlepsze pomysły i wkład powinny być rozpoznawane i nagradzane, niezależnie od hierarchii. Doskonałość i rezultaty napędzają nasze decyzje."
+      },
+      "feedback": {
+        "title": "Orientacja na feedback",
+        "description": "Ciągłe doskonalenie poprzez szczery, konstruktywny feedback. Tworzymy środowisko, w którym każdy może się rozwijać i uczyć od siebie nawzajem."
+      },
+      "partnership": {
+        "title": "Partnerstwo",
+        "description": "Działamy jak nowoczesna kancelaria prawna, gdzie pracownicy uczestniczą w podziale przychodów. Każdy ma udział w naszym wspólnym sukcesie i wzroście."
+      },
+      "customer_focus": {
+        "title": "Fokus na kliencie",
+        "description": "Sukces naszych klientów to nasz sukces. Priorytetem jest zrozumienie ich potrzeb i dostarczenie rozwiązań, które tworzą rzeczywistą, mierzalną wartość."
+      },
+      "honesty": {
+        "title": "Uczciwość i wiarygodność",
+        "description": "Budujemy trwałe relacje poprzez transparentną komunikację, etyczne praktyki i zawsze dotrzymywanie zobowiązań."
+      }
+    },
+    "founder": {
+      "title": "Poznaj naszego założyciela",
+      "name": "Darek Dwornikowski",
+      "position": "Założyciel i CEO, Bitropy",
+      "connect_linkedin": "Połącz się na LinkedIn",
+      "subtitle": "Wizjoner technologiczny i seryjny przedsiębiorca",
+      "bio": [
+        "Darek Dwornikowski to doświadczony polski przedsiębiorca i wizjoner technologiczny, który był częścią dwóch udanych exitów o dziewięciocyfrowych wycenach. Obecnie pełniąc funkcję CEO Bitropy, kieruje strategicznym rozwojem firmy, wykorzystując swoje bogate doświadczenie w budowaniu i skalowaniu organizacji technologicznych.",
+        "Wcześniej, jako VP Engineering i członek globalnego zespołu zarządzającego w Nordcloud, Darek odegrał kluczową rolę w transformacji firmy ze startupu w wiodącego europejskiego dostawcę usług chmurowych, ostatecznie przejętego przez IBM za ponad 500 mln USD. To Darek zbudował polski oddział Nordcloud od podstaw, skalując zespół do ponad 400 pracowników i rozwijając biznes SaaS firmy od zera.",
+        "W Worksuite, pełniąc funkcję CTO, uczestniczył w sprzedaży firmy funduszom wzrostu. Jego doświadczenie obejmuje nie tylko strategie M&A i przygotowywanie firm do exitów, ale także głęboką ekspercyzę techniczną w cloud computing, systemach rozproszonych i blockchain, co jest wspierane przez jego wcześniejszą karierę akademicką na Politechnice Poznańskiej i rolę współzałożyciela Tenesys.",
+        "Obecnie Darek aktywnie doradza w zakresie technicznej due diligence dla funduszy VC/PE i wspiera założycieli w skalowaniu i sprzedaży swoich firm, łącząc swoje unikalne połączenie głębi technicznej i zmysłu biznesowego dla osiągnięcia udanych rezultatów."
+      ],
+      "achievements_title": "Kluczowe osiągnięcia",
+      "achievements": [
+        "Dwa udane exity o dziewięciocyfrowej wartości jako kluczowy członek zespołu zarządzającego",
+        "Zbudował i przeskalował Nordcloud Polska od 0 do 400+ pracowników",
+        "Rozwinął linię biznesową SaaS, która przyczyniła się do przejęcia za ponad 500 mln USD przez IBM",
+        "Głęboka ekspertyza w cloud computing, systemach rozproszonych i technologii blockchain",
+        "Aktywny doradca dla technicznej due diligence VC/PE i wsparcia założycieli"
+      ]
+    }
+  },
+  "privacy": {
+    "badge": "Prywatność i ochrona danych",
+    "title": "Polityka prywatności",
+    "title_highlight": "i zgodność z RODO",
+    "subtitle": "Twoja prywatność jest naszym priorytetem. Dowiedz się, jak Bitropy sp zoo chroni i zarządza Twoimi danymi osobowymi zgodnie z RODO i innymi przepisami o ochronie prywatności.",
+    "features": {
+      "gdpr_compliant": "zgodne z RODO",
+      "data_protection": "ochrona danych",
+      "transparent_practices": "przejrzyste praktyki"
+    },
+    "last_updated": {
+      "title": "Ostatnia aktualizacja",
+      "date_label": "Data:"
+    },
+    "introduction": {
+      "title": "1. Wprowadzenie",
+      "content": [
+        "Bitropy sp zoo (\"my\", \"nasze\" lub \"nas\") zobowiązuje się do ochrony Twojej prywatności i zapewnienia zgodności z ogólnym rozporządzeniem o ochronie danych (RODO) oraz innymi obowiązującymi przepisami o ochronie danych. Ta Polityka prywatności wyjaśnia, w jaki sposób gromadzimy, wykorzystujemy, ujawniamy i chronimy Twoje informacje podczas odwiedzania naszej strony internetowej lub korzystania z naszych usług.",
+        "Korzystając z naszej strony internetowej i usług, wyrażasz zgodę na praktyki dotyczące danych opisane w tej polityce. Jeśli nie zgadzasz się z naszymi zasadami i praktykami, prosimy o niekorzystanie z naszych usług."
+      ]
+    },
+    "information_collect": {
+      "title": "2. Informacje, które gromadzimy",
+      "personal_info": {
+        "title": "2.1 Dane osobowe",
+        "description": "Możemy gromadzić dane osobowe, które dobrowolnie nam przekazujesz, w tym:",
+        "items": [
+          "Imię i nazwisko oraz informacje kontaktowe (adres e-mail, numer telefonu)",
+          "Nazwa firmy i stanowisko",
+          "Informacje przekazane przez formularze kontaktowe",
+          "Preferencje komunikacyjne",
+          "Doświadczenie zawodowe i specjalizacja"
+        ]
+      },
+      "auto_collected": {
+        "title": "2.2 Informacje automatycznie gromadzone",
+        "description": "Podczas odwiedzania naszej strony internetowej automatycznie gromadzimy pewne informacje, w tym:",
+        "items": [
+          "Adres IP i typ przeglądarki",
+          "Odwiedzone strony i czas spędzony na stronach",
+          "Strona odsyłająca",
+          "Informacje o urządzeniu i systemie operacyjnym",
+          "Pliki cookie i podobne technologie śledzenia"
+        ]
+      }
+    },
+    "how_we_use": {
+      "title": "3. Jak wykorzystujemy Twoje informacje",
+      "description": "Wykorzystujemy zebrane informacje do różnych celów, w tym:",
+      "items": [
+        "Aby świadczyć i utrzymywać nasze usługi",
+        "Aby komunikować się z Tobą w sprawie naszych usług",
+        "Aby odpowiadać na Twoje zapytania i zapewniać obsługę klienta",
+        "Aby ulepszać naszą stronę internetową i usługi",
+        "Aby wysyłać Ci komunikaty marketingowe (za Twoją wyraźną zgodą)",
+        "Aby przestrzegać zobowiązań prawnych",
+        "Aby zapewnić bezpieczeństwo i integralność naszych usług"
+      ]
+    },
+    "gdpr_rights": {
+      "title": "4. Twoje prawa wynikające z RODO",
+      "description": "Zgodnie z ogólnym rozporządzeniem o ochronie danych (RODO) masz następujące prawa dotyczące Twoich danych osobowych:",
+      "rights": {
+        "access": {
+          "title": "Prawo dostępu",
+          "description": "Żądanie kopii Twoich danych osobowych i informacji o tym, jak są przetwarzane."
+        },
+        "rectification": {
+          "title": "Prawo do sprostowania",
+          "description": "Żądanie poprawienia niedokładnych lub niekompletnych danych osobowych."
+        },
+        "erasure": {
+          "title": "Prawo do usunięcia",
+          "description": "Żądanie usunięcia Twoich danych osobowych (\"prawo do bycia zapomnianym\")."
+        },
+        "restrict": {
+          "title": "Prawo do ograniczenia przetwarzania",
+          "description": "Żądanie ograniczenia przetwarzania w określonych okolicznościach."
+        },
+        "portability": {
+          "title": "Prawo do przenoszalności danych",
+          "description": "Otrzymanie Twoich danych osobowych w ustrukturyzowanym, nadającym się do odczytu maszynowego formacie."
+        },
+        "object": {
+          "title": "Prawo sprzeciwu",
+          "description": "Sprzeciw wobec przetwarzania Twoich danych osobowych w określonych celach."
+        }
+      },
+      "contact_note": "Aby skorzystać z któregokolwiek z tych praw, skontaktuj się z nami, korzystając z informacji podanych w sekcji \"Skontaktuj się z nami\" poniżej."
+    },
+    "information_sharing": {
+      "title": "5. Udostępnianie i ujawnianie informacji",
+      "description": "Nie sprzedajemy, nie wymieniamy ani nie przekazujemy Twoich danych osobowych stronom trzecim bez Twojej zgody, z wyjątkiem następujących okoliczności:",
+      "items": [
+        "Dostawcom usług, którzy pomagają nam w prowadzeniu naszej strony internetowej i świadczeniu usług (na podstawie ścisłych umów przetwarzania danych)",
+        "W celu przestrzegania wymogów prawnych lub ochrony naszych praw",
+        "W związku z przejęciem biznesu lub fuzją",
+        "Za Twoją wyraźną zgodą",
+        "W celu zapobiegania oszustwom lub zagrożeniom bezpieczeństwa"
+      ]
+    },
+    "data_security": {
+      "title": "6. Bezpieczeństwo danych",
+      "description": "Wdrażamy odpowiednie techniczne i organizacyjne środki bezpieczeństwa w celu ochrony Twoich danych osobowych przed nieuprawnionym dostępem, zmianą, ujawnieniem lub zniszczeniem, w tym:",
+      "items": [
+        "Szyfrowanie danych w tranzycie i w spoczynku",
+        "Regularne oceny bezpieczeństwa i aktualizacje",
+        "Kontrola dostępu i środki uwierzytelniania",
+        "Szkolenie pracowników w zakresie ochrony danych",
+        "Procedury reagowania na incydenty"
+      ],
+      "disclaimer": "Jednak żadna metoda transmisji przez internet nie jest w 100% bezpieczna i nie możemy zagwarantować absolutnego bezpieczeństwa."
+    },
+    "cookies": {
+      "title": "7. Pliki cookie i technologie śledzenia",
+      "content": [
+        "Używamy plików cookie i podobnych technologii śledzenia, aby ulepszyć Twoje doświadczenie na naszej stronie internetowej. Możesz kontrolować ustawienia plików cookie poprzez preferencje przeglądarki.",
+        "Używamy tylko niezbędnych plików cookie i plików cookie analitycznych, które pomagają nam ulepszać nasze usługi. Masz prawo do wycofania zgody na niezbędne pliki cookie w dowolnym momencie."
+      ]
+    },
+    "data_retention": {
+      "title": "8. Przechowywanie danych",
+      "content": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to konieczne do realizacji celów określonych w tej Polityce prywatności, chyba że dłuższy okres przechowywania jest wymagany lub dozwolony przez prawo. Regularnie przeglądamy i usuwamy dane, które nie są już potrzebne."
+    },
+    "international_transfers": {
+      "title": "9. Międzynarodowe transfery danych",
+      "content": "Twoje informacje mogą być przekazywane i przetwarzane w krajach innych niż Twój własny. Zapewniamy, że takie transfery są zgodne z obowiązującymi przepisami o ochronie danych, w tym wymogami RODO dotyczącymi transferów międzynarodowych, poprzez odpowiednie zabezpieczenia, takie jak standardowe klauzule umowne (SCC) lub decyzje o adekwatności."
+    },
+    "children_privacy": {
+      "title": "10. Prywatność dzieci",
+      "content": "Nasze usługi nie są przeznaczone dla dzieci poniżej 16 roku życia. Nie gromadzimy świadomie danych osobowych od dzieci poniżej 16 roku życia. Jeśli dowiemy się, że zebraliśmy dane osobowe od dziecka poniżej 16 roku życia, podejmiemy kroki w celu niezwłocznego usunięcia takich informacji."
+    },
+    "policy_changes": {
+      "title": "11. Zmiany w tej Polityce prywatności",
+      "content": "Możemy od czasu do czasu aktualizować tę Politykę prywatności. Powiadomimy Cię o wszelkich zmianach, publikując nową Politykę prywatności na tej stronie i aktualizując datę \"Ostatnia aktualizacja\". W przypadku znaczących zmian możemy również powiadomić Cię za pośrednictwem poczty elektronicznej lub przez naszą stronę internetową."
+    },
+    "contact": {
+      "title": "12. Skontaktuj się z nami",
+      "description": "Jeśli masz jakiekolwiek pytania dotyczące tej Polityki prywatności, naszych praktyk dotyczących danych lub chcesz skorzystać ze swoich praw wynikających z RODO, skontaktuj się z nami:",
+      "company": "Bitropy sp zoo",
+      "email_label": "E-mail:",
+      "email": "privacy@bitropy.io",
+      "website_label": "Strona internetowa:",
+      "website": "https://bitropy.io",
+      "dpo_note": "Inspektor ochrony danych: W sprawach związanych z RODO prosimy o kontakt z naszym wyznaczonym inspektorem ochrony danych pod powyższym adresem e-mail."
+    }
+  }
+}
