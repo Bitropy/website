@@ -2,12 +2,12 @@ import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import ShareButtons from "@/components/ShareButtons"
 import { ArticleSchema } from "@/components/StructuredData"
-import Breadcrumb, { BreadcrumbStructuredData } from "@/components/ui/Breadcrumb"
 import { Badge } from "@/components/ui/badge"
+import Breadcrumb, { BreadcrumbStructuredData } from "@/components/ui/Breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { getArticleById } from "@/lib/mdx"
 import { getDictionary } from "@/lib/dictionaries"
+import { getArticleById } from "@/lib/mdx"
 import { ArrowLeft, ArrowRight, BookOpen, Calendar, CalendarDays, Clock, Share2 } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
   const breadcrumbItems = [
     {
-      label: dict.nav?.articles || 'Articles',
+      label: dict.navigation?.articles || 'Articles',
       href: `/${lang}/articles`
     },
     {
@@ -137,7 +137,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
                   <span>By {article.author}</span>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="text-white font-semibold flex items-center text-sm">
                   <Share2 className="h-4 w-4 mr-2" />

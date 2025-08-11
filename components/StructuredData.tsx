@@ -93,7 +93,7 @@ export function ServiceSchema() {
           }
         },
         {
-          "@type": "Offer", 
+          "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Private AI Implementation",
@@ -103,7 +103,7 @@ export function ServiceSchema() {
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service", 
+            "@type": "Service",
             "name": "Data Sovereignty Solutions",
             "description": "Data residency and sovereignty compliance implementation"
           }
@@ -115,7 +115,9 @@ export function ServiceSchema() {
   return <StructuredData data={serviceData} />
 }
 
-export function ArticleSchema({ article }: { article: Record<string, unknown> }) {
+import type { Article } from "@/lib/mdx"
+
+export function ArticleSchema({ article }: { article: Article }) {
   const articleData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -128,7 +130,7 @@ export function ArticleSchema({ article }: { article: Record<string, unknown> })
       "url": "https://bitropy.io"
     },
     "publisher": {
-      "@type": "Organization", 
+      "@type": "Organization",
       "name": "Bitropy",
       "logo": {
         "@type": "ImageObject",
@@ -147,7 +149,7 @@ export function ArticleSchema({ article }: { article: Record<string, unknown> })
     "timeRequired": `PT${article.readTime}`,
     "about": [
       "AI Consulting",
-      "Data Sovereignty", 
+      "Data Sovereignty",
       "Technology Strategy",
       "Private AI Implementation"
     ]

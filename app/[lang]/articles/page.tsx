@@ -4,12 +4,12 @@ import Breadcrumb, { BreadcrumbStructuredData } from "@/components/ui/Breadcrumb
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { getAllArticles } from "@/lib/mdx"
 import { getDictionary } from "@/lib/dictionaries"
+import { getAllArticles } from "@/lib/mdx"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "AI Consulting & Data Sovereignty Insights - Expert Articles",
@@ -54,7 +54,7 @@ export default async function ArticlesPage({
 
   const breadcrumbItems = [
     {
-      label: dict.nav?.articles || 'Articles'
+      label: dict.navigation?.articles || 'Articles'
     }
   ]
 
@@ -138,15 +138,15 @@ export default async function ArticlesPage({
                     {article.category}
                   </Badge>
                 </div>
-                
+
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-4 text-sm text-gray-400 mb-2">
                     <div className="flex items-center space-x-1">
                       <Calendar className="h-3 w-3" />
-                      <span>{new Date(article.publishDate).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'short', 
-                        day: 'numeric' 
+                      <span>{new Date(article.publishDate).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
                       })}</span>
                     </div>
                     <div className="flex items-center space-x-1">
@@ -158,14 +158,14 @@ export default async function ArticlesPage({
                     {article.title}
                   </CardTitle>
                 </CardHeader>
-                
+
                 <CardContent className="pt-0">
                   <CardDescription className="text-gray-300 line-clamp-3 mb-4">
                     {article.excerpt}
                   </CardDescription>
                   <Link href={`/${lang}/articles/${article.id}`}>
-                    <Button 
-                      variant="ghost" 
+                    <Button
+                      variant="ghost"
                       className="text-purple-400 hover:text-purple-300 hover:bg-purple-900/20 p-0 h-auto"
                     >
                       Read More
