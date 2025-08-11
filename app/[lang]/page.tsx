@@ -7,7 +7,6 @@ import ClientButton from "@/components/ui/ClientButton"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import AnimatedBitropyDots from "@/components/ui/AnimatedBitropyDots"
 import { Brain, Code, Database, Shield } from "lucide-react"
-import Image from "next/image"
 
 export default async function ConsultingLandingPage({
   params,

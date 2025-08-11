@@ -179,7 +179,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
                         Ready to Scale Your Technology?
                       </h3>
                       <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                        Let's discuss how we can help you implement the strategies from this article with exit-proven leadership. Schedule a strategic assessment with our experts.
+                        Let&apos;s discuss how we can help you implement the strategies from this article with exit-proven leadership. Schedule a strategic assessment with our experts.
                       </p>
                     </div>
 

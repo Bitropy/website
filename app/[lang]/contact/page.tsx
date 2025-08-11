@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { MapPin, Mail, Clock, ArrowLeft, CheckCircle, AlertCircle } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import Header from "@/components/layout/Header"
@@ -98,7 +97,7 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-[600px] mx-auto">
-              Ready to scale your technology? Let's discuss how our expert teams can help accelerate your growth.
+              Ready to scale your technology? Let&apos;s discuss how our expert teams can help accelerate your growth.
             </p>
           </div>
 
@@ -160,14 +159,14 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle className="text-2xl text-white">Send us a message</CardTitle>
                 <CardDescription className="text-gray-300">
-                  Tell us about your project and we'll get back to you within 24 hours.
+                  Tell us about your project and we&apos;ll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 {submitStatus === "success" && (
                   <div className="mb-6 p-4 bg-green-900/50 border border-green-700 rounded-lg flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-green-400" />
-                    <p className="text-green-300">Message sent successfully! We'll get back to you soon.</p>
+                    <p className="text-green-300">Message sent successfully! We&apos;ll get back to you soon.</p>
                   </div>
                 )}
 

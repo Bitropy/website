@@ -75,7 +75,7 @@ export function getArticleById(id: string): Article | undefined {
       content: htmlContent,
       ...(matterResult.data as Omit<Article, 'id' | 'content'>),
     }
-  } catch (error) {
+  } catch {
     return undefined
   }
 }

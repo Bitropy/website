@@ -1,6 +1,5 @@
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import { OrganizationSchema, ServiceSchema } from "@/components/StructuredData"
-import { getDictionary } from "@/lib/dictionaries"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
@@ -12,7 +11,6 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
-  const dict = await getDictionary(lang as 'en' | 'pl')
   const locale = lang === 'pl' ? 'pl_PL' : 'en_US'
   const baseUrl = 'https://bitropy.io'
   const currentUrl = lang === 'en' ? baseUrl : `${baseUrl}/${lang}`

@@ -4,7 +4,37 @@ import { useState } from "react"
 import { Brain, Code, Database, Shield, ChevronDown } from "lucide-react"
 
 interface FourPillarsProps {
-  dict: any
+  dict: {
+    services: {
+      section_title: string
+      section_subtitle: string
+      advisory: {
+        title: string
+        description: string
+        what_we_deliver: string
+        services: string[]
+        perfect_for: string
+      }
+      ai_productivity: {
+        title: string
+        description: string
+        services: string[]
+        perfect_for: string
+      }
+      data_sovereignty: {
+        title: string
+        description: string
+        services: string[]
+        perfect_for: string
+      }
+      infrastructure: {
+        title: string
+        description: string
+        services: string[]
+        perfect_for: string
+      }
+    }
+  }
 }
 
 export default function FourPillars({ dict }: FourPillarsProps) {

@@ -6,7 +6,39 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 interface FooterProps {
-  dict?: any
+  dict?: {
+    footer?: {
+      tagline: string
+      company_info: {
+        name: string
+        address_line1: string
+        address_line2: string
+      }
+      technology_advisory: {
+        title: string
+        services: string[]
+      }
+      ai_solutions: {
+        title: string
+        services: string[]
+      }
+      data_sovereignty: {
+        title: string
+        services: string[]
+      }
+      ai_apps: {
+        title: string
+        services: string[]
+      }
+      connect: {
+        title: string
+        links: string[]
+      }
+      copyright: string
+      made_with_love: string
+      privacy_policy: string
+    }
+  }
 }
 
 export default function Footer({ dict }: FooterProps) {

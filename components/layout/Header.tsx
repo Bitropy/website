@@ -4,7 +4,6 @@ import BitropyLogo from "@/components/ui/BitropyLogo"
 import { Button } from "@/components/ui/button"
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer"
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher"
-import { useIsMobile } from "@/components/ui/use-mobile"
 import { Menu, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -12,11 +11,25 @@ import { useState, useRef, useEffect } from "react"
 
 interface HeaderProps {
   currentPage?: "home" | "about" | "privacy" | "articles" | "contact"
-  dict?: any
+  dict?: {
+    header?: {
+      services: string
+      why_bitropy: string
+      case_studies: string
+      articles: string
+      about: string
+      schedule_consultation: string
+      services_dropdown: {
+        ai_strategy: string
+        private_ai: string
+        data_sovereignty: string
+        ai_apps: string
+      }
+    }
+  }
 }
 
 export default function Header({ currentPage = "home", dict }: HeaderProps) {
-  const isMobile = useIsMobile()
   const pathname = usePathname()
   const currentLang = pathname.split('/')[1] || 'en'
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
