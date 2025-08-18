@@ -3,97 +3,79 @@
 import { useState } from "react"
 import { Brain, Code, Database, Shield, ChevronDown } from "lucide-react"
 
-interface FourPillarsProps {
-  dict: {
-    services: {
-      section_title: string
-      section_subtitle: string
-      advisory: {
-        title: string
-        description: string
-        what_we_deliver: string
-        services: string[]
-        perfect_for: string
-      }
-      ai_productivity: {
-        title: string
-        description: string
-        services: string[]
-        perfect_for: string
-      }
-      data_sovereignty: {
-        title: string
-        description: string
-        services: string[]
-        perfect_for: string
-      }
-      infrastructure: {
-        title: string
-        description: string
-        services: string[]
-        perfect_for: string
-      }
-    }
-  }
-}
-
-export default function FourPillars({ dict }: FourPillarsProps) {
+export default function FourPillars() {
   const [activeService, setActiveService] = useState('advisory')
 
   const services = [
     {
       key: 'advisory',
       icon: Brain,
-      title: dict.services.advisory.title,
-      description: dict.services.advisory.description,
-      whatWeDeliver: dict.services.advisory.what_we_deliver,
-      services: dict.services.advisory.services,
-      perfectFor: dict.services.advisory.perfect_for
+      title: "AI Strategy & Governance",
+      description: "We guide enterprises to implement AI responsibly with comprehensive governance frameworks that ensure data sovereignty and regulatory compliance.",
+      whatWeDeliver: "What we deliver:",
+      services: [
+        "AI strategy and governance frameworks",
+        "Data sovereignty implementation roadmaps", 
+        "AI compliance and risk assessment",
+        "Executive AI advisory and training"
+      ],
+      perfectFor: "Perfect for: Organizations implementing AI while maintaining data control and compliance"
     },
     {
       key: 'ai_productivity',
       icon: Database,
-      title: dict.services.ai_productivity.title,
-      description: dict.services.ai_productivity.description,
-      whatWeDeliver: dict.services.advisory.what_we_deliver,
-      services: dict.services.ai_productivity.services,
-      perfectFor: dict.services.ai_productivity.perfect_for
+      title: "Private AI Implementation",
+      description: "We implement secure, private AI systems that keep your data on-premises while delivering enterprise-grade AI capabilities.",
+      whatWeDeliver: "What we deliver:",
+      services: [
+        "On-premises AI infrastructure setup",
+        "Private LLM deployment and fine-tuning",
+        "Secure AI data pipelines", 
+        "Air-gapped AI development environments"
+      ],
+      perfectFor: "Perfect for: Organizations requiring AI capabilities without data leaving their infrastructure"
     },
     {
-      key: 'data_sovereignty',
+      key: 'genai_development',
       icon: Code,
-      title: dict.services.data_sovereignty.title,
-      description: dict.services.data_sovereignty.description,
-      whatWeDeliver: dict.services.advisory.what_we_deliver,
-      services: dict.services.data_sovereignty.services,
-      perfectFor: dict.services.data_sovereignty.perfect_for
+      title: "GenAI Development",
+      description: "We build custom Generative AI solutions tailored to your business needs, from LLM fine-tuning to AI-powered applications that transform your operations.",
+      whatWeDeliver: "What we deliver:",
+      services: [
+        "Custom LLM fine-tuning and deployment",
+        "RAG (Retrieval-Augmented Generation) systems",
+        "Multi-modal AI applications",
+        "GenAI workflow integration"
+      ],
+      perfectFor: "Perfect for: Companies wanting cutting-edge AI capabilities integrated into their core business processes"
     },
     {
       key: 'infrastructure',
       icon: Shield,
-      title: dict.services.infrastructure.title,
-      description: dict.services.infrastructure.description,
-      whatWeDeliver: dict.services.advisory.what_we_deliver,
-      services: dict.services.infrastructure.services,
-      perfectFor: dict.services.infrastructure.perfect_for
+      title: "AI Applications & Automation",
+      description: "We develop custom AI applications and intelligent automation systems that enhance productivity while maintaining complete data control and privacy.",
+      whatWeDeliver: "What we deliver:",
+      services: [
+        "Custom AI application development",
+        "Intelligent process automation",
+        "AI-powered workflow optimization",
+        "Private AI agent deployment"
+      ],
+      perfectFor: "Perfect for: Organizations wanting to build AI-powered applications and automate processes privately"
     }
   ]
 
   const activeServiceData = services.find(service => service.key === activeService)
 
   return (
-    <section id="services" className="py-20 md:py-32 relative bg-gray-800">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+    <section id="services" className="py-24 md:py-32 bg-gray-50">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-white">
-            {dict.services.section_title.split(' ').slice(0, -1).join(' ')}
-            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-              {" "}
-              {dict.services.section_title.split(' ').slice(-1)[0]}
-            </span>
+          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl text-gray-900">
+            Our Core Services
           </h2>
-          <p className="text-xl text-gray-300 max-w-[800px] mx-auto">
-            {dict.services.section_subtitle}
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Enterprise AI transformation through strategic advisory, custom development, and intelligent automation
           </p>
         </div>
 
@@ -103,7 +85,7 @@ export default function FourPillars({ dict }: FourPillarsProps) {
             <select
               value={activeService}
               onChange={(e) => setActiveService(e.target.value)}
-              className="w-full p-4 bg-gray-900 border border-gray-700 rounded-lg text-white appearance-none cursor-pointer focus:border-purple-500 focus:outline-none"
+              className="w-full p-4 bg-white border border-gray-200 rounded-lg text-lg font-medium text-gray-900 appearance-none cursor-pointer focus:border-gray-400 focus:outline-none"
             >
               {services.map((service) => (
                 <option key={service.key} value={service.key}>
@@ -116,9 +98,9 @@ export default function FourPillars({ dict }: FourPillarsProps) {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid md:grid-cols-2 gap-8 items-stretch">
+        <div className="hidden md:grid md:grid-cols-5 gap-16 items-stretch">
           {/* Left side - Service buttons */}
-          <div className="flex flex-col justify-between aspect-square space-y-4">
+          <div className="col-span-2 flex flex-col space-y-4">
             {services.map((service) => {
               const IconComponent = service.icon
               const isActive = activeService === service.key
@@ -127,22 +109,18 @@ export default function FourPillars({ dict }: FourPillarsProps) {
                 <button
                   key={service.key}
                   onClick={() => setActiveService(service.key)}
-                  className={`w-full flex-1 p-6 rounded-lg border transition-all duration-300 text-left group ${
+                  className={`w-full p-6 rounded-lg border transition-all duration-200 text-left group ${
                     isActive 
-                      ? 'bg-purple-900/50 border-purple-500 shadow-lg shadow-purple-500/20' 
-                      : 'bg-gray-900 border-gray-700 hover:border-purple-500/50 hover:bg-gray-800'
+                      ? 'bg-white border-purple-200 shadow-md shadow-purple-100' 
+                      : 'bg-white border-gray-200 hover:border-purple-200 hover:shadow-sm'
                   }`}
                 >
                   <div className="flex items-center space-x-4">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-lg transition-all ${
-                      isActive 
-                        ? 'bg-purple-800/50' 
-                        : 'bg-purple-900/50 group-hover:bg-purple-800/50'
-                    }`}>
-                      <IconComponent className="h-6 w-6 text-purple-400" />
-                    </div>
-                    <h3 className={`text-xl font-semibold transition-colors ${
-                      isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'
+                    <IconComponent className={`h-6 w-6 transition-colors ${
+                      isActive ? 'text-purple-600' : 'text-gray-400'
+                    }`} />
+                    <h3 className={`text-lg font-semibold transition-colors ${
+                      isActive ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'
                     }`}>
                       {service.title}
                     </h3>
@@ -152,79 +130,75 @@ export default function FourPillars({ dict }: FourPillarsProps) {
             })}
           </div>
 
-          {/* Right side - Content display (square) */}
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-8 aspect-square flex flex-col justify-center">
+          {/* Right side - Content display */}
+          <div className="col-span-3 bg-white border border-gray-200 rounded-lg p-10">
             {activeServiceData && (
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50">
-                    <activeServiceData.icon className="h-8 w-8 text-purple-400" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
                     {activeServiceData.title}
                   </h3>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    {activeServiceData.description}
+                  </p>
                 </div>
 
-                <p className="text-gray-300 leading-relaxed">
-                  {activeServiceData.description}
-                </p>
-
                 <div>
-                  <h4 className="font-semibold text-white mb-3">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">
                     {activeServiceData.whatWeDeliver}
                   </h4>
-                  <ul className="text-gray-300 space-y-2 text-sm">
+                  <ul className="text-lg text-gray-600 space-y-3">
                     {activeServiceData.services.map((service: string, index: number) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-purple-400 mr-2">•</span>
+                        <span className="text-purple-500 mr-3 text-xl">•</span>
                         {service}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <p className="text-purple-300 text-sm font-medium bg-purple-900/20 p-3 rounded-lg border border-purple-900/50">
-                  {activeServiceData.perfectFor}
-                </p>
+                <div className="pt-6 border-t border-gray-100">
+                  <p className="text-lg text-gray-500 font-medium">
+                    {activeServiceData.perfectFor}
+                  </p>
+                </div>
               </div>
             )}
           </div>
         </div>
 
         {/* Mobile Content display */}
-        <div className="md:hidden bg-gray-900 border border-gray-700 rounded-lg p-6">
+        <div className="md:hidden bg-white border border-gray-200 rounded-lg p-8">
           {activeServiceData && (
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-purple-900/50">
-                  <activeServiceData.icon className="h-8 w-8 text-purple-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
                   {activeServiceData.title}
                 </h3>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  {activeServiceData.description}
+                </p>
               </div>
 
-              <p className="text-gray-300 leading-relaxed">
-                {activeServiceData.description}
-              </p>
-
               <div>
-                <h4 className="font-semibold text-white mb-3">
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
                   {activeServiceData.whatWeDeliver}
                 </h4>
-                <ul className="text-gray-300 space-y-2 text-sm">
+                <ul className="text-lg text-gray-600 space-y-3">
                   {activeServiceData.services.map((service: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-purple-400 mr-2">•</span>
+                      <span className="text-purple-500 mr-3 text-xl">•</span>
                       {service}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <p className="text-purple-300 text-sm font-medium bg-purple-900/20 p-3 rounded-lg border border-purple-900/50">
-                {activeServiceData.perfectFor}
-              </p>
+              <div className="pt-6 border-t border-gray-100">
+                <p className="text-lg text-gray-500 font-medium">
+                  {activeServiceData.perfectFor}
+                </p>
+              </div>
             </div>
           )}
         </div>

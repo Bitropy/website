@@ -3,48 +3,29 @@ import Header from "@/components/layout/Header"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Shield, Eye, Lock, FileText, Users, Globe, Clock, Mail } from "lucide-react"
-import { getDictionary } from "@/lib/dictionaries"
 import { Metadata } from "next"
 
-type Props = {
-  params: Promise<{ lang: string }>
-}
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params
-  const dict = await getDictionary(lang as 'en' | 'pl')
-  const locale = lang === 'pl' ? 'pl_PL' : 'en_US'
-  
-  const title = lang === 'pl' 
-    ? "Polityka prywatności - Bitropy | RODO i ochrona danych"
-    : "Privacy Policy - Bitropy | GDPR & Data Protection"
-  
-  const description = dict.privacy.subtitle
-  
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: 'website',
-      locale,
-      alternateLocale: lang === 'pl' ? 'en_US' : 'pl_PL',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    }
+export const metadata: Metadata = {
+  title: "Privacy Policy - Bitropy | GDPR & Data Protection",
+  description: "Your privacy is our priority. Learn how Bitropy sp zoo protects and manages your personal data in compliance with GDPR and other privacy regulations.",
+  openGraph: {
+    title: "Privacy Policy - Bitropy | GDPR & Data Protection",
+    description: "Your privacy is our priority. Learn how Bitropy sp zoo protects and manages your personal data in compliance with GDPR and other privacy regulations.",
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Privacy Policy - Bitropy | GDPR & Data Protection",
+    description: "Your privacy is our priority. Learn how Bitropy sp zoo protects and manages your personal data in compliance with GDPR and other privacy regulations.",
   }
 }
 
-export default async function PrivacyPolicy({ params }: Props) {
-  const { lang } = await params
-  const dict = await getDictionary(lang as 'en' | 'pl')
+export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <Header currentPage="privacy" dict={dict} />
+      <Header currentPage="privacy" />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
@@ -66,33 +47,33 @@ export default async function PrivacyPolicy({ params }: Props) {
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <Badge variant="secondary" className="w-fit mx-auto bg-purple-900/50 text-purple-300 border-purple-700">
               <Shield className="h-4 w-4 mr-2" />
-              {dict.privacy.badge}
+              Privacy & Data Protection
             </Badge>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white">
-              {dict.privacy.title}
+              Privacy Policy
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                 {" "}
-                {dict.privacy.title_highlight}
+                & GDPR Compliance
               </span>
             </h1>
 
             <p className="text-xl text-gray-300 max-w-[800px] mx-auto leading-relaxed">
-              {dict.privacy.subtitle}
+              Your privacy is our priority. Learn how Bitropy sp zoo protects and manages your personal data in compliance with GDPR and other privacy regulations.
             </p>
 
             <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
                 <Shield className="h-4 w-4 text-purple-400" />
-                <span>{dict.privacy.features.gdpr_compliant}</span>
+                <span>GDPR Compliant</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Lock className="h-4 w-4 text-purple-400" />
-                <span>{dict.privacy.features.data_protection}</span>
+                <span>Data Protection</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Eye className="h-4 w-4 text-purple-400" />
-                <span>{dict.privacy.features.transparent_practices}</span>
+                <span>Transparent Practices</span>
               </div>
             </div>
           </div>
@@ -109,12 +90,12 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <FileText className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.last_updated.title}
+                  Last Updated
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">
-                  <strong>{dict.privacy.last_updated.date_label}</strong> {new Date().toLocaleDateString(lang === 'pl' ? 'pl-PL' : 'en-US', { 
+                  <strong>Date:</strong> {new Date().toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
@@ -128,15 +109,16 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Users className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.introduction.title}
+                  1. Introduction
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {dict.privacy.introduction.content.map((paragraph, index) => (
-                  <p key={index} className="text-gray-300">
-                    {paragraph}
-                  </p>
-                ))}
+                <p className="text-gray-300">
+                  Bitropy sp zoo (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy and ensuring compliance with the General Data Protection Regulation (GDPR) and other applicable data protection laws. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                </p>
+                <p className="text-gray-300">
+                  By using our website and services, you consent to the data practices described in this policy. If you do not agree with our policies and practices, please do not use our services.
+                </p>
               </CardContent>
             </Card>
 
@@ -145,31 +127,35 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Eye className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.information_collect.title}
+                  2. Information We Collect
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-3">{dict.privacy.information_collect.personal_info.title}</h3>
+                  <h3 className="text-xl font-medium text-white mb-3">2.1 Personal Information</h3>
                   <p className="text-gray-300 mb-4">
-                    {dict.privacy.information_collect.personal_info.description}
+                    We may collect personal information that you voluntarily provide to us, including:
                   </p>
                   <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                    {dict.privacy.information_collect.personal_info.items.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    <li>Name and contact information (email address, phone number)</li>
+                    <li>Company name and job title</li>
+                    <li>Information provided through contact forms</li>
+                    <li>Communication preferences</li>
+                    <li>Professional background and expertise</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-3">{dict.privacy.information_collect.auto_collected.title}</h3>
+                  <h3 className="text-xl font-medium text-white mb-3">2.2 Automatically Collected Information</h3>
                   <p className="text-gray-300 mb-4">
-                    {dict.privacy.information_collect.auto_collected.description}
+                    When you visit our website, we automatically collect certain information, including:
                   </p>
                   <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                    {dict.privacy.information_collect.auto_collected.items.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    <li>IP address and browser type</li>
+                    <li>Pages visited and time spent on pages</li>
+                    <li>Referring website</li>
+                    <li>Device information and operating system</li>
+                    <li>Cookies and similar tracking technologies</li>
                   </ul>
                 </div>
               </CardContent>
@@ -180,17 +166,21 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Globe className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.how_we_use.title}
+                  3. How We Use Your Information
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300 mb-4">
-                  {dict.privacy.how_we_use.description}
+                  We use the collected information for various purposes, including:
                 </p>
                 <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                  {dict.privacy.how_we_use.items.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
+                  <li>To provide and maintain our services</li>
+                  <li>To communicate with you about our services</li>
+                  <li>To respond to your inquiries and provide customer support</li>
+                  <li>To improve our website and services</li>
+                  <li>To send you marketing communications (with your explicit consent)</li>
+                  <li>To comply with legal obligations</li>
+                  <li>To ensure the security and integrity of our services</li>
                 </ul>
               </CardContent>
             </Card>
@@ -200,41 +190,41 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Shield className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.gdpr_rights.title}
+                  4. Your GDPR Rights
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-300">
-                  {dict.privacy.gdpr_rights.description}
+                  Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-medium text-white mb-2">{dict.privacy.gdpr_rights.rights.access.title}</h4>
-                    <p className="text-gray-300 text-sm">{dict.privacy.gdpr_rights.rights.access.description}</p>
+                    <h4 className="font-medium text-white mb-2">Right to Access</h4>
+                    <p className="text-gray-300 text-sm">Request a copy of your personal data and information about how it&apos;s processed.</p>
                   </div>
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-medium text-white mb-2">{dict.privacy.gdpr_rights.rights.rectification.title}</h4>
-                    <p className="text-gray-300 text-sm">{dict.privacy.gdpr_rights.rights.rectification.description}</p>
+                    <h4 className="font-medium text-white mb-2">Right to Rectification</h4>
+                    <p className="text-gray-300 text-sm">Request correction of inaccurate or incomplete personal data.</p>
                   </div>
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-medium text-white mb-2">{dict.privacy.gdpr_rights.rights.erasure.title}</h4>
-                    <p className="text-gray-300 text-sm">{dict.privacy.gdpr_rights.rights.erasure.description}</p>
+                    <h4 className="font-medium text-white mb-2">Right to Erasure</h4>
+                    <p className="text-gray-300 text-sm">Request deletion of your personal data (&quot;right to be forgotten&quot;).</p>
                   </div>
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-medium text-white mb-2">{dict.privacy.gdpr_rights.rights.restrict.title}</h4>
-                    <p className="text-gray-300 text-sm">{dict.privacy.gdpr_rights.rights.restrict.description}</p>
+                    <h4 className="font-medium text-white mb-2">Right to Restrict Processing</h4>
+                    <p className="text-gray-300 text-sm">Request limitation of processing under certain circumstances.</p>
                   </div>
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-medium text-white mb-2">{dict.privacy.gdpr_rights.rights.portability.title}</h4>
-                    <p className="text-gray-300 text-sm">{dict.privacy.gdpr_rights.rights.portability.description}</p>
+                    <h4 className="font-medium text-white mb-2">Right to Data Portability</h4>
+                    <p className="text-gray-300 text-sm">Receive your personal data in a structured, machine-readable format.</p>
                   </div>
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-medium text-white mb-2">{dict.privacy.gdpr_rights.rights.object.title}</h4>
-                    <p className="text-gray-300 text-sm">{dict.privacy.gdpr_rights.rights.object.description}</p>
+                    <h4 className="font-medium text-white mb-2">Right to Object</h4>
+                    <p className="text-gray-300 text-sm">Object to processing of your personal data for specific purposes.</p>
                   </div>
                 </div>
                 <p className="text-gray-300 mt-4">
-                  {dict.privacy.gdpr_rights.contact_note}
+                  To exercise any of these rights, please contact us using the information provided in the &quot;Contact Us&quot; section below.
                 </p>
               </CardContent>
             </Card>
@@ -244,17 +234,19 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Lock className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.information_sharing.title}
+                  5. Information Sharing and Disclosure
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300 mb-4">
-                  {dict.privacy.information_sharing.description}
+                  We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
                 </p>
                 <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                  {dict.privacy.information_sharing.items.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
+                  <li>With service providers who assist us in operating our website and providing services (under strict data processing agreements)</li>
+                  <li>To comply with legal requirements or protect our rights</li>
+                  <li>In connection with a business transfer or merger</li>
+                  <li>With your explicit consent</li>
+                  <li>To prevent fraud or security threats</li>
                 </ul>
               </CardContent>
             </Card>
@@ -264,20 +256,22 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Shield className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.data_security.title}
+                  6. Data Security
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300 mb-4">
-                  {dict.privacy.data_security.description}
+                  We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction, including:
                 </p>
                 <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                  {dict.privacy.data_security.items.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
+                  <li>Encryption of data in transit and at rest</li>
+                  <li>Regular security assessments and updates</li>
+                  <li>Access controls and authentication measures</li>
+                  <li>Employee training on data protection</li>
+                  <li>Incident response procedures</li>
                 </ul>
                 <p className="text-gray-300 mt-4">
-                  {dict.privacy.data_security.disclaimer}
+                  However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
                 </p>
               </CardContent>
             </Card>
@@ -287,15 +281,16 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Eye className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.cookies.title}
+                  7. Cookies and Tracking Technologies
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                {dict.privacy.cookies.content.map((paragraph, index) => (
-                  <p key={index} className={`text-gray-300 ${index === 0 ? 'mb-4' : ''}`}>
-                    {paragraph}
-                  </p>
-                ))}
+                <p className="text-gray-300 mb-4">
+                  We use cookies and similar tracking technologies to enhance your experience on our website. You can control cookie settings through your browser preferences.
+                </p>
+                <p className="text-gray-300">
+                  We only use essential cookies and analytics cookies that help us improve our services. You have the right to withdraw consent for non-essential cookies at any time.
+                </p>
               </CardContent>
             </Card>
 
@@ -304,12 +299,12 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Clock className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.data_retention.title}
+                  8. Data Retention
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">
-                  {dict.privacy.data_retention.content}
+                  We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. We regularly review and delete data that is no longer needed.
                 </p>
               </CardContent>
             </Card>
@@ -319,12 +314,12 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Globe className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.international_transfers.title}
+                  9. International Data Transfers
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">
-                  {dict.privacy.international_transfers.content}
+                  Your information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws, including GDPR requirements for international transfers, through appropriate safeguards such as Standard Contractual Clauses (SCCs) or adequacy decisions.
                 </p>
               </CardContent>
             </Card>
@@ -334,12 +329,12 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Users className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.children_privacy.title}
+                  10. Children&apos;s Privacy
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">
-                  {dict.privacy.children_privacy.content}
+                  Our services are not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If we become aware that we have collected personal information from a child under 16, we will take steps to delete such information promptly.
                 </p>
               </CardContent>
             </Card>
@@ -349,12 +344,12 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <FileText className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.policy_changes.title}
+                  11. Changes to This Privacy Policy
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">
-                  {dict.privacy.policy_changes.content}
+                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date. For significant changes, we may also notify you via email or through our website.
                 </p>
               </CardContent>
             </Card>
@@ -364,22 +359,22 @@ export default async function PrivacyPolicy({ params }: Props) {
               <CardHeader>
                 <CardTitle className="text-white flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-purple-400" />
-                  {dict.privacy.contact.title}
+                  12. Contact Us
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300 mb-4">
-                  {dict.privacy.contact.description}
+                  If you have any questions about this Privacy Policy, our data practices, or wish to exercise your GDPR rights, please contact us:
                 </p>
                 <div className="bg-gray-800 p-6 rounded-lg">
                   <div className="space-y-2">
-                    <p className="text-white font-medium">{dict.privacy.contact.company}</p>
-                    <p className="text-gray-300">{dict.privacy.contact.email_label} <a href={`mailto:${dict.privacy.contact.email}`} className="text-purple-400 hover:text-purple-300">{dict.privacy.contact.email}</a></p>
-                    <p className="text-gray-300">{dict.privacy.contact.website_label} <a href={dict.privacy.contact.website} className="text-purple-400 hover:text-purple-300">{dict.privacy.contact.website}</a></p>
+                    <p className="text-white font-medium">Bitropy sp zoo</p>
+                    <p className="text-gray-300">Email: <a href="mailto:privacy@bitropy.io" className="text-purple-400 hover:text-purple-300">privacy@bitropy.io</a></p>
+                    <p className="text-gray-300">Website: <a href="https://bitropy.io" className="text-purple-400 hover:text-purple-300">https://bitropy.io</a></p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-700">
                     <p className="text-gray-300 text-sm">
-                      <strong>{dict.privacy.contact.dpo_note}</strong>
+                      <strong>Data Protection Officer: For GDPR-related inquiries, please contact our designated data protection officer at the email address above.</strong>
                     </p>
                   </div>
                 </div>
@@ -389,7 +384,7 @@ export default async function PrivacyPolicy({ params }: Props) {
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer />
     </div>
   )
 } 

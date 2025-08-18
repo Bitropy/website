@@ -8,7 +8,7 @@ export default function BitropyLogo({ className = "h-12 w-auto" }: BitropyLogoPr
   return (
     <div className={className}>
       <Image
-        src="/images/Bitropy.svg"
+        src="/images/Bitropy-w.svg"
         alt="Bitropy"
         width={120}
         height={49}
