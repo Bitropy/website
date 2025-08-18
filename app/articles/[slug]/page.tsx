@@ -108,11 +108,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               {article.category}
             </Badge>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               {article.title}
             </h1>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-700 leading-relaxed">
               {article.description}
             </p>
 
@@ -158,7 +158,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <Card className="bg-white border-gray-200">
             <CardContent className="p-8">
               <div
-                className="prose prose-gray max-w-none prose-lg"
+                className="prose prose-slate max-w-none prose-lg prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-ul:text-gray-800 prose-ol:text-gray-800 prose-li:text-gray-800"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
 

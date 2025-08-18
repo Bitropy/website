@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header"
 import FourPillars from "@/components/sections/FourPillars"
 import { Badge } from "@/components/ui/badge"
 import ClientButton from "@/components/ui/ClientButton"
-import { Brain, Code, Database, Shield, ArrowRight } from "lucide-react"
+import { Brain, Code, Database, Shield } from "lucide-react"
 
 export default function ConsultingLandingPage() {
   return (
@@ -115,7 +115,7 @@ export default function ConsultingLandingPage() {
                   <div className="text-purple-500 mt-1">→</div>
                   <div>
                     <p className="text-gray-900">
-                      <span className="font-semibold text-purple-600">Builder's mindset</span> - We've built SaaS businesses from scratch and know what works
+                      <span className="font-semibold text-purple-600">Builder&apos;s mindset</span> - We&apos;ve built SaaS businesses from scratch and know what works
                     </p>
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function ConsultingLandingPage() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">SaaS Security & Acquisition Readiness</h3>
                 <p className="text-gray-600 leading-relaxed text-base">
-                  Transformed a growing SaaS company's security posture and operational processes to prepare for acquisition. Implemented comprehensive security frameworks resulting in successful SOC 2 Type II and ISO 27001 certifications, significantly increasing company valuation and acquisition appeal.
+                  Transformed a growing SaaS company&apos;s security posture and operational processes to prepare for acquisition. Implemented comprehensive security frameworks resulting in successful SOC 2 Type II and ISO 27001 certifications, significantly increasing company valuation and acquisition appeal.
                 </p>
               </div>
             </div>

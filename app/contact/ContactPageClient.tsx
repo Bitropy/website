@@ -98,7 +98,7 @@ export default function ContactPageClient() {
               <Button
                 asChild
                 size="lg"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold">
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold"
               >
                 <Link href="https://calendly.com/darek-bitropy/call" target="_blank">
                   Schedule a Call

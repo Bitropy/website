@@ -70,7 +70,7 @@ export default function ArticlesPage() {
               🤖 AI & Data Sovereignty Insights
             </Badge>
 
-            <h1 className="text-4xl font-medium tracking-tight sm:text-5xl md:text-6xl text-gray-900">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-gray-900">
               Private AI &
               <span className="text-purple-600">
                 {" "}
@@ -79,7 +79,7 @@ export default function ArticlesPage() {
               {" "}Articles
             </h1>
 
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
               Strategic insights on Private AI implementation, Data Sovereignty solutions, and AI security from executives with 9-figure exit experience. Expert analysis for enterprise AI adoption.
             </p>
 
@@ -136,13 +136,13 @@ export default function ArticlesPage() {
                       <span>{article.readTime}</span>
                     </div>
                   </div>
-                  <CardTitle className="text-gray-900 text-lg line-clamp-2 group-hover:text-purple-600 transition-colors">
+                  <CardTitle className="text-gray-900 text-xl font-bold line-clamp-2 group-hover:text-purple-600 transition-colors">
                     {article.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="pt-0">
-                  <CardDescription className="text-gray-600 line-clamp-3 mb-4">
+                  <CardDescription className="text-gray-700 text-base line-clamp-3 mb-4">
                     {article.excerpt}
                   </CardDescription>
                   <Link href={`/articles/${article.id}`}>
