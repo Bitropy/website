@@ -40,15 +40,15 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl text-gray-900">
-              Accelerating Companies with
+              Accelerate your growth with
               <span className="text-purple-600">
                 {" "}
-                Next-Gen Technology
+                Next-Gen Technologies
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We help companies move fast and embrace cutting-edge technologies. From AI implementation to cloud transformation - we deliver enterprise-grade solutions that drive real results.
+              We help companies move fast and embrace cutting-edge technologies. From AI implementation to cloud transformation - we deliver enterprise-grade solutions that drive real results in no time. 
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
