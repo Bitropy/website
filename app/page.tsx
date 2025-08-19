@@ -82,7 +82,7 @@ export default function ConsultingLandingPage() {
                 <div className="flex items-start space-x-3">
                   <div className="text-purple-500 mt-1">→</div>
                   <div>
-                    <p className="text-gray-900">
+                    <p className="text-lg text-gray-900">
                       <span className="font-semibold text-purple-600">Exit-proven leadership</span> - Led by executives from two 9-figure exits (Nordcloud to IBM, Worksuite) and leadership of leading European e-commerce platforms
                     </p>
                   </div>
@@ -90,7 +90,7 @@ export default function ConsultingLandingPage() {
                 <div className="flex items-start space-x-3">
                   <div className="text-purple-500 mt-1">→</div>
                   <div>
-                    <p className="text-gray-900">
+                    <p className="text-lg text-gray-900">
                       <span className="font-semibold text-purple-600">Scale expertise</span> - Built and scaled engineering teams from 0 to 1000+ employees
                     </p>
                   </div>
@@ -98,7 +98,7 @@ export default function ConsultingLandingPage() {
                 <div className="flex items-start space-x-3">
                   <div className="text-purple-500 mt-1">→</div>
                   <div>
-                    <p className="text-gray-900">
+                    <p className="text-lg text-gray-900">
                       <span className="font-semibold text-purple-600">M&A ready</span> - Active technical due diligence advisor for VC/PE funds
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export default function ConsultingLandingPage() {
                 <div className="flex items-start space-x-3">
                   <div className="text-purple-500 mt-1">→</div>
                   <div>
-                    <p className="text-gray-900">
+                    <p className="text-lg text-gray-900">
                       <span className="font-semibold text-purple-600">Full-stack excellence</span> - From blockchain to AI to enterprise infrastructure
                     </p>
                   </div>
@@ -114,7 +114,7 @@ export default function ConsultingLandingPage() {
                 <div className="flex items-start space-x-3">
                   <div className="text-purple-500 mt-1">→</div>
                   <div>
-                    <p className="text-gray-900">
+                    <p className="text-lg text-gray-900">
                       <span className="font-semibold text-purple-600">Builder&apos;s mindset</span> - We&apos;ve built SaaS businesses from scratch and know what works
                     </p>
                   </div>
@@ -125,17 +125,17 @@ export default function ConsultingLandingPage() {
             <div className="lg:sticky lg:top-24">
               <div className="bg-white rounded-lg p-8 border border-gray-200">
                 <div className="space-y-6">
-                  <h3 className="text-lg font-medium text-gray-900">Core Competencies</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Core Competencies</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <div className="text-sm text-gray-600">AI & ML</div>
-                      <div className="text-sm text-gray-600">Cloud Architecture</div>
-                      <div className="text-sm text-gray-600">DevSecOps</div>
+                    <div className="space-y-3">
+                      <div className="text-base text-gray-700">AI & ML</div>
+                      <div className="text-base text-gray-700">Cloud Architecture</div>
+                      <div className="text-base text-gray-700">DevSecOps</div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-sm text-gray-600">Data Engineering</div>
-                      <div className="text-sm text-gray-600">Platform Engineering</div>
-                      <div className="text-sm text-gray-600">Technical Strategy</div>
+                    <div className="space-y-3">
+                      <div className="text-base text-gray-700">Data Engineering</div>
+                      <div className="text-base text-gray-700">Platform Engineering</div>
+                      <div className="text-base text-gray-700">Technical Strategy</div>
                     </div>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function ConsultingLandingPage() {
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl text-gray-900">
               Real Results
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Case studies from our technology consulting engagements
             </p>
           </div>
@@ -168,8 +168,8 @@ export default function ConsultingLandingPage() {
                     <Badge className="bg-purple-50 text-purple-700 border-purple-200">DevSecOps</Badge>
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">SaaS Security & Acquisition Readiness</h3>
-                <p className="text-gray-600 leading-relaxed text-base">
+                <h3 className="text-xl font-semibold text-gray-900">SaaS Security & Acquisition Readiness</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
                   Transformed a growing SaaS company&apos;s security posture and operational processes to prepare for acquisition. Implemented comprehensive security frameworks resulting in successful SOC 2 Type II and ISO 27001 certifications, significantly increasing company valuation and acquisition appeal.
                 </p>
               </div>
@@ -181,8 +181,8 @@ export default function ConsultingLandingPage() {
                   <Brain className="h-5 w-5 text-gray-400" />
                   <Badge className="bg-purple-50 text-purple-700 border-purple-200">AI & Developer Productivity</Badge>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">AI Startup Technical Leadership</h3>
-                <p className="text-gray-600 leading-relaxed text-base">
+                <h3 className="text-xl font-semibold text-gray-900">AI Startup Technical Leadership</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
                   Served as Fractional CTO for an innovative AI startup, designing scalable architecture and overseeing end-to-end technical delivery of advanced software solutions with Large Language Model integrations. Established robust development practices and guided the technical team through rapid product iterations.
                 </p>
               </div>
@@ -194,8 +194,8 @@ export default function ConsultingLandingPage() {
                   <Code className="h-5 w-5 text-gray-400" />
                   <Badge className="bg-purple-50 text-purple-700 border-purple-200">Private AI Infrastructure</Badge>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">Private AI Infrastructure Implementation</h3>
-                <p className="text-gray-600 leading-relaxed text-base">
+                <h3 className="text-xl font-semibold text-gray-900">Private AI Infrastructure Implementation</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
                   Designed and implemented a complete private AI infrastructure for a financial services company, ensuring data never left their premises. Deployed private LLMs with custom fine-tuning capabilities, achieving enterprise-grade AI functionality while maintaining full data sovereignty and regulatory compliance.
                 </p>
               </div>
@@ -207,8 +207,8 @@ export default function ConsultingLandingPage() {
                   <Database className="h-5 w-5 text-gray-400" />
                   <Badge className="bg-purple-50 text-purple-700 border-purple-200">Data Sovereignty & AI</Badge>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">Fashion Retail Data & AI Strategy</h3>
-                <p className="text-gray-600 leading-relaxed text-base">
+                <h3 className="text-xl font-semibold text-gray-900">Fashion Retail Data & AI Strategy</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
                   Developed comprehensive data and AI strategy for an emerging fashion retail brand, implementing intelligent recommendation systems, inventory optimization algorithms, and customer behavior analytics. Created data-driven insights that improved conversion rates and operational efficiency.
                 </p>
               </div>

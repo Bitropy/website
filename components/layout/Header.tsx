@@ -29,7 +29,7 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
   
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="w-full max-w-6xl mx-auto flex h-16 items-center justify-between px-6 md:px-8">
+      <div className="w-full max-w-6xl mx-auto flex h-20 items-center justify-between px-6 md:px-8">
         <Link href="/" className="flex items-center space-x-3">
           <BitropyLogo className="h-12 w-auto" />
         </Link>
@@ -103,14 +103,14 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
           </Link>
           <Link
             href={`/articles`}
-            className={`text-sm font-medium transition-colors ${currentPage === "articles" ? "text-purple-600" : "text-gray-700 hover:text-purple-600"
+            className={`text-base font-semibold transition-colors ${currentPage === "articles" ? "text-purple-600" : "text-gray-700 hover:text-purple-600"
               }`}
           >
             Articles
           </Link>
           <Link
             href={`/about`}
-            className={`text-sm font-medium transition-colors ${currentPage === "about" ? "text-purple-600" : "text-gray-700 hover:text-purple-600"
+            className={`text-base font-semibold transition-colors ${currentPage === "about" ? "text-purple-600" : "text-gray-700 hover:text-purple-600"
               }`}
           >
             About

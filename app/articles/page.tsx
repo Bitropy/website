@@ -66,37 +66,9 @@ export default function ArticlesPage() {
             <Breadcrumb items={breadcrumbItems} lang="en" />
           </div>
           <div className="text-center space-y-8 max-w-4xl mx-auto">
-            <Badge variant="secondary" className="w-fit mx-auto bg-purple-50 text-purple-700 border-purple-200">
-              🤖 AI & Data Sovereignty Insights
-            </Badge>
-
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-gray-900">
-              Private AI &
-              <span className="text-purple-600">
-                {" "}
-                Data Sovereignty
-              </span>
-              {" "}Articles
+              Articles
             </h1>
-
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-              Strategic insights on Private AI implementation, Data Sovereignty solutions, and AI security from executives with 9-figure exit experience. Expert analysis for enterprise AI adoption.
-            </p>
-
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <Calendar className="h-4 w-4 text-purple-600" />
-                <span>Regular AI Insights</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 text-purple-600" />
-                <span>Data Sovereignty Focus</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <ArrowRight className="h-4 w-4 text-purple-600" />
-                <span>Enterprise Ready</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
