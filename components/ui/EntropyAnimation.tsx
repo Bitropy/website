@@ -45,7 +45,7 @@ export default function EntropyAnimation({
   height = 600
 }: EntropyAnimationProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
   const latticesRef = useRef<Lattice[]>([])
 
   useEffect(() => {
