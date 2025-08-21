@@ -14,22 +14,9 @@ interface HeaderProps {
 export default function Header({ currentPage = "home" }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
+  const handleNavClick = () => {
+    // Simply close the drawer and let the browser handle navigation
     setIsOpen(false)
-    
-    // Wait for drawer to close, then navigate
-    setTimeout(() => {
-      if (href.startsWith('/#')) {
-        const id = href.replace('/#', '')
-        const element = document.getElementById(id)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }
-      } else {
-        window.location.href = href
-      }
-    }, 300)
   }
   
   return (
@@ -41,19 +28,19 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
 
         <nav className="hidden md:flex items-center space-x-8">
           <Link
-            href="/#services"
+            href="#services"
             className={`text-base font-semibold transition-colors text-gray-700 hover:text-purple-600`}
           >
             Services
           </Link>
           <Link
-            href="/#expertise"
+            href="#expertise"
             className={`text-base font-semibold transition-colors text-gray-700 hover:text-purple-600`}
           >
             Why Bitropy
           </Link>
           <Link
-            href="/#testimonials"
+            href="#testimonials"
             className={`text-base font-semibold transition-colors text-gray-700 hover:text-purple-600`}
           >
             Case Studies
@@ -86,46 +73,46 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
               <DrawerTitle className="sr-only">Main Menu</DrawerTitle>
               <nav className="flex flex-col space-y-6 mt-4">
                 <Link 
-                  href="/#services" 
-                  onClick={(e) => handleNavClick(e, '/#services')}
+                  href="#services" 
+                  onClick={handleNavClick}
                   className="text-lg font-medium text-gray-900 hover:text-gray-700 transition-colors"
                 >
                   Services
                 </Link>
                 <Link 
-                  href="/#expertise" 
-                  onClick={(e) => handleNavClick(e, '/#expertise')}
+                  href="#expertise" 
+                  onClick={handleNavClick}
                   className="text-lg font-medium text-gray-900 hover:text-gray-700 transition-colors"
                 >
                   Why Bitropy
                 </Link>
                 <Link 
-                  href="/#testimonials" 
-                  onClick={(e) => handleNavClick(e, '/#testimonials')}
+                  href="#testimonials" 
+                  onClick={handleNavClick}
                   className="text-lg font-medium text-gray-900 hover:text-gray-700 transition-colors"
                 >
                   Case Studies
                 </Link>
                 <Link 
                   href="/about" 
-                  onClick={(e) => handleNavClick(e, '/about')}
+                  onClick={handleNavClick}
                   className="text-lg font-medium text-gray-900 hover:text-gray-700 transition-colors"
                 >
                   About
                 </Link>
                 <div className="pt-4 border-t border-gray-200">
-                  <Button
-                    variant="default"
-                    className="w-full bg-purple-600 text-white hover:bg-purple-700"
-                    onClick={() => {
-                      setIsOpen(false)
-                      setTimeout(() => {
-                        window.location.href = '/contact'
-                      }, 300)
-                    }}
+                  <Link 
+                    href="/contact"
+                    onClick={handleNavClick}
+                    className="block"
                   >
-                    Get in touch
-                  </Button>
+                    <Button
+                      variant="default"
+                      className="w-full bg-purple-600 text-white hover:bg-purple-700"
+                    >
+                      Get in touch
+                    </Button>
+                  </Link>
                 </div>
               </nav>
             </DrawerContent>
