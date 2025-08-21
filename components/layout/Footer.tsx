@@ -1,189 +1,48 @@
 "use client"
 
 import BitropyLogo from "@/components/ui/BitropyLogo"
-import LanguageSwitcher from "@/components/ui/LanguageSwitcher"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 
-interface FooterProps {
-  dict?: {
-    footer?: {
-      tagline: string
-      company_info: {
-        name: string
-        address_line1: string
-        address_line2: string
-      }
-      technology_advisory: {
-        title: string
-        services: string[]
-      }
-      ai_solutions: {
-        title: string
-        services: string[]
-      }
-      data_sovereignty: {
-        title: string
-        services: string[]
-      }
-      ai_apps: {
-        title: string
-        services: string[]
-      }
-      connect: {
-        title: string
-        links: string[]
-      }
-      copyright: string
-      made_with_love: string
-      privacy_policy: string
-    }
-  }
-}
-
-export default function Footer({ dict }: FooterProps) {
-  const pathname = usePathname()
-  const currentLang = pathname.split('/')[1] || 'en'
-  
-  // Default English values as fallback
-  const footerData = dict?.footer || {
-    tagline: "Strategic Technology Architecture for Modern Enterprises",
-    company_info: {
-      name: "Bitropy sp. z o.o.",
-      address_line1: "Hanny Malewskiej 24/1",
-      address_line2: "60-461 Poznań, Poland"
-    },
-    technology_advisory: {
-      title: "Technology Advisory",
-      services: ["Fractional CTO", "M&A Readiness", "Tech Due Diligence"]
-    },
-    ai_solutions: {
-      title: "AI Solutions", 
-      services: ["AI Strategy", "Developer Tools", "AI Training"]
-    },
-    data_sovereignty: {
-      title: "Data Sovereignty",
-      services: ["Data Residency", "Sovereign Cloud", "Compliance Audits"]
-    },
-    ai_apps: {
-      title: "AI Applications",
-      services: ["Custom AI Apps", "Process Automation", "AI Agents"]
-    },
-    connect: {
-      title: "Connect",
-      links: ["LinkedIn", "Case Studies", "Schedule Consultation"]
-    },
-    copyright: "© {year} bitropy.io. All rights reserved.",
-    made_with_love: "Made in Europe 🇪🇺 with love ❤️",
-    privacy_policy: "Privacy Policy"
-  }
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-16">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-6">
-          <div className="space-y-4 md:col-span-2">
+    <footer className="bg-gray-900 py-16">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <BitropyLogo />
+              <BitropyLogo variant="dark" />
             </div>
             <div className="space-y-2">
-              <p className="text-gray-300">
-                {footerData.tagline}
+              <p className="text-gray-400">
+                Enterprise AI Fast Track Partners · From Strategy to Results in Weeks
               </p>
-              <div className="text-gray-400 text-sm">
-                <p>{footerData.company_info.name}</p>
-                <p>{footerData.company_info.address_line1}</p>
-                <p>{footerData.company_info.address_line2}</p>
+              <div className="text-gray-500 text-sm">
+                <p>Bitropy sp. z o.o.</p>
+                <p>Hanny Malewskiej 24/1</p>
+                <p>60-461 Poznań, Poland</p>
               </div>
             </div>
           </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold text-white">{footerData.technology_advisory.title}</h3>
-            <ul className="space-y-2 text-gray-300">
-              {footerData.technology_advisory.services.map((service: string, index: number) => (
-                <li key={index}>
-                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
-                    {service}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold text-white">{footerData.ai_solutions.title}</h3>
-            <ul className="space-y-2 text-gray-300">
-              {footerData.ai_solutions.services.map((service: string, index: number) => (
-                <li key={index}>
-                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
-                    {service}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold text-white">{footerData.data_sovereignty.title}</h3>
-            <ul className="space-y-2 text-gray-300">
-              {footerData.data_sovereignty.services.map((service: string, index: number) => (
-                <li key={index}>
-                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
-                    {service}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold text-white">{footerData.ai_apps.title}</h3>
-            <ul className="space-y-2 text-gray-300">
-              {footerData.ai_apps.services.map((service: string, index: number) => (
-                <li key={index}>
-                  <Link href={`/${currentLang}/#services`} className="hover:text-white transition-colors">
-                    {service}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold text-white">{footerData.connect.title}</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <Link href="https://www.linkedin.com/company/bitropy" className="hover:text-white transition-colors">
-                  {footerData.connect.links[0]}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${currentLang}/#testimonials`} className="hover:text-white transition-colors">
-                  {footerData.connect.links[1]}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://calendly.com/darek-bitropy/call"
-                  className="hover:text-white transition-colors"
-                  target="_blank"
-                >
-                  {footerData.connect.links[2]}
-                </Link>
-              </li>
-            </ul>
+          
+          <div className="flex-shrink-0">
+            <Button
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2"
+              onClick={() => window.open("https://calendly.com/darek-bitropy/call", "_blank")}
+            >
+              Get in touch
+            </Button>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col items-center md:items-start">
-            <p className="text-gray-400">{footerData.copyright.replace('{year}', new Date().getFullYear().toString())}</p>
-            <p className="text-gray-500 text-sm mt-2">{footerData.made_with_love}</p>
+            <p className="text-gray-400">© {new Date().getFullYear()} bitropy.io. All rights reserved.</p>
+            <p className="text-gray-500 text-sm mt-2">Made in Europe 🇪🇺 with love ❤️</p>
           </div>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <LanguageSwitcher />
-            <Link href={`/${currentLang}/privacy`} className="text-gray-400 hover:text-white transition-colors">
-              {footerData.privacy_policy}
+            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+              Privacy Policy
             </Link>
             <Link href="https://www.linkedin.com/company/bitropy/" className="text-gray-400 hover:text-white transition-colors">
               <span className="sr-only">LinkedIn</span>

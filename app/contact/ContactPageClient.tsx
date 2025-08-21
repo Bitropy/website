@@ -1,19 +1,16 @@
 "use client"
 
 import type React from "react"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { MapPin, Mail, Clock, ArrowLeft, CheckCircle, AlertCircle } from "lucide-react"
+import { MapPin, Mail, ArrowLeft, CheckCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
-import Header from "@/components/layout/Header"
-import Footer from "@/components/layout/Footer"
 
-export default function ContactPage() {
+export default function ContactPageClient() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -74,12 +71,10 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <Header currentPage="contact" />
-
+    <>
       {/* Back to Home Link */}
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 pt-8">
-        <Link href="/" className="inline-flex items-center text-gray-300 hover:text-white transition-colors">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-8 pt-8">
+        <Link href="/" className="inline-flex items-center text-gray-600 hover:text-purple-600 transition-colors">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Home
         </Link>
@@ -87,18 +82,30 @@ export default function ContactPage() {
 
       {/* Contact Hero Section */}
       <section className="py-16 md:py-24">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white">
-              Get In
-              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl text-gray-900">
+              Start Your
+              <span className="text-purple-600">
                 {" "}
-                Touch
+                AI Fast Track
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-[600px] mx-auto">
-              Ready to scale your technology? Let&apos;s discuss how our expert teams can help accelerate your growth.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Ready to see real AI results in weeks? Let&apos;s discuss your transformation roadmap.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+              <Button
+                asChild
+                size="lg"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                <Link href="https://calendly.com/darek-bitropy/call" target="_blank">
+                  Schedule a Call
+                </Link>
+              </Button>
+              <p className="text-sm text-gray-500 self-center">or fill out the form below</p>
+            </div>
           </div>
 
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
@@ -107,15 +114,15 @@ export default function ContactPage() {
               {/* Contact Details */}
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50">
-                    <MapPin className="h-6 w-6 text-purple-400" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50 border border-purple-100">
+                    <MapPin className="h-5 w-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Office Address</h3>
-                    <p className="text-gray-300">
-                      Bitropy sp. z o.o.o
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Office Address</h3>
+                    <p className="text-base text-gray-600">
+                      Bitropy sp. z o.o.
                       <br /> 
-                      Regsitered in the National Court Register under 0001182638 
+                      Registered in the National Court Register under 0001182638 
                       <br />
                       Hanny Malewskiej 24/1
                       <br />
@@ -125,62 +132,49 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50">
-                    <Mail className="h-6 w-6 text-purple-400" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50 border border-purple-100">
+                    <Mail className="h-5 w-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Email</h3>
-                    <p className="text-gray-300">
-                      <a href="mailto:info@bitropy.io" className="hover:text-purple-400 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
+                    <p className="text-base text-gray-600">
+                      <a href="mailto:info@bitropy.io" className="hover:text-purple-600 transition-colors">
                         info@bitropy.io
                       </a>
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-900/50">
-                    <Clock className="h-6 w-6 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">Response Time</h3>
-                    <p className="text-gray-300">
-                      Within 24 hours
-                      <br />
-                      Usually much faster
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <Card className="bg-gray-800 border-gray-700 p-6">
+            <Card className="bg-white border border-gray-200 shadow-sm p-6">
               <CardHeader>
-                <CardTitle className="text-2xl text-white">Send us a message</CardTitle>
-                <CardDescription className="text-gray-300">
-                  Tell us about your project and we&apos;ll get back to you within 24 hours.
+                <CardTitle className="text-2xl font-semibold text-gray-900">Send us a message</CardTitle>
+                <CardDescription className="text-lg text-gray-600">
+                  Tell us about your AI goals and we&apos;ll respond with a fast track plan within 24 hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 {submitStatus === "success" && (
-                  <div className="mb-6 p-4 bg-green-900/50 border border-green-700 rounded-lg flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-400" />
-                    <p className="text-green-300">Message sent successfully! We&apos;ll get back to you soon.</p>
+                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-600" />
+                    <p className="text-green-700">Message sent successfully! We&apos;ll get back to you soon.</p>
                   </div>
                 )}
 
                 {submitStatus === "error" && (
-                  <div className="mb-6 p-4 bg-red-900/50 border border-red-700 rounded-lg flex items-center space-x-3">
-                    <AlertCircle className="h-5 w-5 text-red-400" />
-                    <p className="text-red-300">{errorMessage}</p>
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3">
+                    <AlertCircle className="h-5 w-5 text-red-600" />
+                    <p className="text-red-700">{errorMessage}</p>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-white">
+                      <Label htmlFor="name" className="text-base text-gray-900 font-semibold">
                         Full Name *
                       </Label>
                       <Input
@@ -192,11 +186,11 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
+                        className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-white">
+                      <Label htmlFor="email" className="text-gray-900 font-medium">
                         Email Address *
                       </Label>
                       <Input
@@ -208,13 +202,13 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
+                        className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="company" className="text-white">
+                    <Label htmlFor="company" className="text-base text-gray-900 font-semibold">
                       Company
                     </Label>
                     <Input
@@ -225,54 +219,54 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       disabled={isSubmitting}
-                      className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-white">
+                    <Label htmlFor="subject" className="text-gray-900 font-medium">
                       Subject *
                     </Label>
                     <Input
                       id="subject"
                       name="subject"
                       type="text"
-                      placeholder="What can we help you with?"
+                      placeholder="How can we fast track your AI journey?"
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500"
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-white">
+                    <Label htmlFor="message" className="text-gray-900 font-medium">
                       Message *
                     </Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell us about your project, challenges, or how we can help..."
+                      placeholder="Tell us about your AI goals, timeline, and current challenges..."
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="bg-gray-900 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:ring-purple-500 resize-none"
+                      className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500 resize-none"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50"
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50 text-lg font-semibold"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
 
-                  <p className="text-sm text-gray-400 text-center">
+                  <p className="text-sm text-gray-500 text-center">
                     We respect your privacy. Your information will never be shared with third parties.
                   </p>
                 </form>
@@ -281,8 +275,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   )
 }

@@ -7,9 +7,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <GoogleAnalytics />
-      {children}
-    </>
+    <html lang="en">
+      <body>
+        <GoogleAnalytics />
+        {children}
+      </body>
+    </html>
   )
 }
