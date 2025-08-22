@@ -26,14 +26,14 @@ export default function ConsultingLandingPage() {
         <div className="w-full max-w-6xl mx-auto px-6 md:px-8 relative z-10">
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl text-gray-900">
-              Fast Track Your
+              Get Real Results with
               <span className="text-purple-600">
                 {" "}
-                AI Transformation
+                AI
               </span>
             </h1>
             <p className="text-2xl font-medium text-gray-700 mt-4">
-              Real Results in Weeks, Not Years
+              Not Just the Hype
             </p>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
