@@ -20,34 +20,34 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
   }
   
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/90">
       <div className="w-full max-w-6xl mx-auto flex h-20 items-center justify-between px-6 md:px-8">
         <Link href="/" className="flex items-center flex-shrink-0">
-          <BitropyLogo className="h-12 w-auto flex-shrink-0" variant="light" />
+          <BitropyLogo className="h-12 w-auto flex-shrink-0" variant="dark" />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             href="#services"
-            className={`text-base font-semibold transition-colors text-gray-700 hover:text-purple-600`}
+            className={`text-base font-semibold transition-colors text-gray-300 hover:text-purple-400`}
           >
             Services
           </Link>
           <Link
             href="#expertise"
-            className={`text-base font-semibold transition-colors text-gray-700 hover:text-purple-600`}
+            className={`text-base font-semibold transition-colors text-gray-300 hover:text-purple-400`}
           >
             Why Bitropy
           </Link>
           <Link
             href="#testimonials"
-            className={`text-base font-semibold transition-colors text-gray-700 hover:text-purple-600`}
+            className={`text-base font-semibold transition-colors text-gray-300 hover:text-purple-400`}
           >
             Case Studies
           </Link>
           <Link
             href={`/about`}
-            className={`text-base font-semibold transition-colors ${currentPage === "about" ? "text-purple-600" : "text-gray-700 hover:text-purple-600"
+            className={`text-base font-semibold transition-colors ${currentPage === "about" ? "text-purple-400" : "text-gray-300 hover:text-purple-400"
               }`}
           >
             About
@@ -65,7 +65,7 @@ export default function Header({ currentPage = "home" }: HeaderProps) {
           </Button>
           <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden text-gray-600 hover:text-gray-900">
+              <Button variant="ghost" size="icon" className="md:hidden text-gray-400 hover:text-white">
                 <Menu className="h-6 w-6" aria-label="Open menu" />
               </Button>
             </DrawerTrigger>

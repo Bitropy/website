@@ -64,3 +64,5 @@ This is a Next.js 15 application built with TypeScript, focusing on technology c
 - **Deployment**: Static-friendly configuration with unoptimized images
 
 EOF < /dev/null
+
+- use pnpm lint as linter or delegate to @agent-lint-fix-enforcer

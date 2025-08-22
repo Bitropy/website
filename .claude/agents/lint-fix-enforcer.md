@@ -1,6 +1,6 @@
 ---
 name: lint-fix-enforcer
-description: Use this agent when you need to run linting checks and automatically fix code style issues in the project. This agent should be used proactively after writing or modifying code to ensure it adheres to the project's coding standards. Examples: <example>Context: The user has just written a new React component and wants to ensure it follows the project's linting rules. user: "I've created a new component for the homepage" assistant: "I've created the component. Now let me use the lint-fix-enforcer agent to check and fix any linting issues" <commentary>Since new code was written, use the lint-fix-enforcer agent to proactively run pnpm lint and fix any style issues.</commentary></example> <example>Context: The user has modified multiple files and wants to ensure code quality. user: "Update the API routes to use the new authentication middleware" assistant: "I've updated the API routes. Let me now run the lint-fix-enforcer to ensure everything follows our coding standards" <commentary>After modifying existing code, proactively use the lint-fix-enforcer to maintain code quality.</commentary></example> <example>Context: The user explicitly asks for linting. user: "Can you check if there are any linting errors?" assistant: "I'll use the lint-fix-enforcer agent to run pnpm lint and fix any issues found" <commentary>Direct request for linting, use the lint-fix-enforcer agent.</commentary></example>
+description: Use this agent PROACTIVELY to run lint and fix issues. Use pnpm lint. 
 model: inherit
 color: green
 ---
