@@ -1,0 +1,68 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Data Sovereignty & Privacy",
+    description:
+      "Complete control over your data with on-premises deployment. Everything runs within your infrastructure, ensuring full compliance and data sovereignty.",
+    icon: "bx:bxs-lock-alt",
+  },
+  {
+    title: "Fast Deployment",
+    description:
+      "Deploy production pilots in weeks, not months. Our standardized platform eliminates the need for lengthy consulting builds.",
+    icon: "bx:bxs-rocket",
+  },
+  {
+    title: "Open Source Foundation",
+    description:
+      "Built entirely on open source technologies like Kubernetes and vLLM. Full control, zero vendor lock-in.",
+    icon: "bx:bxs-heart",
+  },
+  {
+    title: "Cost Effective",
+    description:
+      "Up to 70% more cost-efficient than traditional consulting builds. €50K-300K per year vs $2M+ for custom solutions.",
+    icon: "bx:bxs-dollar-circle",
+  },
+  {
+    title: "Compliance Ready",
+    description:
+      "Designed for regulated industries. Fully compliant with GDPR, BaFin, EU AI Act, and pharmaceutical quality standards.",
+    icon: "bx:bxs-shield",
+  },
+  {
+    title: "Production Scale",
+    description:
+      "Proven with real enterprise pilots. 70% faster document processing in pharma, 60% faster KYC/AML in banking.",
+    icon: "bx:bxs-bar-chart-alt-2",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Why Enterprises Choose Bitropy
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    A secure, on-premises alternative to Databricks or Azure AI. Production-scale AI without exposing sensitive data to public clouds.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

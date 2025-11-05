@@ -1,16 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps and Feeds
-Sitemap: https://bitropy.io/sitemap.xml
-# RSS Feed: https://bitropy.io/feed.xml
-
-# Block admin areas (if any in future)
-Disallow: /admin/
-Disallow: /api/
-
-# Allow important pages
-Allow: /en/
-Allow: /pl/
-Allow: /en/articles/
-Allow: /pl/articles/
+Sitemap: http://astroship.web3templates.com/sitemap-index.xml
