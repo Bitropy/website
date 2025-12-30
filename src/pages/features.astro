@@ -1,17 +1,3 @@
 ---
-import Container from "@/components/container.astro";
-import Cta from "@/components/cta.astro";
-import FeatureAlt from "@/components/feature-alt.astro";
-import FeatureGrid from "@/components/feature-grid.astro";
-import { default as FeaturesBlock } from "@/components/features.astro";
-import Layout from "@/layouts/Layout.astro";
+return Astro.redirect("/");
 ---
-
-<Layout footerMargin={false}>
-  <Container class="mt-16">
-    <FeatureAlt nomargin={true} />
-    <FeatureGrid />
-    <FeaturesBlock />
-  </Container>
-  <Cta />
-</Layout>

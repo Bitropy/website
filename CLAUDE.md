@@ -2,6 +2,20 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Backup Location
+
+The original full website pages are backed up in `backup-pages/` directory:
+- `backup-pages/pages/` - All original page files (index, about, blog, contact, features, pricing, integrations, 404)
+- `backup-pages/pages/blog/` - Blog dynamic route files
+- `backup-pages/layouts/` - Original layout files
+- `backup-pages/components/` - Original component files
+
+To restore the full site:
+```bash
+cp backup-pages/pages/*.astro src/pages/
+cp backup-pages/pages/blog/*.astro src/pages/blog/
+```
+
 ## Development Commands
 
 - **Development server**: `pnpm dev` or `npm run dev`

@@ -14,6 +14,11 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        external: ["@getbrevo/brevo"],
+      },
+    },
   },
 
   adapter: vercel(),

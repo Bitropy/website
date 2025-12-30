@@ -1,0 +1,22 @@
+---
+const { margin } = Astro.props;
+---
+
+<footer
+  class:list={[
+    "py-8 border-t border-slate-200",
+    margin && "mt-20",
+  ]}>
+  <div class="px-5">
+    <p class="text-center text-sm text-slate-600 [text-wrap:balance]">
+      Copyright © {new Date().getFullYear()} Bitropy. All rights reserved.
+    </p>
+    <p class="text-center text-xs text-slate-600 mt-2">
+      <a href="/terms" class="hover:text-indigo-600 transition"> Terms</a> ・ <a
+        href="/privacy"
+        class="hover:text-indigo-600 transition">
+        Privacy</a
+      >
+    </p>
+  </div>
+</footer>
