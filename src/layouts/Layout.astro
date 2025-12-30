@@ -15,7 +15,7 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/opengraph.png",
   Astro.site
 ).toString();
 
@@ -23,7 +23,7 @@ const { title, footerMargin = true } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "Bitropy"
-  : "Bitropy - Sovereign AI Infrastructure for Enterprises";
+  : "Bitropy - Sovereign AI infrastructure for enterprises. Stay tuned for something extraordinary.";
 ---
 
 <!doctype html>
@@ -43,7 +43,7 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Bitropy - Sovereign AI Infrastructure for Enterprises`,
+          title: `Bitropy - Sovereign AI infrastructure for enterprises.`,
           image: resolvedImageWithDomain,
         },
         image: {
