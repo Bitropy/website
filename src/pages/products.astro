@@ -1,0 +1,101 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Centralized AI Control Plane",
+    subtitle: "One place to run and govern AI.",
+    description: "Bitropy provides a unified control plane for AI usage across teams, tools, and environments — covering models, prompts, agents, pipelines, and integrations.",
+    icon: "bx:bxs-dashboard",
+  },
+  {
+    title: "AI Usage Logging & Traceability",
+    subtitle: "No blind spots.",
+    description: "We capture structured logs for AI interactions — including prompts, context, model calls, outputs, and metadata — enabling full traceability, auditability, and root-cause analysis.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Policy Enforcement & Guardrails",
+    subtitle: "Rules enforced at runtime.",
+    description: "Bitropy enforces AI usage policies across code, tools, and teams — preventing unsafe data exposure, unauthorized model usage, and policy violations without blocking developers.",
+    icon: "bx:bxs-shield",
+  },
+  {
+    title: "AI Risk Intelligence",
+    subtitle: "Security, legal, and operational signals in one view.",
+    description: "The platform continuously analyzes AI activity to surface risks across security, compliance, and reputation — mapping your AI attack surface and detecting anomalous or unsafe behavior.",
+    icon: "bx:bxs-error",
+  },
+  {
+    title: "Continuous Compliance by Design",
+    subtitle: "Compliance that runs continuously, not once a year.",
+    description: "Bitropy maps AI usage to regulatory and internal requirements — enabling ongoing alignment with the EU AI Act, GDPR, Data Act, DORA, and relevant ISO standards.",
+    icon: "bx:bxs-check-shield",
+  },
+  {
+    title: "AI Cost Control & FinOps",
+    subtitle: "Full visibility. Predictable spend.",
+    description: "Bitropy tracks AI usage and cost across models, teams, and workloads — enabling budgeting, cost allocation, anomaly detection, and optimization without sacrificing performance.",
+    icon: "bx:bxs-dollar-circle",
+  },
+  {
+    title: "Multi-Model & Multi-Environment Support",
+    subtitle: "Freedom without lock-in.",
+    description: "Run and govern AI across multiple models, vendors, and environments — cloud, on-prem, or hybrid — while maintaining consistent controls and visibility.",
+    icon: "bx:bxs-cloud",
+  },
+  {
+    title: "Developer-First Integration",
+    subtitle: "Built for real engineering teams.",
+    description: "Bitropy integrates with existing codebases, SDKs, CI/CD pipelines, and developer tools — enabling adoption without rewriting systems or slowing delivery.",
+    icon: "bx:bxs-terminal",
+  },
+  {
+    title: "From Audit to Operations",
+    subtitle: "Designed to close the loop.",
+    description: "Bitropy is the natural continuation of AI audits — transforming one-time assessments into continuous governance, monitoring, optimization, and improvement.",
+    icon: "bx:bxs-analyse",
+  },
+];
+---
+
+<Layout title="Products">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Bitropy Platform</Fragment>
+      <Fragment slot="desc">What We Offer</Fragment>
+    </Sectionhead>
+
+    <div class="mx-auto max-w-4xl mt-12">
+      <p class="text-xl text-center text-slate-600 leading-relaxed">
+        <span class="font-semibold text-gray-800">Uncompromised AI operations.</span> Bitropy is a sovereign AI platform for building, running, and governing AI systems in production — with full control, observability, continuous compliance, and cost transparency.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+      {
+        features.map((feature) => (
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex gap-3 items-center mb-4">
+              <div class="bg-black rounded-full p-2 w-10 h-10 shrink-0 flex items-center justify-center">
+                <Icon class="text-white w-5 h-5" name={feature.icon} />
+              </div>
+              <h3 class="font-bold text-lg">{feature.title}</h3>
+            </div>
+            <p class="text-purple-600 font-medium mb-2">{feature.subtitle}</p>
+            <p class="text-slate-600 leading-relaxed">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-2xl font-bold text-gray-800">
+        Run AI in production with confidence.
+      </p>
+    </div>
+  </Container>
+</Layout>

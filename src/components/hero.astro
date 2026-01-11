@@ -5,27 +5,25 @@ import { Icon } from "astro-icon/components";
 import { Picture } from "astro:assets";
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block max-w-md">
     <Picture
       src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
+      alt="Bitropy logo"
+      widths={[200, 300, 400]}
+      sizes="(max-width: 800px) 100vw, 400px"
       loading="eager"
       format="avif"
+      class="rounded-xl p-4"
     />
   </div>
   <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Your AI. Your Data.
+    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
       <span class="relative inline-block align-baseline">
         <span
           class="rounded px-1"
           style="background: linear-gradient(90deg, #967deb26, #967deb1A)">
-          Your Rules.
+          Uncompromised AI
         </span>
         <svg
           aria-hidden="true"
@@ -40,14 +38,28 @@ import { Picture } from "astro:assets";
             stroke-linecap="round"></path>
         </svg>
       </span>
+      <br />
+      Built for what's next.
+      <br />
+      Bitropy.
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      In a world racing toward automation, trust has become the new currency.
-      Bitropy was built for enterprises that demand both intelligence and
-      independence. We provide sovereign AI infrastructure a modular platform
-      that handles inference, governance, and secure data integrations so your
-      teams can innovate freely, without compromise.
-    </p>
+    <div class="text-lg mt-6 text-slate-600 max-w-xl space-y-4">
+      <p>
+        AI assistants don't live in isolation. To be useful, they need to read from databases, create tickets, call APIs, send emails, and trigger internal tools.
+      </p>
+      <p>
+        Today this usually happens through custom integrations that are fragile, inconsistent, and hard to secure.
+      </p>
+      <p>
+        MCP (Model Context Protocol) is emerging as a standard way for AI to talk to tools and data — like USB-C for AI systems.
+      </p>
+      <p>
+        Bitropy is the enterprise layer that makes MCP safe, observable, and manageable at scale.
+      </p>
+      <p>
+        We sit between your AI agents and your systems, acting as a secure gateway where access, data flow, and execution are controlled by design.
+      </p>
+    </div>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link href="/contact" class="flex gap-1 items-center justify-center">
         <Icon class="text-white w-5 h-5" name="bx:bxs-paper-plane" />

@@ -1,76 +1,38 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
-
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
 ---
 
-<Layout title="About">
+<Layout title="The Team">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About Bitropy</Fragment>
-      <Fragment slot="desc">Unlocking production AI for regulated industries.</Fragment>
+      <Fragment slot="title">The Team</Fragment>
+      <Fragment slot="desc">Built by professionals who understand enterprise AI.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Breaking Down AI Barriers for Enterprises
-      </h2>
+    <div class="flex flex-col gap-6 mx-auto max-w-4xl mt-16">
       <p class="text-lg leading-relaxed text-slate-500">
-        For years, regulated industries have watched the AI boom from the sidelines. Banks, pharma innovators, and insurers want to move fast—but compliance, privacy, and vendor lock-in keep holding them back. The rules are complex, and the risks are high.
+        Bitropy is built by professionals with deep experience across enterprise software, AI engineering, security, and compliance.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        At Bitropy, we saw that frustration up close and decided to build a different path. A path where enterprises can innovate boldly and stay fully in control.
+        We've spent years working with complex, regulated environments — helping organizations scale technology without losing control, transparency, or trust.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        Our modular AI infrastructure lets organizations deploy secure, production-grade AI in under two weeks—no compromises, no black boxes.
+        Our team understands AI from both sides: how leaders think about risk, cost, and accountability — and how engineers build, deploy, and operate systems in production.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        We've helped a pharma company cut document processing time by 70% while staying fully compliant, and enabled a global bank to speed up KYC and AML operations by 60%, all with full transparency and auditability.
+        We've seen firsthand where AI adoption breaks down: fragmented tooling, missing guardrails, unclear ownership, rising costs, and growing regulatory pressure.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        What makes Bitropy different isn't just the tech—it's the people. We're a team of passionate builders, engineers, and problem-solvers who've spent years inside enterprise AI. We know how hard this journey can be and we're here to make it possible, faster, and freer than ever before.
+        That experience shapes everything we build. Bitropy is designed by people who have operated real systems, supported real teams, and solved real problems — not just experimented with models.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        We believe AI should belong to those who create it. And we can't wait to help you break down the barriers and build what's next.
+        We believe enterprises don't need more AI tools. They need a foundation they can trust.
       </p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-3xl mt-12">
-      {
-        publishedTeamMembers.map(async (teamMemberEntry) => {
-          const { Content } = await teamMemberEntry.render();
-          return (
-            <div class="group">
-              <div class="w-full aspect-square">
-                <Picture
-                  src={teamMemberEntry.data.avatar.src}
-                  alt={teamMemberEntry.data.avatar.alt}
-                  sizes="(max-width: 800px) 100vw, 400px"
-                  width={400}
-                  height={400}
-                  class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-                />
-              </div>
-
-              <div class="mt-4 text-center">
-                <h2 class="text-lg text-gray-800 font-bold">{teamMemberEntry.data.name}</h2>
-                <h3 class="text-sm text-slate-500 mb-3">
-                  {teamMemberEntry.data.title}
-                </h3>
-                <div class="text-sm text-slate-600 leading-relaxed">
-                  <Content />
-                </div>
-              </div>
-            </div>
-          );
-        })
-      }
+      <p class="text-lg leading-relaxed text-slate-600 font-medium">
+        That's why we're building Bitropy.
+      </p>
     </div>
   </Container>
 </Layout>

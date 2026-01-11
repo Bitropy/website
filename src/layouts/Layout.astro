@@ -23,7 +23,9 @@ const { title, footerMargin = true } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "Bitropy"
-  : "Bitropy - Sovereign AI Infrastructure for Enterprises";
+  : "Bitropy - The Enterprise Layer for MCP";
+
+const siteDescription = "Bitropy makes MCP (Model Context Protocol) safe, observable, and manageable at scale. The secure gateway between your AI agents and enterprise systems.";
 ---
 
 <!doctype html>
@@ -37,18 +39,25 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Bitropy is a modular sovereign AI infrastructure platform for enterprises that prioritize data privacy, security, and cost effectiveness. On-premises deployment with production-scale AI."
+      description={siteDescription}
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Bitropy - Sovereign AI Infrastructure for Enterprises`,
+          title: `Bitropy - The Enterprise Layer for MCP`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Bitropy - Sovereign AI Infrastructure",
+          alt: "Bitropy - Uncompromised AI. Built for what's next.",
         },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: "@bitropy",
+        title: "Bitropy - The Enterprise Layer for MCP",
+        description: siteDescription,
+        image: resolvedImageWithDomain,
       }}
     />
     <style is:global>
