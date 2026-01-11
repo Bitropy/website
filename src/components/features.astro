@@ -2,94 +2,76 @@
 // @ts-ignore
 import { Icon } from "astro-icon/components";
 
-const features = [
+const personas = [
   {
-    title: "Data Sovereignty & Privacy",
-    description:
-      "Your data stays yours—always. Everything runs on-premises, inside your infrastructure, ensuring complete compliance and true data sovereignty.",
-    icon: "bx:bxs-lock-alt",
-  },
-  {
-    title: "Fast Deployment",
-    description:
-      "AI that moves at your pace. We deploy production pilots in weeks, not months, through a standardized platform that cuts out endless consulting cycles.",
-    icon: "bx:bxs-rocket",
-  },
-  {
-    title: "Open Source Foundation",
-    description:
-      "No lock-ins. No hidden costs. Bitropy is built entirely on open-source technologies like Kubernetes and vLLM, giving you full visibility and control.",
-    icon: "bx:bxs-heart",
-  },
-  {
-    title: "Cost Effective",
-    description:
-      "Enterprise AI without the enterprise price tag. Up to 70% more cost-efficient than traditional consulting builds—typically $50K–300K per year, versus $2M+ for custom projects.",
-    icon: "bx:bxs-dollar-circle",
-  },
-  {
-    title: "Compliance Ready",
-    description:
-      "Made for the industries that can't afford to get it wrong. Fully compliant with GDPR, BaFin, the EU AI Act, and pharmaceutical quality standards.",
+    title: "For Security teams and CISOs",
     icon: "bx:bxs-shield",
+    points: [
+      "You don't have to trust every MCP server to \"do security right\". Authentication and authorization are enforced centrally at the gateway, not left to individual implementations.",
+      "Every data flow can be inspected, logged, and governed. You can filter PII, mask sensitive fields, and prevent unintended data exfiltration before it happens.",
+      "Each MCP server runs in isolation, so a compromised or buggy tool can't move laterally across your environment.",
+      "All tool usage is captured in a single audit trail: who triggered what, when, and which data moved between the model and backend systems.",
+    ],
   },
   {
-    title: "Proven at Production Scale",
-    description:
-      "Real results, not prototypes. Pharma clients cut document processing time by 70%. Banks accelerated KYC and AML by 60%—all with full auditability and data control.",
-    icon: "bx:bxs-bar-chart-alt-2",
+    title: "For Platform and DevOps teams",
+    icon: "bx:bxs-server",
+    points: [
+      "You get a single source of truth for MCP servers. A registry with versioning, approvals, and visibility into what tools exist and who owns them.",
+      "MCP servers can be deployed, updated, or rolled back without touching agent or client configurations, which keeps environments stable and predictable.",
+      "Resource usage is governed centrally. You can apply rate limits, quotas, and cost attribution per team or project instead of guessing where spend comes from.",
+      "The runtime is standardized. Teams don't need to reinvent secure networking, isolation, or secrets handling for every new MCP server.",
+    ],
+  },
+  {
+    title: "For Developers and AI Engineers",
+    icon: "bx:bxs-terminal",
+    points: [
+      "Integrating tools becomes simple. Your agent connects to one gateway and gets access to all approved MCP servers through unified authentication.",
+      "A self-service catalog lets you browse available tools, request access, and get provisioned without long ticket chains.",
+      "Because the runtime is consistent, the same MCP server behaves the same way in development, staging, and production. Fewer surprises, fewer late-night fixes.",
+    ],
+  },
+  {
+    title: "For Compliance and Legal teams",
+    icon: "bx:bxs-file-doc",
+    points: [
+      "The gateway becomes a clear policy enforcement point. Data residency, retention rules, and access constraints are applied consistently across all AI tool usage.",
+      "Centralized controls map cleanly to frameworks like SOC 2, ISO 27001, and ISO/IEC 42000, making audits simpler and less disruptive.",
+      "Third-party MCP servers run inside your controlled environment, not the vendor's. This reduces vendor risk and gives you real oversight instead of contractual promises.",
+    ],
   },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Why Enterprises Choose Bitropy
+    Built for every team involved
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Enterprises come to Bitropy when they're ready to move fast without giving up control.
-  </p>
-  <p class="text-lg mt-2 text-slate-600">
-    Our platform delivers production-scale AI that runs securely within your own walls, giving you all the power of modern AI without exposing a single byte of sensitive data to public clouds.
-  </p>
-  <p class="text-lg mt-2 text-slate-600">
-    We built Bitropy for teams who value trust, speed, and freedom over black-box dependencies.
+  <p class="text-lg mt-4 text-slate-600 max-w-3xl">
+    Different teams have different concerns when it comes to AI tooling. Bitropy addresses them all from a single platform.
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid md:grid-cols-2 mt-16 gap-12">
   {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+    personas.map((persona) => (
+      <div class="bg-slate-50 rounded-xl p-8">
+        <div class="flex gap-3 items-center mb-6">
+          <div class="bg-black rounded-full p-2 w-10 h-10 shrink-0 flex items-center justify-center">
+            <Icon class="text-white w-5 h-5" name={persona.icon} />
+          </div>
+          <h3 class="font-bold text-xl">{persona.title}</h3>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-          {item.techIcons && (
-            <div class="flex gap-2 mt-3">
-              {item.techIcons.map((techIcon) => (
-                <div class="bg-gray-100 rounded p-1.5">
-                  <Icon class="w-5 h-5 text-gray-700" name={techIcon} />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        <ul class="space-y-4">
+          {persona.points.map((point) => (
+            <li class="flex gap-3 text-slate-600 leading-relaxed">
+              <Icon class="text-purple-600 w-5 h-5 shrink-0 mt-1" name="bx:bx-check" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     ))
   }
-</div>
-
-<div class="mt-16 text-center">
-  <p class="text-lg text-slate-600">
-    We built Bitropy because we believe enterprises deserve AI that works for them—not the other way around.
-  </p>
-  <p class="text-xl font-semibold mt-4 text-gray-800">
-    Private. Fast. Open. Proven.
-  </p>
-  <p class="text-lg text-slate-600 mt-2">
-    That's the Bitropy way.
-  </p>
 </div>

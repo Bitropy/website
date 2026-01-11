@@ -1,3 +1,38 @@
 ---
-return Astro.redirect("/");
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
 ---
+
+<Layout title="The Team">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">The Team</Fragment>
+      <Fragment slot="desc">Built by professionals who understand enterprise AI.</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-6 mx-auto max-w-4xl mt-16">
+      <p class="text-lg leading-relaxed text-slate-500">
+        Bitropy is built by professionals with deep experience across enterprise software, AI engineering, security, and compliance.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        We've spent years working with complex, regulated environments — helping organizations scale technology without losing control, transparency, or trust.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Our team understands AI from both sides: how leaders think about risk, cost, and accountability — and how engineers build, deploy, and operate systems in production.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        We've seen firsthand where AI adoption breaks down: fragmented tooling, missing guardrails, unclear ownership, rising costs, and growing regulatory pressure.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        That experience shapes everything we build. Bitropy is designed by people who have operated real systems, supported real teams, and solved real problems — not just experimented with models.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        We believe enterprises don't need more AI tools. They need a foundation they can trust.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-600 font-medium">
+        That's why we're building Bitropy.
+      </p>
+    </div>
+  </Container>
+</Layout>
