@@ -1,0 +1,95 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Data Sovereignty & Privacy",
+    description:
+      "Your data stays yours—always. Everything runs on-premises, inside your infrastructure, ensuring complete compliance and true data sovereignty.",
+    icon: "bx:bxs-lock-alt",
+  },
+  {
+    title: "Fast Deployment",
+    description:
+      "AI that moves at your pace. We deploy production pilots in weeks, not months, through a standardized platform that cuts out endless consulting cycles.",
+    icon: "bx:bxs-rocket",
+  },
+  {
+    title: "Open Source Foundation",
+    description:
+      "No lock-ins. No hidden costs. Bitropy is built entirely on open-source technologies like Kubernetes and vLLM, giving you full visibility and control.",
+    icon: "bx:bxs-heart",
+  },
+  {
+    title: "Cost Effective",
+    description:
+      "Enterprise AI without the enterprise price tag. Up to 70% more cost-efficient than traditional consulting builds—typically $50K–300K per year, versus $2M+ for custom projects.",
+    icon: "bx:bxs-dollar-circle",
+  },
+  {
+    title: "Compliance Ready",
+    description:
+      "Made for the industries that can't afford to get it wrong. Fully compliant with GDPR, BaFin, the EU AI Act, and pharmaceutical quality standards.",
+    icon: "bx:bxs-shield",
+  },
+  {
+    title: "Proven at Production Scale",
+    description:
+      "Real results, not prototypes. Pharma clients cut document processing time by 70%. Banks accelerated KYC and AML by 60%—all with full auditability and data control.",
+    icon: "bx:bxs-bar-chart-alt-2",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Why Enterprises Choose Bitropy
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Enterprises come to Bitropy when they're ready to move fast without giving up control.
+  </p>
+  <p class="text-lg mt-2 text-slate-600">
+    Our platform delivers production-scale AI that runs securely within your own walls, giving you all the power of modern AI without exposing a single byte of sensitive data to public clouds.
+  </p>
+  <p class="text-lg mt-2 text-slate-600">
+    We built Bitropy for teams who value trust, speed, and freedom over black-box dependencies.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          {item.techIcons && (
+            <div class="flex gap-2 mt-3">
+              {item.techIcons.map((techIcon) => (
+                <div class="bg-gray-100 rounded p-1.5">
+                  <Icon class="w-5 h-5 text-gray-700" name={techIcon} />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div class="mt-16 text-center">
+  <p class="text-lg text-slate-600">
+    We built Bitropy because we believe enterprises deserve AI that works for them—not the other way around.
+  </p>
+  <p class="text-xl font-semibold mt-4 text-gray-800">
+    Private. Fast. Open. Proven.
+  </p>
+  <p class="text-lg text-slate-600 mt-2">
+    That's the Bitropy way.
+  </p>
+</div>
