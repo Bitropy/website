@@ -1,24 +1,15 @@
 ---
-import heroImage from "@/assets/hero.png";
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
-import { Picture } from "astro:assets";
 ---
 
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block max-w-md">
-    <Picture
-      src={heroImage}
-      alt="Bitropy logo"
-      widths={[200, 300, 400]}
-      sizes="(max-width: 800px) 100vw, 400px"
-      loading="eager"
-      format="avif"
-      class="rounded-xl p-4"
-    />
-  </div>
-  <div>
-    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+<div class="absolute top-0 right-0 w-full h-[800px] md:h-[900px] pointer-events-none -z-10" style="mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);">
+  <div id="grain-gradient-container" class="w-full h-full"></div>
+</div>
+
+<main class="grid lg:grid-cols-2 pt-8 pb-8 md:pt-16 md:pb-24 relative">
+  <div class="relative z-10">
+    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter" style="text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);">
       <span class="relative inline-block align-baseline">
         <span
           class="rounded px-1"
@@ -43,7 +34,7 @@ import { Picture } from "astro:assets";
       <br />
       Bitropy.
     </h1>
-    <div class="text-lg mt-6 text-slate-600 max-w-xl space-y-4">
+    <div class="text-lg mt-6 text-slate-600 max-w-xl space-y-4" style="text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7);">
       <p>
         AI assistants don't live in isolation. To be useful, they need to read from databases, create tickets, call APIs, send emails, and trigger internal tools.
       </p>
@@ -76,3 +67,66 @@ import { Picture } from "astro:assets";
     </div>
   </div>
 </main>
+
+<script>
+  import {
+    ShaderMount,
+    grainGradientFragmentShader,
+    getShaderNoiseTexture
+  } from "@paper-design/shaders";
+
+  function initShader() {
+    const container = document.getElementById('grain-gradient-container');
+
+    if (!container) {
+      return;
+    }
+
+    if (container.querySelector('canvas')) {
+      return;
+    }
+
+    const noiseTexture = getShaderNoiseTexture();
+
+    if (!noiseTexture) {
+      // in case the shader is not loaded, may only happen on old browser without webgl support
+      return;
+    }
+
+    const createShader = () => {
+      new ShaderMount(
+        container,
+        grainGradientFragmentShader,
+        {
+          u_colorsCount: 3,
+          u_colors: [
+            [0.545, 0.361, 0.965, 1],
+            [0.655, 0.545, 0.980, 1],
+            [0.988, 0.827, 0.302, 1],
+          ],
+          u_softness: 0.8,
+          u_intensity: 0.2,
+          u_noise: 0,
+          u_shape: 6,
+          u_scale: 1.25,
+          u_rotation: 180,
+          u_offsetX: 0.85,
+          u_offsetY: -0.2,
+          u_noiseTexture: noiseTexture,
+        },
+        undefined,
+        1
+      );
+    };
+
+    noiseTexture.onload = createShader;
+    if (noiseTexture.complete) {
+      createShader();
+    }
+  }
+
+  initShader();
+
+  // Reinitialize after Astro view transitions
+  document.addEventListener('astro:page-load', initShader);
+</script>
