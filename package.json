@@ -2,6 +2,11 @@
   "name": "astroship-temp",
   "type": "module",
   "version": "3.0.0",
+  "pnpm": {
+    "overrides": {
+      "fontkitten": "1.0.0"
+    }
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
