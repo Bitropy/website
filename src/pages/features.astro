@@ -1,3 +1,105 @@
 ---
-return Astro.redirect("/");
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import Features from "@/components/features.astro";
+import Quickstart from "@/components/quickstart.astro";
+import Comparison from "@/components/comparison.astro";
+import Faq from "@/components/faq.astro";
+import { Icon } from "astro-icon/components";
+
+const deepFeatures = [
+  {
+    title: "Central auth & key rotation",
+    icon: "bx:bxs-key",
+    points: [
+      "Issue Bitropy-scoped API keys per team, app, or user — rotate or revoke without touching downstream code.",
+      "Provider credentials live in Bitropy only. Apps never see OpenAI, Anthropic, or Azure keys.",
+      "Key scopes map to models, spend caps, and policies, so access changes are a config edit.",
+    ],
+  },
+  {
+    title: "Routing, aliases & caching",
+    icon: "bx:bx-shuffle",
+    points: [
+      "Model aliases (e.g. team-default, research-cheap) point at real provider models — change them without redeploying.",
+      "Fallback chains and retry policies route around provider outages automatically.",
+      "Exact-match cache cuts latency and cost on repeated prompts without any application change.",
+    ],
+  },
+  {
+    title: "Usage, cost & attribution",
+    icon: "bx:bxs-bar-chart-alt-2",
+    points: [
+      "Every request tagged with identity, model, tokens, latency, and dollar cost.",
+      "Per-user / per-app / per-team rollups available in the admin console and via API.",
+      "Export to Prometheus, BigQuery, Snowflake, Datadog, or S3 for BI and FinOps workflows.",
+    ],
+  },
+  {
+    title: "Policy & data governance",
+    icon: "bx:bxs-shield",
+    points: [
+      "PII detection and redaction on prompts and responses before they reach providers or end users.",
+      "Content filters, data residency rules, retention windows, and per-team rate limits.",
+      "Policies version-controlled and testable — roll changes out gradually, revert instantly.",
+    ],
+  },
+  {
+    title: "Audit & tracing",
+    icon: "bx:bxs-file-doc",
+    points: [
+      "Full prompt / response logging with per-request correlation IDs across your services.",
+      "OpenTelemetry spans for every gateway operation — plugs into your existing tracing stack.",
+      "Tamper-evident audit exports designed to stand up as the system of record for AI usage.",
+    ],
+  },
+  {
+    title: "MCP gateway",
+    icon: "bx:bx-transfer",
+    points: [
+      "Central registry of Model Context Protocol servers with per-tool isolation.",
+      "Same auth, policy, and audit layer as LLM traffic — one operator experience.",
+      "Per-user approval flows for sensitive tools; shadow mode to test new tools safely.",
+    ],
+  },
+];
 ---
+
+<Layout title="Features — Bitropy">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Features</Fragment>
+      <Fragment slot="desc">Everything Bitropy does for the teams running AI in production.</Fragment>
+    </Sectionhead>
+
+    <Features />
+
+    <div class="mt-24 space-y-16 max-w-5xl mx-auto">
+      {deepFeatures.map((f, i) => (
+        <div class={`grid md:grid-cols-5 gap-8 items-start ${i % 2 ? "md:[direction:rtl]" : ""}`}>
+          <div class="md:col-span-2 [direction:ltr]">
+            <div class="bg-[#967deb]/10 rounded-xl w-14 h-14 flex items-center justify-center">
+              <Icon class="text-[#967deb] w-7 h-7" name={f.icon} />
+            </div>
+            <h3 class="text-2xl font-bold mt-4 text-slate-900">{f.title}</h3>
+          </div>
+          <div class="md:col-span-3 [direction:ltr]">
+            <ul class="space-y-3">
+              {f.points.map((p) => (
+                <li class="flex gap-3 text-slate-600 leading-relaxed">
+                  <Icon class="text-[#967deb] w-5 h-5 shrink-0 mt-1" name="bx:bx-check" />
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <Quickstart />
+    <Comparison />
+    <Faq />
+  </Container>
+</Layout>

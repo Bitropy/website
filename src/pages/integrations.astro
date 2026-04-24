@@ -1,3 +1,99 @@
 ---
-return Astro.redirect("/");
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import ProvidersGrid from "@/components/providers-grid.astro";
+import ContactCards from "@/components/contact-cards.astro";
+import { Icon } from "astro-icon/components";
+
+const sdks = [
+  { name: "Python", sub: "openai-python", icon: "simple-icons:python" },
+  { name: "TypeScript", sub: "openai-node", icon: "simple-icons:typescript" },
+  { name: "Go", sub: "go-openai", icon: "simple-icons:go" },
+  { name: "Java", sub: "openai-java", icon: "simple-icons:openjdk" },
+  { name: "Ruby", sub: "ruby-openai", icon: "simple-icons:ruby" },
+  { name: "curl / HTTP", sub: "any HTTP client", icon: "bx:bx-code-curly" },
+];
+
+const observability = [
+  { name: "Prometheus", icon: "simple-icons:prometheus" },
+  { name: "OpenTelemetry", icon: "simple-icons:opentelemetry" },
+  { name: "Datadog", icon: "simple-icons:datadog" },
+  { name: "Grafana", icon: "simple-icons:grafana" },
+  { name: "BigQuery", icon: "simple-icons:googlebigquery" },
+  { name: "Snowflake", icon: "simple-icons:snowflake" },
+];
+
+const identity = [
+  { name: "Okta", icon: "simple-icons:okta" },
+  { name: "Azure AD / Entra", icon: "simple-icons:microsoftazure" },
+  { name: "Google Workspace", icon: "simple-icons:google" },
+  { name: "SAML 2.0", icon: "bx:bxs-key" },
+  { name: "OIDC", icon: "bx:bxs-lock" },
+];
 ---
+
+<Layout title="Integrations — Bitropy">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Integrations</Fragment>
+      <Fragment slot="desc">Bitropy connects to every LLM provider, every SDK, and the observability and identity tools you already run.</Fragment>
+    </Sectionhead>
+
+    <ProvidersGrid />
+
+    <section class="mt-24">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">SDKs & clients</h2>
+        <p class="text-lg mt-3 text-slate-600">Any OpenAI-compatible SDK works. Point the base URL at Bitropy and keep your existing code.</p>
+      </div>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+        {sdks.map((s) => (
+          <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+            <div class="w-10 h-10 mx-auto flex items-center justify-center mb-2">
+              <Icon class="text-slate-500 w-7 h-7" name={s.icon} />
+            </div>
+            <div class="font-semibold text-slate-800 text-sm">{s.name}</div>
+            <div class="text-xs text-slate-500 font-mono mt-0.5">{s.sub}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-24">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Observability & BI</h2>
+        <p class="text-lg mt-3 text-slate-600">Export usage, cost, and trace data to the systems your platform team already operates.</p>
+      </div>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+        {observability.map((o) => (
+          <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+            <div class="w-10 h-10 mx-auto flex items-center justify-center mb-2">
+              <Icon class="text-slate-500 w-7 h-7" name={o.icon} />
+            </div>
+            <div class="font-semibold text-slate-800 text-sm">{o.name}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-24">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Identity & SSO</h2>
+        <p class="text-lg mt-3 text-slate-600">Plug Bitropy into your IdP. SAML, OIDC, and major IdPs supported out of the box.</p>
+      </div>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+        {identity.map((i) => (
+          <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+            <div class="w-10 h-10 mx-auto flex items-center justify-center mb-2">
+              <Icon class="text-slate-500 w-7 h-7" name={i.icon} />
+            </div>
+            <div class="font-semibold text-slate-800 text-sm">{i.name}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <ContactCards />
+  </Container>
+</Layout>

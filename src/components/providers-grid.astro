@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+
+const providers = [
+  { name: "OpenAI", env: "OPENAI_API_KEY", model: "gpt-4o-mini", icon: "simple-icons:openai" },
+  { name: "Anthropic", env: "ANTHROPIC_API_KEY", model: "claude-sonnet-latest", icon: "simple-icons:anthropic" },
+  { name: "Google", env: "GEMINI_API_KEY", model: "gemini-2.5-flash", icon: "simple-icons:google" },
+  { name: "Mistral", env: "MISTRAL_API_KEY", model: "mistral-large-latest", icon: "bx:bx-wind" },
+  { name: "Groq", env: "GROQ_API_KEY", model: "llama-3.3-70b", icon: "bx:bxs-bolt" },
+  { name: "xAI", env: "XAI_API_KEY", model: "grok-2", icon: "bx:bx-x" },
+  { name: "Azure OpenAI", env: "AZURE_API_KEY + BASE_URL", model: "gpt-4o", icon: "simple-icons:microsoftazure" },
+  { name: "AWS Bedrock", env: "AWS_ACCESS_KEY_ID", model: "anthropic.claude-3", icon: "simple-icons:amazonwebservices", badge: "BETA" },
+  { name: "Ollama", env: "OLLAMA_BASE_URL", model: "llama3.3", icon: "simple-icons:ollama" },
+  { name: "OpenRouter", env: "OPENROUTER_API_KEY", model: "any supported model", icon: "bx:bx-network-chart" },
+  { name: "Custom", env: "CUSTOM_BASE_URL", model: "any OpenAI-compatible endpoint", icon: "bx:bx-plus" },
+];
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-slate-400">
+      Supported AI model providers
+    </h2>
+    <p class="text-lg mt-4 text-slate-500">
+      Connect OpenAI, Anthropic, Google, Mistral, Groq, xAI, Azure OpenAI, AWS Bedrock, OpenRouter, Ollama, and any OpenAI-compatible backend through one gateway.
+    </p>
+  </div>
+
+  <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+    {providers.map((p) => (
+      <div class="text-center p-4">
+        <div class="w-14 h-14 mx-auto rounded-full border border-slate-200 flex items-center justify-center mb-3 bg-white">
+          <Icon class="text-slate-400 w-7 h-7" name={p.icon} />
+        </div>
+        <div class="text-xs font-mono text-slate-400">{p.env}</div>
+        <div class="mt-1 flex items-center justify-center gap-1.5">
+          <div class="font-bold text-slate-700">{p.name}</div>
+          {p.badge && (
+            <span class="text-[10px] font-semibold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">{p.badge}</span>
+          )}
+        </div>
+        <div class="text-xs font-mono text-slate-400 mt-1">{p.model}</div>
+      </div>
+    ))}
+  </div>
+
+  <p class="text-center text-sm text-slate-500 mt-10 max-w-xl mx-auto">
+    Bitropy auto-discovers configured providers and can also route to additional OpenAI-compatible backends through their base URLs.
+  </p>
+</section>

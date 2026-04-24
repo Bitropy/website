@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+const badges = [
+  { icon: "bx:bxs-shield-alt-2", label: "Enterprise-grade auth" },
+  { icon: "bx:bxs-check-shield", label: "SOC 2 / ISO 27001 ready" },
+  { icon: "bx:bxs-cloud", label: "Self-hosted or managed" },
+  { icon: "bx:bxs-plug", label: "OpenAI-compatible API" },
+  { icon: "bx:bx-transfer", label: "MCP + LLM in one gateway" },
+  { icon: "bx:bxs-bar-chart-alt-2", label: "Live usage tracking" },
+];
+---
+
+<div class="border-y border-slate-200 py-6 md:py-8 mt-4">
+  <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12">
+    {badges.map((b) => (
+      <div class="flex items-center gap-2 text-slate-700 text-sm">
+        <Icon class="text-[#967deb] w-5 h-5" name={b.icon} />
+        <span class="font-medium">{b.label}</span>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,85 @@
+---
+import Link from "@/components/ui/link.astro";
+
+const steps = [
+  {
+    n: "1",
+    title: "Point your SDK at Bitropy",
+    body: "Change the base URL in your existing OpenAI-compatible client. No SDK swap, no rewrite.",
+    block: {
+      label: "PYTHON",
+      code: `from openai import OpenAI
+
+client = OpenAI(
+  base_url="https://gateway.bitropy.io/v1",
+  api_key="bitropy_sk_..."
+)`,
+    },
+  },
+  {
+    n: "2",
+    title: "Set policies in the dashboard",
+    body: "Define aliases, routing rules, PII filters, rate limits, and per-team scopes from the admin console.",
+    block: {
+      label: "CONSOLE",
+      code: `https://admin.bitropy.io
+  └─ Teams · Keys · Policies
+  └─ Aliases · Routing · Caching
+  └─ Usage · Audit · Alerts`,
+    },
+  },
+  {
+    n: "3",
+    title: "Send your first call",
+    body: "Keep your OpenAI-compatible payload. Bitropy authenticates, routes, caches, logs, and returns.",
+    block: {
+      label: "API CALL",
+      code: `curl https://gateway.bitropy.io/v1/chat/completions \\
+  -H "Authorization: Bearer $BITROPY_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "model": "team-default",
+    "messages": [
+      { "role": "user", "content": "Hello!" }
+    ]
+  }'`,
+    },
+  },
+];
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      Quick start: deploy Bitropy
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Launch the gateway, open the dashboard, and send your first OpenAI-compatible request in three steps.
+    </p>
+  </div>
+
+  <div class="mt-12 space-y-6 max-w-4xl mx-auto">
+    {steps.map((s) => (
+      <div class="border border-slate-200 rounded-xl p-6 md:p-8 bg-white">
+        <div class="flex gap-6">
+          <div class="shrink-0 text-3xl md:text-4xl font-bold text-[#967deb]/40">{s.n}</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl text-slate-900">{s.title}</h3>
+            <p class="text-slate-600 mt-2">{s.body}</p>
+            <div class="mt-5 bg-slate-50 rounded-lg border border-slate-200 overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2 border-b border-slate-200 bg-white">
+                <span class="text-xs font-mono font-semibold text-slate-500 tracking-widest">{s.block.label}</span>
+                <span class="text-xs text-slate-400">Copy</span>
+              </div>
+              <pre class="p-4 text-xs md:text-sm font-mono text-slate-800 overflow-x-auto whitespace-pre"><code>{s.block.code}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-10 text-center">
+    <Link href="/contact" size="lg" style="outline">Book a walkthrough</Link>
+  </div>
+</section>

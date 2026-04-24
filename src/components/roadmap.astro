@@ -1,0 +1,71 @@
+---
+const columns = [
+  {
+    label: "Live today",
+    color: "#10b981",
+    items: [
+      "OpenAI-compatible gateway endpoint",
+      "Central auth, key rotation, per-team scopes",
+      "Model aliases & routing rules",
+      "Per-user / per-app usage tracking",
+      "Exact-match response cache",
+      "Audit logs & request tracing",
+      "MCP gateway (core)",
+      "Self-hosted & managed deployment",
+    ],
+  },
+  {
+    label: "Next release",
+    color: "#967deb",
+    items: [
+      "Cluster mode (HA + horizontal scale)",
+      "Prompt / response DLP presets",
+      "Cost budgets & alerts per team",
+      "Semantic response cache",
+      "Prometheus + OpenTelemetry exporters",
+      "Streaming observability",
+    ],
+  },
+  {
+    label: "Queued",
+    color: "#f59e0b",
+    items: [
+      "Fine-grained RBAC & SSO (SAML / OIDC)",
+      "BYOK / customer-managed encryption",
+      "Shadow traffic & replay for model migrations",
+      "Agent-side SDK helpers",
+      "Marketplace of managed MCP servers",
+    ],
+  },
+];
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      Roadmap
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      A condensed view of what is shipping today, what lands in the next release, and what is queued behind it.
+    </p>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    {columns.map((c) => (
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full" style={`background:${c.color}`}></span>
+          <div class="font-bold text-slate-800 uppercase text-sm tracking-widest">{c.label}</div>
+        </div>
+        <ul class="space-y-3">
+          {c.items.map((i) => (
+            <li class="text-slate-600 text-sm leading-relaxed flex gap-2">
+              <span class="text-slate-300 mt-0.5">•</span>
+              <span>{i}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

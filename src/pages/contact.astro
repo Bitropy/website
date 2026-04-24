@@ -4,29 +4,76 @@ import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+
+const cards = [
+  {
+    label: "Calendly",
+    icon: "bx:bxs-calendar",
+    title: "Book a 20-minute call",
+    body: "Walk through your use case and see whether Bitropy fits your architecture.",
+    cta: "Schedule",
+    href: "#",
+  },
+  {
+    label: "Slack · Discord",
+    icon: "bx:bxs-message-dots",
+    title: "Join the community",
+    body: "Best for fast questions, setup help, and implementation follow-up.",
+    cta: "Join",
+    href: "#",
+  },
+  {
+    label: "Phone",
+    icon: "bx:bxs-phone",
+    title: "Talk to the team",
+    body: "Direct contact for product and implementation calls.",
+    cta: "Call",
+    href: "#",
+  },
+];
 ---
 
-<Layout title="Contact">
+<Layout title="Contact — Bitropy">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are here to help.</Fragment>
+      <Fragment slot="title">Contact the Bitropy team</Fragment>
+      <Fragment slot="desc">Ready to consolidate your AI stack onto one gateway? Reach out any way that fits your team.</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+    <div class="grid md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
+      {cards.map((c) => (
+        <a href={c.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:border-[#967deb] transition-colors block">
+          <div class="flex items-center gap-2 mb-4">
+            <Icon class="text-[#967deb] w-5 h-5" name={c.icon} />
+            <div class="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900">{c.title}</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">{c.body}</p>
+          <div class="mt-5 text-sm font-semibold text-[#967deb] group-hover:underline">
+            {c.cta} →
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-24">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Bitropy</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Ready to unlock production AI for your enterprise? Get in touch to discuss your requirements.
+        <h2 class="font-bold text-2xl text-slate-900">Send us a message</h2>
+        <p class="text-lg leading-relaxed text-slate-600 mt-3">
+          Tell us about your stack, your scale, and what you need the gateway to do. We'll get back to you within one business day.
         </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
-            <a href="mailto:contact@bitropy.io">contact@bitropy.io</a>
+        <div class="mt-5 space-y-2 text-slate-700">
+          <div class="flex items-center gap-2">
+            <Icon class="text-slate-400 w-4 h-4" name="uil:envelope" />
+            <a href="mailto:contact@bitropy.io" class="hover:text-[#967deb] transition">contact@bitropy.io</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon class="text-slate-400 w-4 h-4" name="bx:bxs-phone" />
+            <span class="text-slate-600">TODO: add phone number</span>
           </div>
         </div>
       </div>
-      <div class="bg-slate-100 p-5 md:p-8 rounded-xl mb-5">
+      <div class="bg-slate-50 border border-slate-200 p-5 md:p-8 rounded-xl">
         <Contactform />
       </div>
     </div>

@@ -2,37 +2,82 @@
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import ContactCards from "@/components/contact-cards.astro";
+import { Icon } from "astro-icon/components";
+
+const principles = [
+  {
+    icon: "bx:bxs-layer",
+    title: "Gateway, not another SDK",
+    body: "We put the hard parts — auth, routing, policy, audit, cost — behind one endpoint. Apps stay simple; governance lives in one place.",
+  },
+  {
+    icon: "bx:bxs-lock-alt",
+    title: "Sovereignty by default",
+    body: "Bitropy runs in your VPC if you want it to. Prompts, responses, and audit data never need to leave your environment.",
+  },
+  {
+    icon: "bx:bxs-bar-chart-alt-2",
+    title: "Measurable from day one",
+    body: "Every request is attributed to a user, app, and team. You know who is spending what on which model — from the first call.",
+  },
+  {
+    icon: "bx:bxs-book-open",
+    title: "Standards-aligned",
+    body: "OpenAI-compatible on the client side. SOC 2, ISO 27001, ISO/IEC 42000, and EU AI Act aligned on the governance side.",
+  },
+];
 ---
 
-<Layout title="The Team">
+<Layout title="About — Bitropy">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">The Team</Fragment>
-      <Fragment slot="desc">Built by professionals who understand enterprise AI.</Fragment>
+      <Fragment slot="title">Why we built Bitropy</Fragment>
+      <Fragment slot="desc">The enterprise layer for LLM and MCP traffic, built by people who have operated AI in regulated environments.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-6 mx-auto max-w-4xl mt-16">
-      <p class="text-lg leading-relaxed text-slate-500">
-        Bitropy is built by professionals with deep experience across enterprise software, AI engineering, security, and compliance.
+    <div class="mx-auto max-w-3xl mt-12 space-y-5 text-lg leading-relaxed text-slate-600">
+      <p>
+        Every team we work with ends up facing the same question: how do you keep shipping with AI without turning every application into a gateway client?
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We've spent years working with complex, regulated environments — helping organizations scale technology without losing control, transparency, or trust.
+      <p>
+        Keys, routing rules, retry logic, PII filters, usage counters, and compliance exports kept landing in application code. Three services became ten. Ten became a governance problem.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        Our team understands AI from both sides: how leaders think about risk, cost, and accountability — and how engineers build, deploy, and operate systems in production.
+      <p>
+        We built Bitropy to pull that logic out — into one OpenAI-compatible gateway that every app points at, and that every auditor, platform engineer, and finance team can reason about.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We've seen firsthand where AI adoption breaks down: fragmented tooling, missing guardrails, unclear ownership, rising costs, and growing regulatory pressure.
+      <p>
+        The same gateway handles Model Context Protocol traffic, so agents and tools get one consistent auth, audit, and policy layer instead of growing another parallel stack.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        That experience shapes everything we build. Bitropy is designed by people who have operated real systems, supported real teams, and solved real problems — not just experimented with models.
-      </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We believe enterprises don't need more AI tools. They need a foundation they can trust.
-      </p>
-      <p class="text-lg leading-relaxed text-slate-600 font-medium">
-        That's why we're building Bitropy.
+      <p class="font-medium text-slate-800">
+        Bitropy is the layer that makes AI safe, observable, and manageable at the scale enterprises actually operate.
       </p>
     </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
+      {principles.map((p) => (
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <div class="bg-[#967deb]/10 rounded-lg w-11 h-11 flex items-center justify-center mb-4">
+            <Icon class="text-[#967deb] w-6 h-6" name={p.icon} />
+          </div>
+          <h3 class="font-bold text-lg text-slate-900">{p.title}</h3>
+          <p class="text-slate-600 mt-2 text-sm leading-relaxed">{p.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mx-auto max-w-3xl mt-20">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">The team</h2>
+      <div class="mt-6 space-y-4 text-lg leading-relaxed text-slate-600">
+        <p>
+          Bitropy is built by engineers with deep experience across enterprise software, AI systems, security, and compliance — with years of work inside regulated environments where every request has to be explainable.
+        </p>
+        <p>
+          We've seen where AI adoption breaks down: fragmented tooling, missing guardrails, unclear ownership, runaway cost, and growing regulatory pressure. That experience shapes every decision we make.
+        </p>
+      </div>
+    </div>
+
+    <ContactCards />
   </Container>
 </Layout>

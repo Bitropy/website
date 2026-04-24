@@ -1,16 +1,34 @@
 ---
 import Container from "@/components/container.astro";
-import Cta from "@/components/cta.astro";
-import Features from "@/components/features.astro";
 import Hero from "@/components/hero.astro";
+import BadgeRow from "@/components/badge-row.astro";
+import Problems from "@/components/problems.astro";
+import HowItWorks from "@/components/how-it-works.astro";
+import Features from "@/components/features.astro";
+import Quickstart from "@/components/quickstart.astro";
+import Comparison from "@/components/comparison.astro";
+import ProvidersGrid from "@/components/providers-grid.astro";
+import Roadmap from "@/components/roadmap.astro";
+import Faq from "@/components/faq.astro";
+import ContactCards from "@/components/contact-cards.astro";
 import Newsletter from "@/components/newsletter.astro";
+import Cta from "@/components/cta.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title="">
+<Layout title="Bitropy — The enterprise LLM gateway">
   <Container>
     <Hero />
+    <BadgeRow />
+    <Problems />
+    <HowItWorks />
     <Features />
+    <Quickstart />
+    <Comparison />
+    <ProvidersGrid />
+    <Roadmap />
+    <Faq />
+    <ContactCards />
     <Newsletter />
     <Cta />
   </Container>

@@ -1,0 +1,47 @@
+---
+const rows = [
+  { feature: "Deployment", bitropy: "Self-host or managed", diy: "Per-app SDK integration", other: "Managed SaaS only" },
+  { feature: "OpenAI-compatible API", bitropy: "Yes — drop-in base URL", diy: "Depends on SDK", other: "Partial" },
+  { feature: "Central auth & key rotation", bitropy: "Built-in", diy: "Rebuild per team", other: "Basic" },
+  { feature: "Usage tracking", bitropy: "Per-user · per-app · per-team", diy: "Provider invoices only", other: "Per-key" },
+  { feature: "Policy / PII enforcement", bitropy: "Config-driven, pre-request", diy: "Scattered middleware", other: "Add-on module" },
+  { feature: "Response cache", bitropy: "Exact-match, scoped", diy: "Not included", other: "Optional" },
+  { feature: "MCP gateway", bitropy: "Included", diy: "Not applicable", other: "Separate product" },
+  { feature: "Audit & compliance logs", bitropy: "Full request/response trail", diy: "Ad-hoc logging", other: "Summary logs" },
+  { feature: "License", bitropy: "Commercial — flexible terms", diy: "Your own code", other: "Commercial SaaS" },
+];
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      Bitropy vs DIY vs managed SaaS
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Compare Bitropy with direct SDK integrations and other managed LLM gateways across deployment, operational features, and compliance posture.
+    </p>
+  </div>
+
+  <div class="mt-12 max-w-5xl mx-auto overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="border-b border-slate-200">
+          <th class="py-4 pr-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">Feature</th>
+          <th class="py-4 px-4 text-sm font-semibold text-[#967deb] uppercase tracking-wider">Bitropy</th>
+          <th class="py-4 px-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">Direct SDK / DIY</th>
+          <th class="py-4 pl-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">Other gateways</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr class="border-b border-slate-100">
+            <td class="py-4 pr-4 font-medium text-slate-700">{r.feature}</td>
+            <td class="py-4 px-4 font-semibold text-[#967deb]">{r.bitropy}</td>
+            <td class="py-4 px-4 text-slate-600">{r.diy}</td>
+            <td class="py-4 pl-4 text-slate-600">{r.other}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

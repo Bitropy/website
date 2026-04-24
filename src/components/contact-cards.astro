@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+
+const cards = [
+  {
+    label: "Calendly",
+    icon: "bx:bxs-calendar",
+    title: "Book a 20-minute call",
+    body: "Walk through your use case and see whether Bitropy fits your architecture.",
+    href: "/contact",
+    cta: "Schedule",
+  },
+  {
+    label: "Slack · Discord",
+    icon: "bx:bxs-message-dots",
+    title: "Join the Bitropy community",
+    body: "Best for fast questions, setup help, and implementation follow-ups.",
+    href: "/contact",
+    cta: "Join",
+  },
+  {
+    label: "Phone",
+    icon: "bx:bxs-phone",
+    title: "Talk to the team",
+    body: "Direct Bitropy contact for product, implementation, and security review calls.",
+    href: "/contact",
+    cta: "Call us",
+  },
+];
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      Contact the Bitropy team
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Need help deciding whether Bitropy fits your project, or planning a switch between LLM providers? Book a call, join the community, or reach us directly.
+    </p>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    {cards.map((c) => (
+      <a href={c.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:border-[#967deb] transition-colors block">
+        <div class="flex items-center gap-2 mb-4">
+          <Icon class="text-[#967deb] w-5 h-5" name={c.icon} />
+          <div class="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900">{c.title}</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">{c.body}</p>
+        <div class="mt-5 text-sm font-semibold text-[#967deb] group-hover:underline">
+          {c.cta} →
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

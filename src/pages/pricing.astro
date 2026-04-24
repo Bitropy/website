@@ -1,3 +1,111 @@
 ---
-return Astro.redirect("/");
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import Link from "@/components/ui/link.astro";
+import Faq from "@/components/faq.astro";
+import ContactCards from "@/components/contact-cards.astro";
+import { Icon } from "astro-icon/components";
+
+const tiers = [
+  {
+    name: "Starter",
+    price: "Free",
+    period: "Self-hosted",
+    description: "For small teams piloting an LLM gateway. Run it yourself, keep all data in your environment.",
+    cta: "Get started",
+    href: "/contact",
+    highlight: false,
+    features: [
+      "Self-hosted deployment",
+      "1 team · up to 5 apps",
+      "All providers",
+      "Basic usage tracking",
+      "Community support",
+    ],
+  },
+  {
+    name: "Team",
+    price: "Custom",
+    period: "Per month",
+    description: "For teams running LLMs in production who need central policy, usage analytics, and SSO.",
+    cta: "Talk to sales",
+    href: "/contact",
+    highlight: true,
+    features: [
+      "Everything in Starter",
+      "Unlimited apps & keys",
+      "PII redaction & policies",
+      "SSO (SAML / OIDC)",
+      "Advanced usage analytics",
+      "Response caching",
+      "Priority email support",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    period: "Annual",
+    description: "For regulated environments that need managed deployment, SLAs, and compliance evidence.",
+    cta: "Talk to sales",
+    href: "/contact",
+    highlight: false,
+    features: [
+      "Everything in Team",
+      "Managed deployment option",
+      "Custom SLA & uptime guarantees",
+      "BYOK / customer-managed keys",
+      "Dedicated Slack channel",
+      "SOC 2 / ISO audit evidence",
+      "Security & legal review",
+    ],
+  },
+];
 ---
+
+<Layout title="Pricing — Bitropy">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc">Self-hosted is free forever. Pay only for operational features, managed hosting, and enterprise support.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
+      {tiers.map((t) => (
+        <div class={`rounded-2xl p-8 border ${t.highlight ? "border-[#967deb] bg-[#967deb]/5 ring-1 ring-[#967deb]/30" : "border-slate-200 bg-white"}`}>
+          <div class="flex items-center gap-2">
+            <div class="font-bold text-xl text-slate-900">{t.name}</div>
+            {t.highlight && (
+              <span class="text-xs font-semibold bg-[#967deb] text-white px-2 py-0.5 rounded-full">Most popular</span>
+            )}
+          </div>
+          <div class="mt-4">
+            <span class="text-4xl font-bold text-slate-900">{t.price}</span>
+            <span class="text-sm text-slate-500 ml-2">{t.period}</span>
+          </div>
+          <p class="text-slate-600 text-sm mt-3 leading-relaxed">{t.description}</p>
+          <div class="mt-6">
+            <Link href={t.href} style={t.highlight ? "primary" : "outline"} block>
+              {t.cta}
+            </Link>
+          </div>
+          <ul class="mt-8 space-y-3">
+            {t.features.map((f) => (
+              <li class="flex gap-2 items-start text-sm text-slate-700">
+                <Icon class="text-[#967deb] w-4 h-4 shrink-0 mt-0.5" name="bx:bx-check" />
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-sm text-slate-500 mt-10 max-w-xl mx-auto">
+      All tiers include the MCP gateway. Pricing based on seat and usage tier — reach out for a quote tailored to your environment.
+    </p>
+
+    <Faq />
+    <ContactCards />
+  </Container>
+</Layout>

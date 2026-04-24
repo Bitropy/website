@@ -1,24 +1,26 @@
 ---
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+import HeroDiagram from "@/components/hero-diagram.astro";
 ---
 
-<div class="absolute top-0 right-0 w-full h-[800px] md:h-[900px] pointer-events-none -z-10" style="mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);">
+<div class="absolute top-0 right-0 w-full h-[900px] md:h-[1100px] pointer-events-none -z-10" style="mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);">
   <div id="grain-gradient-container" class="w-full h-full"></div>
 </div>
 
-<main class="grid lg:grid-cols-2 pt-8 pb-8 md:pt-16 md:pb-24 relative">
-  <div class="relative z-10">
-    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter" style="text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);">
+<main class="pt-10 pb-10 md:pt-20 md:pb-16 relative text-center">
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <h1 class="text-4xl lg:text-6xl xl:text-7xl font-bold tracking-tight" style="text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);">
+      The enterprise
       <span class="relative inline-block align-baseline">
         <span
           class="rounded px-1"
-          style="background: linear-gradient(90deg, #967deb26, #967deb1A)">
-          Uncompromised AI
+          style="background: linear-gradient(90deg, #967deb33, #967deb1A)">
+          LLM gateway
         </span>
         <svg
           aria-hidden="true"
-          class="pointer-events-none absolute left-0 -bottom-1 w-full h-[10px] text-[#967deb]/70 dark:text-[#967deb]/60"
+          class="pointer-events-none absolute left-0 -bottom-1 w-full h-[10px] text-[#967deb]/70"
           viewBox="0 0 100 10"
           preserveAspectRatio="none">
           <path
@@ -30,28 +32,16 @@ import { Icon } from "astro-icon/components";
         </svg>
       </span>
       <br />
-      Built for what's next.
+      for tracking, routing,
       <br />
-      Bitropy.
+      and governing AI usage.
     </h1>
-    <div class="text-lg mt-6 text-slate-600 max-w-xl space-y-4" style="text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7);">
-      <p>
-        AI assistants don't live in isolation. To be useful, they need to read from databases, create tickets, call APIs, send emails, and trigger internal tools.
-      </p>
-      <p>
-        Today this usually happens through custom integrations that are fragile, inconsistent, and hard to secure.
-      </p>
-      <p>
-        MCP (Model Context Protocol) is emerging as a standard way for AI to talk to tools and data — like USB-C for AI systems.
-      </p>
-      <p>
-        Bitropy is the enterprise layer that makes MCP safe, observable, and manageable at scale.
-      </p>
-      <p>
-        We sit between your AI agents and your systems, acting as a secure gateway where access, data flow, and execution are controlled by design.
-      </p>
-    </div>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <p class="text-lg md:text-xl mt-8 text-slate-700 max-w-2xl mx-auto" style="text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);">
+      Bitropy sits between your apps and every LLM provider. One
+      OpenAI-compatible endpoint, central auth, live usage tracking,
+      policy controls, and model routing — without rewriting your code.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
       <Link href="/contact" class="flex gap-1 items-center justify-center">
         <Icon class="text-white w-5 h-5" name="bx:bxs-paper-plane" />
         Get Started
@@ -59,12 +49,29 @@ import { Icon } from "astro-icon/components";
       <Link
         size="lg"
         style="outline"
+        href="/contact"
+        class="flex gap-2 items-center justify-center">
+        <Icon class="text-black w-4 h-4" name="bx:bxs-phone" />
+        Talk to Us
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
         href="/products"
-        class="flex gap-1 items-center justify-center">
+        class="flex gap-2 items-center justify-center">
         <Icon class="text-black w-4 h-4" name="bx:bxs-info-circle" />
         Learn More
       </Link>
     </div>
+  </div>
+
+  <div class="mt-16 md:mt-20 relative z-10">
+    <HeroDiagram />
+  </div>
+
+  <div class="mt-10 flex items-center justify-center gap-2 text-sm tracking-widest uppercase">
+    <span class="text-slate-500">Deploy in</span>
+    <span class="text-[#10b981] font-semibold">under 10 minutes</span>
   </div>
 </main>
 
@@ -89,7 +96,6 @@ import { Icon } from "astro-icon/components";
     const noiseTexture = getShaderNoiseTexture();
 
     if (!noiseTexture) {
-      // in case the shader is not loaded, may only happen on old browser without webgl support
       return;
     }
 
@@ -110,8 +116,8 @@ import { Icon } from "astro-icon/components";
           u_shape: 6,
           u_scale: 1.25,
           u_rotation: 180,
-          u_offsetX: 0.85,
-          u_offsetY: -0.2,
+          u_offsetX: 0.5,
+          u_offsetY: -0.1,
           u_noiseTexture: noiseTexture,
         },
         undefined,
@@ -125,8 +131,11 @@ import { Icon } from "astro-icon/components";
     }
   }
 
-  initShader();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initShader);
+  } else {
+    initShader();
+  }
 
-  // Reinitialize after Astro view transitions
   document.addEventListener('astro:page-load', initShader);
 </script>

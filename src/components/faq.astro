@@ -1,80 +1,75 @@
 ---
-import Container from "./container.astro";
-import Sectionhead from "./sectionhead.astro";
-import { ArrowIcon } from "./ui/icons";
+import { Arrow } from "./ui/icons";
 
 const faq = [
   {
-    question: "What is Astroship's API-based SAAS platform?",
+    question: "What is Bitropy?",
     answer:
-      "Astroship's API-based SAAS platform is a cloud-based software service that allows users to access and use a variety of API-powered tools and functionality.",
+      "Bitropy is an enterprise LLM gateway that sits between your applications and every AI model provider. It handles authentication, routing, caching, policy enforcement, audit logging, and usage tracking — so that logic lives in one place instead of leaking into every service. An MCP gateway is included for teams that use Model Context Protocol tools.",
   },
   {
-    question: "How does Astroship's billing work?",
+    question: "Can I keep using the OpenAI SDK with Bitropy?",
     answer:
-      "Astroship offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other secure online payment method.",
+      "Yes. Bitropy exposes an OpenAI-compatible endpoint, so you change the base URL in your existing SDK (Python, TypeScript, Go, or raw HTTP) and everything continues to work. Aliases let you address models by role (e.g. 'team-default') instead of hard-coding provider model names.",
   },
   {
-    question: "Can I get a refund for my Astroship subscription?",
+    question: "Which LLM providers does Bitropy support?",
     answer:
-      "Astroship offers a 30-day money-back guarantee for most of its subscription plans. If you are not satisfied with your subscription within the first 30 days, you can request a full refund. Refunds for subscriptions that have been active for longer than 30 days may be considered on a case-by-case basis.",
+      "OpenAI, Anthropic, Google (Gemini), Mistral, Groq, xAI, Azure OpenAI, AWS Bedrock, OpenRouter, and Ollama out of the box. Any OpenAI-compatible backend can be added through a custom base URL.",
   },
   {
-    question: "How do I cancel my Astroship subscription?",
+    question: "How does Bitropy handle authentication and policy?",
     answer:
-      "To cancel your Astroship subscription, you can log in to your account and navigate to the subscription management page. From there, you should be able to cancel your subscription and stop future billing.",
+      "Bitropy issues scoped API keys per team, app, or user and resolves them against central policies before any request reaches a provider. Policies include PII redaction, content filters, data residency, rate limits, retention, and per-key spend limits. Every request is logged with correlation IDs for audit.",
   },
   {
-    question: "Can I try Astroship's API platform for free?",
+    question: "Can I track usage per team, app, or user?",
     answer:
-      "Astroship offers a free trial of its API platform for a limited time. During the trial period, you will have access to a limited set of features and functionality, but you will not be charged.",
+      "Yes. Bitropy captures tokens, cost, latency, and model per request and attributes it to the identity that made the call. Metrics are visible in the admin console and exportable to Prometheus, BigQuery, Snowflake, or your BI tool of choice.",
   },
   {
-    question: "How do I access Astroship's API documentation?",
+    question: "What does the MCP gateway add?",
     answer:
-      "Astroship's API documentation is available on the company's website and can be accessed by logging in to your account. The documentation provides detailed information on how to use the API, as well as code examples and other resources.",
+      "The MCP gateway routes Model Context Protocol traffic through the same auth, audit, and policy layer as LLM traffic. You get a central registry of MCP servers, isolation per tool, per-user approval flows, and a single audit trail for both model calls and tool invocations.",
   },
   {
-    question: "How do I contact support?",
+    question: "How do I deploy and operate Bitropy?",
     answer:
-      "If you need help with Astroship's API platform or have any other questions, you can contact the company's support team by submitting a support request through the website or by emailing support@Astroship.com.",
+      "Bitropy runs as a self-hosted deployment in your VPC (Docker, Kubernetes, or a single binary) or as a managed service we operate. There is no required vendor database — state can live in your Postgres / Redis, and the gateway scales horizontally behind any load balancer.",
   },
   {
-    question: "Do you offer any discounts or promotions?",
+    question: "Is Bitropy suitable for regulated environments?",
     answer:
-      "Astroship may offer discounts or promotions from time to time. To stay up-to-date on the latest deals and special offers, you can sign up for the company's newsletter or follow it on social media.",
-  },
-  {
-    question: "How does Astroship compare to other similar services?",
-    answer:
-      "Astroship's API platform is a highly reliable and feature-rich service that offers a wide range of tools and functionality. It is competitively priced and offers a variety of billing options to suit different needs and budgets.",
+      "Yes. The self-hosted deployment keeps prompts, responses, and audit data inside your environment. Central policy enforcement maps cleanly to SOC 2, ISO 27001, ISO/IEC 42000, and EU AI Act controls, and the audit trail is designed to be the system of record for AI usage.",
   },
 ];
 ---
 
-<Container>
-  <Sectionhead>
-    <Fragment slot="title">FAQ</Fragment>
-    <Fragment slot="desc">Frequenty asked questions</Fragment>
-  </Sectionhead>
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      Bitropy FAQ
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Common questions about deployment, provider switching, policy, observability, MCP, and the roadmap.
+    </p>
+  </div>
 
-  <div class="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
+  <div class="grid gap-3 max-w-3xl mx-auto mt-12">
     {
       faq.map((item) => (
-        <div class="py-5">
-          <details class="group">
-            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-              <span> {item.question}</span>
-              <span class="transition group-open:rotate-180">
-                <ArrowIcon />
-              </span>
-            </summary>
-            <p class="text-neutral-600 mt-3 opacity-0 -translate-y-3 group-open:translate-y-0 group-open:opacity-100 group-open:transition-all">
-              {item.answer}
-            </p>
-          </details>
-        </div>
+        <details class="group border border-slate-200 rounded-xl bg-white">
+          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-5 text-slate-800">
+            <span>{item.question}</span>
+            <span class="transition group-open:rotate-180 text-slate-400">
+              <Arrow class="w-5 h-5" />
+            </span>
+          </summary>
+          <p class="text-slate-600 px-5 pb-5 leading-relaxed">
+            {item.answer}
+          </p>
+        </details>
       ))
     }
   </div>
-</Container>
+</section>

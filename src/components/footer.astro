@@ -1,22 +1,77 @@
 ---
+import { Icon } from "astro-icon/components";
 const { margin } = Astro.props;
+
+const cols = [
+  {
+    label: "Product",
+    links: [
+      { name: "Features", href: "/features" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "Integrations", href: "/integrations" },
+      { name: "Products", href: "/products" },
+    ],
+  },
+  {
+    label: "Company",
+    links: [
+      { name: "About", href: "/about" },
+      { name: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    label: "Resources",
+    links: [
+      { name: "Blog", href: "/blog" },
+      { name: "Terms", href: "/terms" },
+      { name: "Privacy", href: "/privacy" },
+    ],
+  },
+];
+
+const socials = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/bitropy/", icon: "bx:bxl-linkedin" },
+  { name: "GitHub", href: "https://github.com/orgs/Bitropy/", icon: "bx:bxl-github" },
+];
 ---
 
-<footer
-  class:list={[
-    "py-8 border-t border-slate-200",
-    margin && "mt-20",
-  ]}>
-  <div class="px-5">
-    <p class="text-center text-sm text-slate-600 [text-wrap:balance]">
-      Copyright © {new Date().getFullYear()} Bitropy. All rights reserved.
-    </p>
-    <p class="text-center text-xs text-slate-600 mt-2">
-      <a href="/terms" class="hover:text-emerald-600 transition"> Terms</a> ・ <a
-        href="/privacy"
-        class="hover:text-emerald-600 transition">
-        Privacy</a
-      >
-    </p>
+<footer class:list={["py-12 border-t border-slate-200", margin && "mt-20"]}>
+  <div class="px-5 max-w-7xl mx-auto">
+
+    <div class="grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">About</div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Bitropy is the enterprise LLM gateway. One OpenAI-compatible endpoint with central auth, routing, caching, audit logs, policy enforcement, and per-user usage tracking — without turning every app into a gateway client. MCP gateway included.
+        </p>
+        <div class="flex items-center gap-3 mt-5">
+          {socials.map((s) => (
+            <a href={s.href} target="_blank" rel="noopener" aria-label={s.name}
+               class="text-slate-500 hover:text-[#967deb] transition rounded-full p-1.5">
+              <Icon class="w-5 h-5" name={s.icon} />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {cols.map((col) => (
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">{col.label}</div>
+          <ul class="space-y-2.5">
+            {col.links.map((l) => (
+              <li>
+                <a href={l.href} class="text-slate-600 text-sm hover:text-[#967deb] transition">
+                  {l.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-slate-200 text-center text-xs text-slate-500">
+      © {new Date().getFullYear()} Bitropy. The enterprise LLM gateway. All rights reserved.
+    </div>
   </div>
 </footer>

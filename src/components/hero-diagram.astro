@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon/components";
+
+const clients = [
+  { label: "OpenAI SDK" },
+  { label: "Anthropic SDK" },
+  { label: "HTTP / REST" },
+];
+
+const providers = [
+  { label: "OpenAI" },
+  { label: "Anthropic" },
+  { label: "Google" },
+  { label: "Mistral" },
+  { label: "Azure" },
+  { label: "Ollama" },
+];
+---
+
+<div class="relative mx-auto max-w-5xl px-2 md:px-6">
+  <div class="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-6 items-center">
+
+    <div class="col-span-1 flex flex-col gap-2 md:gap-3">
+      {clients.map((c) => (
+        <div class="bg-white/80 backdrop-blur-sm border-2 border-slate-800 rounded-md px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-mono text-slate-900 text-center shadow-sm">
+          {c.label}
+        </div>
+      ))}
+    </div>
+
+    <div class="col-span-1 flex justify-center items-center relative h-full min-h-[180px]">
+      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <g stroke="#cbd5e1" stroke-width="0.5" fill="none" stroke-dasharray="2 2">
+          <line x1="0" y1="20" x2="100" y2="50" />
+          <line x1="0" y1="50" x2="100" y2="50" />
+          <line x1="0" y1="80" x2="100" y2="50" />
+        </g>
+      </svg>
+      <div class="relative z-10 bg-slate-900 text-white px-3 md:px-5 py-2 md:py-3 rounded text-xs md:text-sm font-mono">
+        AUTH
+      </div>
+    </div>
+
+    <div class="col-span-1 flex justify-center">
+      <div class="relative">
+        <div class="bg-slate-900 text-white px-4 md:px-8 py-6 md:py-10 rounded-lg shadow-lg text-center" style="clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);">
+          <div class="font-bold text-base md:text-xl">Bitropy</div>
+          <div class="text-xs md:text-sm text-slate-300 mt-1">LLM Gateway</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-1 flex justify-center items-center relative h-full min-h-[180px]">
+      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <g stroke="#a78bfa" stroke-width="0.5" fill="none" stroke-dasharray="2 2">
+          <line x1="0" y1="50" x2="100" y2="10" />
+          <line x1="0" y1="50" x2="100" y2="30" />
+          <line x1="0" y1="50" x2="100" y2="50" />
+          <line x1="0" y1="50" x2="100" y2="70" />
+          <line x1="0" y1="50" x2="100" y2="90" />
+        </g>
+      </svg>
+      <div class="relative z-10 bg-white/80 backdrop-blur-sm border-2 border-[#967deb] text-slate-900 px-3 md:px-5 py-2 md:py-3 rounded text-xs md:text-sm font-mono">
+        ROUTE
+      </div>
+    </div>
+
+    <div class="col-span-1 flex flex-col gap-1.5 md:gap-2">
+      {providers.map((p) => (
+        <div class="bg-white/80 backdrop-blur-sm border-2 border-[#967deb] rounded-full px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm font-medium text-slate-900 text-center shadow-sm">
+          {p.label}
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>

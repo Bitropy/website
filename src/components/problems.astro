@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon/components";
+
+const problems = [
+  {
+    icon: "bx:bx-link-external",
+    title: "Provider lock-in across the codebase",
+    body: "SDKs, base URLs, and auth logic leak into every service. Swapping models or adding a new provider means touching dozens of repos.",
+  },
+  {
+    icon: "bx:bxs-error-circle",
+    title: "No single pane for AI spend",
+    body: "Finance and platform teams can't see who is spending what on which model. Cost attribution is built from stitched-together invoices.",
+  },
+  {
+    icon: "bx:bxs-lock-open",
+    title: "Security blind to model calls",
+    body: "Prompts and responses bypass your DLP, audit, and policy layers. There is no central place to enforce what leaves the company.",
+  },
+  {
+    icon: "bx:bx-loader-circle",
+    title: "Debugging is guesswork",
+    body: "When an agent misbehaves, logs are scattered across app code, provider dashboards, and trace tools. Reproducing an issue takes hours.",
+  },
+  {
+    icon: "bx:bx-sitemap",
+    title: "Routing logic lives in app code",
+    body: "Fallbacks, retries, A/B tests, and model aliases end up duplicated per service — or skipped entirely because they are too risky to change.",
+  },
+  {
+    icon: "bx:bx-shield-quarter",
+    title: "MCP tooling is ungoverned",
+    body: "Teams wire agents to MCP servers ad-hoc. There is no consistent auth, isolation, or approval flow for what the model can touch.",
+  },
+];
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      Problems Bitropy solves
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      When provider switching, debugging, cost tracking, and policy enforcement leak into application code, Bitropy moves that logic into a single gateway layer.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+    {problems.map((p) => (
+      <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-[#967deb] transition-colors">
+        <div class="bg-[#967deb]/10 rounded-full w-11 h-11 flex items-center justify-center mb-4">
+          <Icon class="text-[#967deb] w-6 h-6" name={p.icon} />
+        </div>
+        <h3 class="font-bold text-lg mb-2 text-slate-900">{p.title}</h3>
+        <p class="text-slate-600 leading-relaxed text-sm">{p.body}</p>
+      </div>
+    ))}
+  </div>
+</section>
