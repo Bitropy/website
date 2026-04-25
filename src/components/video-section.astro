@@ -1,0 +1,30 @@
+---
+const VIDEO_ID = "1186511691";
+const playerSrc = `https://player.vimeo.com/video/${VIDEO_ID}?title=0&byline=0&portrait=0&dnt=1`;
+---
+
+<section class="mt-24 md:mt-32">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      See Bitropy in action
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      A short walkthrough of the gateway, dashboard, and what teams see when they ship through Bitropy.
+    </p>
+  </div>
+
+  <div class="mt-12 max-w-5xl mx-auto">
+    <div class="relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-sm" style="aspect-ratio: 16 / 9;">
+      <iframe
+        src={playerSrc}
+        title="Bitropy product walkthrough"
+        loading="lazy"
+        class="absolute inset-0 h-full w-full"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+<script src="https://player.vimeo.com/api/player.js" async></script>
