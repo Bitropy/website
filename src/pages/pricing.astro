@@ -7,59 +7,68 @@ import Faq from "@/components/faq.astro";
 import ContactCards from "@/components/contact-cards.astro";
 import { Icon } from "astro-icon/components";
 
-const tiers = [
+const implementation = [
   {
-    name: "Starter",
-    price: "Free",
-    period: "Self-hosted",
-    description: "For small teams piloting an LLM gateway. Run it yourself, keep all data in your environment.",
-    cta: "Get started",
-    href: "/contact",
+    name: "Pilot",
+    price: "€6,000",
+    unit: "one-time",
+    description:
+      "One month pilot, max 10 Governed AI Endpoints. If successful, the fee is deducted from the standard implementation.",
+    cta: "Start a pilot",
     highlight: false,
-    features: [
-      "Self-hosted deployment",
-      "1 team · up to 5 apps",
-      "All providers",
-      "Basic usage tracking",
-      "Community support",
-    ],
   },
   {
-    name: "Team",
-    price: "Custom",
-    period: "Per month",
-    description: "For teams running LLMs in production who need central policy, usage analytics, and SSO.",
+    name: "Standard",
+    price: "€15,000",
+    unit: "one-time",
+    description:
+      "Full implementation, configuration, and launch support to bring Bitropy online for your team.",
     cta: "Talk to sales",
-    href: "/contact",
     highlight: true,
-    features: [
-      "Everything in Starter",
-      "Unlimited apps & keys",
-      "PII redaction & policies",
-      "SSO (SAML / OIDC)",
-      "Advanced usage analytics",
-      "Response caching",
-      "Priority email support",
-    ],
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "Annual",
-    description: "For regulated environments that need managed deployment, SLAs, and compliance evidence.",
-    cta: "Talk to sales",
-    href: "/contact",
+    name: "Custom Config",
+    price: "€150",
+    unit: "per hour",
+    description:
+      "Custom configuration and integration scoped in the pre-implementation phase. Billed hourly.",
+    cta: "Scope a custom build",
     highlight: false,
-    features: [
-      "Everything in Team",
-      "Managed deployment option",
-      "Custom SLA & uptime guarantees",
-      "BYOK / customer-managed keys",
-      "Dedicated Slack channel",
-      "SOC 2 / ISO audit evidence",
-      "Security & legal review",
-    ],
   },
+];
+
+const license = [
+  {
+    name: "Base",
+    price: "€45",
+    unit: "per user / month",
+    description: "Annual license. Minimum 50 named Bitropy users.",
+    bullets: [
+      "Up to 50 named users included at this tier",
+      "All gateway, governance, and audit features",
+      "Email support",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Scale",
+    price: "€35",
+    unit: "per user / month",
+    description: "Annual license. For organisations with more than 50 named Bitropy users.",
+    bullets: [
+      "Volume pricing for >50 named users",
+      "All gateway, governance, and audit features",
+      "Priority support and onboarding review",
+    ],
+    highlight: true,
+  },
+];
+
+const managedFeatures = [
+  "Platform management of the Bitropy cloud control plane",
+  "Updates and security patching on a managed cadence",
+  "Scaling, capacity planning, and observability",
+  "99.9% uptime SLA on the hosted control plane (≤ 43 min/month)",
 ];
 ---
 
@@ -67,43 +76,159 @@ const tiers = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">Pricing</Fragment>
-      <Fragment slot="desc">Self-hosted is free forever. Pay only for operational features, managed hosting, and enterprise support.</Fragment>
+      <Fragment slot="desc">Transparent EUR pricing for the Bitropy enterprise AI governance and security platform.</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
-      {tiers.map((t) => (
-        <div class={`rounded-2xl p-8 border ${t.highlight ? "border-[#967deb] bg-[#967deb]/5 ring-1 ring-[#967deb]/30" : "border-slate-200 bg-white"}`}>
-          <div class="flex items-center gap-2">
-            <div class="font-bold text-xl text-slate-900">{t.name}</div>
-            {t.highlight && (
-              <span class="text-xs font-semibold bg-[#967deb] text-white px-2 py-0.5 rounded-full">Most popular</span>
-            )}
+    <section class="mt-20">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#967deb]">Step 1</span>
+        <span class="h-px flex-1 bg-slate-200"></span>
+        <span class="text-xs font-semibold uppercase tracking-widest text-slate-400">One-time fee</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+        Implementation / Solution Fee
+      </h2>
+      <p class="text-lg text-slate-600 mt-2 max-w-2xl">
+        Choose a path to bring Bitropy online — from a one-month pilot to a custom integration.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        {implementation.map((t) => (
+          <div class={`rounded-2xl p-8 border ${t.highlight ? "border-[#967deb] bg-[#967deb]/5 ring-1 ring-[#967deb]/30" : "border-slate-200 bg-white"}`}>
+            <div class="flex items-center gap-2">
+              <div class="font-bold text-xl text-slate-900">{t.name}</div>
+              {t.highlight && (
+                <span class="text-xs font-semibold bg-[#967deb] text-white px-2 py-0.5 rounded-full">Most popular</span>
+              )}
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-4xl font-bold text-slate-900">{t.price}</span>
+              <span class="text-sm text-slate-500">{t.unit}</span>
+            </div>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">{t.description}</p>
+            <div class="mt-6">
+              <Link href="/contact" style={t.highlight ? "primary" : "outline"} block>
+                {t.cta}
+              </Link>
+            </div>
           </div>
-          <div class="mt-4">
-            <span class="text-4xl font-bold text-slate-900">{t.price}</span>
-            <span class="text-sm text-slate-500 ml-2">{t.period}</span>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-24">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#967deb]">Step 2</span>
+        <span class="h-px flex-1 bg-slate-200"></span>
+        <span class="text-xs font-semibold uppercase tracking-widest text-slate-400">Annual</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+        Platform License Fee
+      </h2>
+      <p class="text-lg text-slate-600 mt-2 max-w-2xl">
+        Per-user pricing for named Bitropy users. The tier is set by the size of your organisation on the platform.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-10 max-w-4xl">
+        {license.map((t) => (
+          <div class={`rounded-2xl p-8 border ${t.highlight ? "border-[#967deb] bg-[#967deb]/5 ring-1 ring-[#967deb]/30" : "border-slate-200 bg-white"}`}>
+            <div class="flex items-center gap-2">
+              <div class="font-bold text-xl text-slate-900">{t.name}</div>
+              {t.highlight && (
+                <span class="text-xs font-semibold bg-[#967deb] text-white px-2 py-0.5 rounded-full">Volume tier</span>
+              )}
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-4xl font-bold text-slate-900">{t.price}</span>
+              <span class="text-sm text-slate-500">{t.unit}</span>
+            </div>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">{t.description}</p>
+            <ul class="mt-6 space-y-2">
+              {t.bullets.map((b) => (
+                <li class="flex gap-2 items-start text-sm text-slate-700">
+                  <Icon class="text-[#967deb] w-4 h-4 shrink-0 mt-0.5" name="bx:bx-check" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <p class="text-slate-600 text-sm mt-3 leading-relaxed">{t.description}</p>
-          <div class="mt-6">
-            <Link href={t.href} style={t.highlight ? "primary" : "outline"} block>
-              {t.cta}
-            </Link>
+        ))}
+      </div>
+      <p class="text-sm text-slate-500 mt-6">
+        Multi-year commitments are available upon request.
+      </p>
+    </section>
+
+    <section class="mt-24">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#967deb]">Step 3</span>
+        <span class="h-px flex-1 bg-slate-200"></span>
+        <span class="text-xs font-semibold uppercase tracking-widest text-slate-400">Optional</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+        Managed Services
+      </h2>
+      <p class="text-lg text-slate-600 mt-2 max-w-2xl">
+        Hand off operations to the Bitropy team — platform management, updates, scaling, and a 99.9% uptime SLA on the hosted control plane.
+      </p>
+
+      <div class="mt-10 max-w-4xl rounded-2xl border border-slate-200 bg-white p-8 grid md:grid-cols-3 gap-8">
+        <div class="md:col-span-1">
+          <div class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Managed Services Fee</div>
+          <div class="mt-3 flex items-baseline gap-2">
+            <span class="text-5xl font-bold text-slate-900">20%</span>
           </div>
-          <ul class="mt-8 space-y-3">
-            {t.features.map((f) => (
-              <li class="flex gap-2 items-start text-sm text-slate-700">
-                <Icon class="text-[#967deb] w-4 h-4 shrink-0 mt-0.5" name="bx:bx-check" />
+          <p class="text-sm text-slate-500 mt-2">of the annual license fee, billed annually.</p>
+        </div>
+        <div class="md:col-span-2">
+          <ul class="space-y-3">
+            {managedFeatures.map((f) => (
+              <li class="flex gap-3 items-start text-slate-700">
+                <Icon class="text-[#967deb] w-5 h-5 shrink-0 mt-0.5" name="bx:bx-check" />
                 <span>{f}</span>
               </li>
             ))}
           </ul>
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
 
-    <p class="text-center text-sm text-slate-500 mt-10 max-w-xl mx-auto">
-      All tiers include the MCP gateway. Pricing based on seat and usage tier — reach out for a quote tailored to your environment.
-    </p>
+    <section class="mt-24 grid md:grid-cols-3 gap-6 max-w-5xl">
+      <div class="md:col-span-2 bg-[#967deb]/5 border border-[#967deb]/30 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <Icon class="text-[#967deb] w-5 h-5" name="bx:bx-info-circle" />
+          <div class="font-bold text-slate-900">Governed AI Endpoint</div>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          A Governed AI Endpoint is any user, AI agent, or software application routed through the Bitropy gateway. Each unique entity consuming AI services through Bitropy counts as one endpoint, regardless of how many AI models, MCP servers, or LLM providers it connects to.
+        </p>
+        <p class="text-xs text-slate-500 italic mt-3 leading-relaxed">
+          Examples: an employee using AI assistants through the Bitropy gateway = 1 endpoint; an autonomous agent processing invoices = 1 endpoint; a custom application calling multiple LLMs via Bitropy = 1 endpoint.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <Icon class="text-slate-500 w-5 h-5" name="bx:bxs-time" />
+          <div class="font-bold text-slate-900">SLA</div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          The 99.9% uptime guarantee applies to the Bitropy cloud control plane and hosted components operated by Bitropy, measured monthly (≤ 43 minutes/month). Components on customer infrastructure (on-prem gateway nodes, local MCP proxies) are excluded. Scheduled maintenance announced ≥ 48 hours in advance is excluded. SLA breach remedies are defined in the service agreement.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12 max-w-5xl">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <Icon class="text-slate-500 w-5 h-5" name="bx:bxs-credit-card" />
+          <div class="font-bold text-slate-900">Payment terms</div>
+        </div>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          All fees are quoted in EUR, net of applicable taxes. Implementation fees are invoiced upon project kickoff. Annual license fees are invoiced at contract signing and on each anniversary. Payment is due within 30 days of invoice date. Multi-year commitments are available upon request.
+        </p>
+      </div>
+    </section>
 
     <Faq />
     <ContactCards />

@@ -4,56 +4,27 @@ import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-
-const cards = [
-  {
-    label: "Calendly",
-    icon: "bx:bxs-calendar",
-    title: "Book a 20-minute call",
-    body: "Walk through your use case and see whether Bitropy fits your architecture.",
-    cta: "Schedule",
-    href: "#",
-  },
-  {
-    label: "Slack · Discord",
-    icon: "bx:bxs-message-dots",
-    title: "Join the community",
-    body: "Best for fast questions, setup help, and implementation follow-up.",
-    cta: "Join",
-    href: "#",
-  },
-  {
-    label: "Phone",
-    icon: "bx:bxs-phone",
-    title: "Talk to the team",
-    body: "Direct contact for product and implementation calls.",
-    cta: "Call",
-    href: "#",
-  },
-];
 ---
 
 <Layout title="Contact — Bitropy">
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contact the Bitropy team</Fragment>
-      <Fragment slot="desc">Ready to consolidate your AI stack onto one gateway? Reach out any way that fits your team.</Fragment>
+      <Fragment slot="desc">Ready to consolidate your AI stack onto one gateway? Book a call or send us a message.</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
-      {cards.map((c) => (
-        <a href={c.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:border-[#967deb] transition-colors block">
-          <div class="flex items-center gap-2 mb-4">
-            <Icon class="text-[#967deb] w-5 h-5" name={c.icon} />
-            <div class="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
-          </div>
-          <h3 class="font-bold text-lg text-slate-900">{c.title}</h3>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">{c.body}</p>
-          <div class="mt-5 text-sm font-semibold text-[#967deb] group-hover:underline">
-            {c.cta} →
-          </div>
-        </a>
-      ))}
+    <div class="grid md:grid-cols-1 mt-16 max-w-2xl mx-auto">
+      <a href="#" class="group bg-white border border-slate-200 rounded-xl p-6 hover:border-[#967deb] transition-colors block">
+        <div class="flex items-center gap-2 mb-4">
+          <Icon class="text-[#967deb] w-5 h-5" name="bx:bxs-calendar" />
+          <div class="text-xs font-semibold uppercase tracking-widest text-slate-500">Calendly</div>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900">Book a 20-minute call</h3>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">Walk through your use case and see whether Bitropy fits your architecture.</p>
+        <div class="mt-5 text-sm font-semibold text-[#967deb] group-hover:underline">
+          Schedule →
+        </div>
+      </a>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-24">
@@ -66,10 +37,6 @@ const cards = [
           <div class="flex items-center gap-2">
             <Icon class="text-slate-400 w-4 h-4" name="uil:envelope" />
             <a href="mailto:contact@bitropy.io" class="hover:text-[#967deb] transition">contact@bitropy.io</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <Icon class="text-slate-400 w-4 h-4" name="bx:bxs-phone" />
-            <span class="text-slate-600">TODO: add phone number</span>
           </div>
         </div>
       </div>

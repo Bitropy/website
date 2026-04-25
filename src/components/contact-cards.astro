@@ -11,20 +11,12 @@ const cards = [
     cta: "Schedule",
   },
   {
-    label: "Slack · Discord",
-    icon: "bx:bxs-message-dots",
-    title: "Join the Bitropy community",
-    body: "Best for fast questions, setup help, and implementation follow-ups.",
+    label: "Email",
+    icon: "uil:envelope",
+    title: "Send us a message",
+    body: "Tell us about your stack and what you need the gateway to do — we reply within one business day.",
     href: "/contact",
-    cta: "Join",
-  },
-  {
-    label: "Phone",
-    icon: "bx:bxs-phone",
-    title: "Talk to the team",
-    body: "Direct Bitropy contact for product, implementation, and security review calls.",
-    href: "/contact",
-    cta: "Call us",
+    cta: "Send a message",
   },
 ];
 ---
@@ -39,7 +31,7 @@ const cards = [
     </p>
   </div>
 
-  <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+  <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
     {cards.map((c) => (
       <a href={c.href} class="group bg-white border border-slate-200 rounded-xl p-6 hover:border-[#967deb] transition-colors block">
         <div class="flex items-center gap-2 mb-4">
