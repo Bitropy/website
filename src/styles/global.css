@@ -4,8 +4,8 @@
 
 @theme {
   --font-sans:
-    Bricolage Grotesque Variable, Inter Variable, Inter, ui-sans-serif,
-    system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    Inter Variable, Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
