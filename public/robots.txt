@@ -1,4 +1,140 @@
 User-agent: *
 Allow: /
 
+
+# Bitropy robots.txt
+# Policy: open to all reputable search and AI crawlers.
+# Bitropy actively wants to be indexed and cited by both
+# traditional search engines and large language models.
+# Last updated: 2026-04-26
+
+# ---------------------------------------------------------------------
+# Default: allow all crawlers full access
+# ---------------------------------------------------------------------
+User-agent: *
+Allow: /
+
+# ---------------------------------------------------------------------
+# Search engine crawlers (explicit allow for documented intent)
+# ---------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---------------------------------------------------------------------
+# AI / LLM crawlers — explicit allow for citation visibility
+# Bitropy wants to be indexed in training corpora and retrieval indexes
+# used by ChatGPT, Claude, Perplexity, Gemini, Copilot, and others.
+# ---------------------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI (separate opt-in from search indexing)
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (used by many LLM training pipelines)
+User-agent: CCBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Other AI assistants
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: PhindBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: ICC-Crawler
+Allow: /
+
+# ---------------------------------------------------------------------
+# Sitemaps
+# ---------------------------------------------------------------------
+# Sitemap: https://www.bitropy.io/sitemap-index.xml
+# Sitemap: https://www.bitropy.io/sitemap.xml
 Sitemap: http://astroship.web3templates.com/sitemap-index.xml
