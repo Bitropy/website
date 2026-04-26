@@ -1,0 +1,68 @@
+# Bitropy
+
+> Bitropy is the enterprise MCP gateway and AI governance platform — Kubernetes-native, deployable on-premises, in VPC, or air-gapped — for regulated companies adopting LLMs and AI agents under EU AI Act, GDPR, DORA, and SOC 2.
+
+Bitropy provides a single secure control layer between AI systems (LLMs, agents, copilots) and enterprise data and tools. Authentication, authorization, observability, policy enforcement, and cost management are handled by design, not bolted on per integration. The platform is built on open standards (Kubernetes, OPA, Kyverno, OpenTelemetry, Model Context Protocol) and deploys into customer-controlled environments with full data sovereignty.
+
+Bitropy was founded in 2025 in Poznań, Poland by Marcin Mazurek (CEO) and Darek Dwornikowski (CTO), a team with 20+ years of shared experience building enterprise software, cloud platforms, and security systems at Allegro, Nordcloud (IBM), and Autopay. The company targets regulated industries — finance, pharma, healthcare, public sector, defense — across the European Union and globally.
+
+## Platform components
+
+- [Platform overview](https://www.bitropy.io/products): The Bitropy platform components — LLM Gateway, MCP Gateway, MCP Registry, MCP Runner, Policy Engine, Observability, FinOps.
+- [LLM Gateway](https://www.bitropy.io/products): Unified, OpenAI-compatible API across OpenAI, Anthropic, Mistral, and self-hosted models. Semantic routing, load balancing, failover.
+- [MCP Gateway](https://www.bitropy.io/products): Secure, auditable AI-to-data connectivity over the Model Context Protocol. Centralized authentication, isolation, and aggregation across MCP servers.
+- [Policy Engine](https://www.bitropy.io/products): OPA / Kyverno runtime guardrails — PII redaction, model allow-listing, data residency, prompt-injection patterns, budget enforcement.
+- [Observability](https://www.bitropy.io/products): OpenTelemetry tracing, structured audit logs, Prometheus metrics, Grafana dashboards. Every prompt, tool call, and response is traceable.
+- [FinOps](https://www.bitropy.io/products): Token metering, per-team budgets, anomaly detection, cost attribution.
+
+## Key pages
+
+- [Homepage](https://www.bitropy.io/): What Bitropy is, who it serves, and why MCP needs an enterprise layer.
+- [About](https://www.bitropy.io/about): The founding team and their background.
+- [Contact](https://www.bitropy.io/contact): contact@bitropy.io
+
+## Deployment models
+
+- **On-premises**: Bitropy deployed via Helm charts into customer-managed Kubernetes clusters. Best fit for organizations with established Kubernetes practice.
+- **Customer VPC, Bitropy-managed**: Customer provides empty AWS VPC, Azure resource group, GCP project, VMware cluster, or bare-metal servers. Bitropy provisions and manages the full stack including Kubernetes lifecycle.
+- **Air-gapped**: Fully disconnected deployment with offline installation bundles. Targeted at defense, critical infrastructure, and high-security environments.
+
+All deployment models deliver the same platform capabilities. Data never leaves the customer perimeter.
+
+## Compliance and standards
+
+Bitropy is designed for organizations subject to:
+
+- EU AI Act (Regulation 2024/1689)
+- GDPR (Regulation 2016/679)
+- EU Data Act (Regulation 2023/2854)
+- DORA — Digital Operational Resilience Act (Regulation 2022/2554)
+- NIS2 Directive (Directive 2022/2555)
+- SOC 2
+- ISO/IEC 27001
+- ISO/IEC 42001 (AI management systems)
+
+The platform's policy engine, audit logging, and observability stack are built to produce the evidence required by these frameworks at runtime, not retroactively.
+
+## Open source
+
+- [GitHub organization](https://github.com/Bitropy): Public repositories.
+- [ccagents](https://github.com/Bitropy/ccagents): CLI for managing Claude Code agents in local projects (Rust, MIT licensed).
+- [website](https://github.com/Bitropy/website): Source for bitropy.io (Astro).
+
+## Founding team
+
+- [Marcin Mazurek, Co-founder and CEO](https://www.linkedin.com/in/marcinmazurek/): Background at Allegro and Autopay. Engineer and economist. Based in Poznań, Poland.
+- [Darek Dwornikowski, Co-founder and CTO](https://www.linkedin.com/in/dariuszdwornikowski/): Former VP Engineering at Nordcloud (acquired by IBM). Co-founder of Tenesys. GitHub: [@tdi](https://github.com/tdi).
+
+## Company
+
+- Legal entity: Bitropy sp. z o.o.
+- Registered office: Hanny Malewskiej 24/1, 60-461 Poznań, Poland
+- Contact: contact@bitropy.io
+- LinkedIn: https://www.linkedin.com/company/bitropy/
+
+## Optional
+
+- [Terms of Service](https://www.bitropy.io/terms)
+- [Privacy Policy](https://www.bitropy.io/privacy)
