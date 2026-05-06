@@ -5,26 +5,20 @@ import Sectionhead from "@/components/sectionhead.astro";
 import ContactCards from "@/components/contact-cards.astro";
 import { Icon } from "astro-icon/components";
 
-const principles = [
+const founders = [
   {
-    icon: "bx:bxs-layer",
-    title: "Gateway, not another SDK",
-    body: "We put the hard parts — auth, routing, policy, audit, cost — behind one endpoint. Apps stay simple; governance lives in one place.",
+    name: "Marcin Mazurek",
+    role: "Co-founder",
+    photo: "/marcin.png",
+    linkedin: "#",
+    bio: "Has led engineering at scale, building platforms used by millions, where reliability, performance, and business impact are inseparable.",
   },
   {
-    icon: "bx:bxs-lock-alt",
-    title: "Sovereignty by default",
-    body: "Bitropy runs in your VPC if you want it to. Prompts, responses, and audit data never need to leave your environment.",
-  },
-  {
-    icon: "bx:bxs-bar-chart-alt-2",
-    title: "Measurable from day one",
-    body: "Every request is attributed to a user, app, and team. You know who is spending what on which model — from the first call.",
-  },
-  {
-    icon: "bx:bxs-book-open",
-    title: "Standards-aligned",
-    body: "OpenAI-compatible on the client side. SOC 2, ISO 27001, ISO/IEC 42000, and EU AI Act aligned on the governance side.",
+    name: "Darek Dwornikowski",
+    role: "Co-founder",
+    photo: "/darek.jpg",
+    linkedin: "#",
+    bio: "Has been deep in the architecture designing systems that need to work under pressure, across complex environments, with no room for failure.",
   },
 ];
 ---
@@ -38,42 +32,53 @@ const principles = [
 
     <div class="mx-auto max-w-3xl mt-12 space-y-5 text-lg leading-relaxed text-slate-600">
       <p>
-        Every team we work with ends up facing the same question: how do you keep shipping with AI without turning every application into a gateway client?
+        Bitropy is the missing control layer for AI in the enterprise.
       </p>
       <p>
-        Keys, routing rules, retry logic, PII filters, usage counters, and compliance exports kept landing in application code. Three services became ten. Ten became a governance problem.
-      </p>
-      <p>
-        We built Bitropy to pull that logic out — into one OpenAI-compatible gateway that every app points at, and that every auditor, platform engineer, and finance team can reason about.
-      </p>
-      <p>
-        The same gateway handles Model Context Protocol traffic, so agents and tools get one consistent auth, audit, and policy layer instead of growing another parallel stack.
+        Gain full visibility into AI usage across teams, models and data and enforce security, cost and compliance in real time.
       </p>
       <p class="font-medium text-slate-800">
-        Bitropy is the layer that makes AI safe, observable, and manageable at the scale enterprises actually operate.
+        One endpoint. Full control. No rewrite required.
       </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
-      {principles.map((p) => (
-        <div class="bg-white border border-slate-200 rounded-xl p-6">
-          <div class="bg-[#967deb]/10 rounded-lg w-11 h-11 flex items-center justify-center mb-4">
-            <Icon class="text-[#967deb] w-6 h-6" name={p.icon} />
-          </div>
-          <h3 class="font-bold text-lg text-slate-900">{p.title}</h3>
-          <p class="text-slate-600 mt-2 text-sm leading-relaxed">{p.body}</p>
-        </div>
-      ))}
     </div>
 
     <div class="mx-auto max-w-3xl mt-20">
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">The team</h2>
-      <div class="mt-6 space-y-4 text-lg leading-relaxed text-slate-600">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Founders</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed text-slate-600">
         <p>
-          Bitropy is built by engineers with deep experience across enterprise software, AI systems, security, and compliance — with years of work inside regulated environments where every request has to be explainable.
+          Bitropy is built by people who have spent years building and running large-scale systems where technology decisions don't stay in code, but shape how entire organisations operate.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-10">
+        {founders.map((f) => (
+          <div class="bg-white border border-slate-200 rounded-xl p-6">
+            <div class="flex items-center gap-4">
+              <img src={f.photo} alt={f.name} class="w-16 h-16 rounded-full object-cover shrink-0 border border-slate-200" />
+              <div>
+                <h3 class="font-bold text-lg text-slate-900">{f.name}</h3>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <p class="text-sm text-[#967deb] font-semibold">{f.role}</p>
+                  <a href={f.linkedin} target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#0a66c2] transition" aria-label={`${f.name} on LinkedIn`}>
+                    <Icon class="w-4 h-4" name="uil:linkedin" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="text-slate-600 mt-4 text-sm leading-relaxed">{f.bio}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 space-y-5 text-lg leading-relaxed text-slate-600">
+        <p>
+          Together, they've seen what happens when new technology outpaces control: systems grow faster than the structure around them, ownership disappears across teams, and costs, risk, and complexity accumulate quietly until they become a problem.
+        </p>
+        <p class="font-medium text-slate-800">
+          AI is repeating the same pattern. Just faster.
         </p>
         <p>
-          We've seen where AI adoption breaks down: fragmented tooling, missing guardrails, unclear ownership, runaway cost, and growing regulatory pressure. That experience shapes every decision we make.
+          Bitropy is their response to that — not built from theory, but from experience of what actually breaks at scale and how to fix it.
         </p>
       </div>
     </div>
