@@ -6,10 +6,9 @@ const cols = [
   {
     label: "Product",
     links: [
-      { name: "Features", href: "/features" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "Products", href: "/products" },
+      { name: "Product", href: "/products" },
+      { name: "Use cases", href: "/use-cases" },
+      { name: "Security", href: "/security" },
     ],
   },
   {
@@ -42,7 +41,10 @@ const socials = [
       <div>
         <div class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">About</div>
         <p class="text-slate-600 text-sm leading-relaxed">
-          Bitropy is the enterprise LLM gateway. One OpenAI-compatible endpoint with central auth, routing, caching, audit logs, policy enforcement, and per-user usage tracking — without turning every app into a gateway client. MCP gateway included.
+          Bitropy is the missing control layer for AI in the enterprise. Gain full visibility into AI usage across teams, models and data and enforce security, cost and compliance in real time.
+        </p>
+        <p class="text-slate-800 text-sm font-medium leading-relaxed mt-3">
+          One endpoint. Full control. No rewrite required.
         </p>
         <div class="flex items-center gap-3 mt-5">
           {socials.map((s) => (
