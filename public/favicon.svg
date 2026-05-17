@@ -1,21 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#000000"/>
-  <!-- Top center dot -->
-  <circle cx="256" cy="120" r="40" fill="#ffffff"/>
-  <!-- Upper left dot -->
-  <circle cx="200" cy="185" r="40" fill="#ffffff"/>
-  <!-- Upper right dot -->
-  <circle cx="312" cy="185" r="40" fill="#ffffff"/>
-  <!-- Middle left dot -->
-  <circle cx="200" cy="270" r="40" fill="#ffffff"/>
-  <!-- Center dot -->
-  <circle cx="256" cy="256" r="40" fill="#ffffff"/>
-  <!-- Middle right dot -->
-  <circle cx="312" cy="270" r="40" fill="#ffffff"/>
-  <!-- Lower left dot -->
-  <circle cx="200" cy="355" r="40" fill="#ffffff"/>
-  <!-- Lower right dot -->
-  <circle cx="312" cy="355" r="40" fill="#ffffff"/>
-  <!-- Bottom center dot -->
-  <circle cx="256" cy="392" r="40" fill="#ffffff"/>
+  <rect width="512" height="512" rx="80" fill="#000000"/>
+  <g fill="#ffffff">
+    <!-- Stem of the "b" (vertical line of dots) -->
+    <circle cx="170" cy="100" r="42"/>
+    <circle cx="170" cy="195" r="42"/>
+    <circle cx="170" cy="290" r="42"/>
+    <circle cx="170" cy="385" r="42"/>
+    <!-- Bowl of the "b" (rounded cluster on the bottom-right) -->
+    <circle cx="265" cy="290" r="42"/>
+    <circle cx="360" cy="335" r="42"/>
+    <circle cx="360" cy="430" r="42"/>
+    <circle cx="265" cy="455" r="42"/>
+  </g>
 </svg>

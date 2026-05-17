@@ -1,34 +1,60 @@
 ---
-import Contactform from "@/components/contactform.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+
+const CALENDLY_URL = "https://calendar.app.google/8Ffgm3kAdQAAoXjo8";
+const CONTACT_EMAIL = "contact@bitropy.io";
 ---
 
-<Layout title="Contact">
+<Layout
+  title="Contact"
+  description="Contact the Bitropy team. Book a 20-minute call to walk through your use case or send us a message — we reply within one business day.">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are here to help.</Fragment>
+      <Fragment slot="title">Contact the Bitropy team</Fragment>
+      <Fragment slot="desc">
+        Need help deciding whether Bitropy fits your project, or planning a switch between LLM providers? Book a call, join the community, or reach us directly.
+      </Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Bitropy</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Ready to unlock production AI for your enterprise? Get in touch to discuss your requirements.
-        </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
-            <a href="mailto:contact@bitropy.io">contact@bitropy.io</a>
-          </div>
+    <div class="grid md:grid-cols-2 gap-6 mx-auto max-w-4xl mt-16">
+      <a
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group bg-white border border-slate-200 hover:border-purple-300 hover:shadow-lg transition rounded-xl p-7 flex flex-col">
+        <div class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+          <Icon class="w-4 h-4 text-purple-600" name="bx:bxs-calendar" />
+          Calendar
         </div>
-      </div>
-      <div class="bg-slate-100 p-5 md:p-8 rounded-xl mb-5">
-        <Contactform />
-      </div>
+        <h3 class="mt-4 text-xl font-bold text-gray-900">Book a 20-minute call</h3>
+        <p class="mt-2 text-slate-600 leading-relaxed flex-1">
+          Walk through your use case and see whether Bitropy fits your architecture.
+        </p>
+        <span class="mt-4 inline-flex items-center gap-1 text-purple-600 font-medium group-hover:gap-2 transition-all">
+          Schedule
+          <Icon class="w-4 h-4" name="bx:right-arrow-alt" />
+        </span>
+      </a>
+
+      <a
+        href={`mailto:${CONTACT_EMAIL}`}
+        class="group bg-white border border-slate-200 hover:border-purple-300 hover:shadow-lg transition rounded-xl p-7 flex flex-col">
+        <div class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+          <Icon class="w-4 h-4 text-purple-600" name="bx:bxs-envelope" />
+          Email
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-gray-900">Send us a message</h3>
+        <p class="mt-2 text-slate-600 leading-relaxed flex-1">
+          Tell us about your stack and what you need the gateway to do — we reply within one business day.
+        </p>
+        <span class="mt-4 inline-flex items-center gap-1 text-purple-600 font-medium group-hover:gap-2 transition-all">
+          Send a message
+          <Icon class="w-4 h-4" name="bx:right-arrow-alt" />
+        </span>
+      </a>
     </div>
   </Container>
 </Layout>

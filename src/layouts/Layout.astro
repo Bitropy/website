@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SEO } from "astro-seo";
 import Footer from "@/components/footer.astro";
 import Navbar from "@/components/navbar/navbar.astro";
@@ -9,8 +9,13 @@ import "../styles/global.css";
 
 export interface Props {
   title: string;
+  description?: string;
   footerMargin?: boolean;
 }
+
+const DEFAULT_TITLE = "Bitropy — The Missing Control Layer for Enterprise AI";
+const DEFAULT_DESCRIPTION = "Bitropy is the missing control layer for enterprise AI. Gain full visibility into AI usage across teams, models and data and enforce security, cost and compliance in real time. One endpoint. Full control. No rewrite required.";
+const OG_IMAGE_ALT = "Bitropy — The Missing Control Layer for Enterprise AI.";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
@@ -19,13 +24,11 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title, footerMargin = true } = Astro.props;
+const { title, description, footerMargin = true } = Astro.props;
 
-const makeTitle = title
-  ? title + " | " + "Bitropy"
-  : "Bitropy - The Enterprise Layer for MCP";
-
-const siteDescription = "Bitropy makes MCP (Model Context Protocol) safe, observable, and manageable at scale. The secure gateway between your AI agents and enterprise systems.";
+const makeTitle = title ? `${title} | Bitropy` : DEFAULT_TITLE;
+const pageDescription = description ?? DEFAULT_DESCRIPTION;
+const ogTitle = title ? `${title} | Bitropy` : DEFAULT_TITLE;
 ---
 
 <!doctype html>
@@ -36,27 +39,26 @@ const siteDescription = "Bitropy makes MCP (Model Context Protocol) safe, observ
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description={siteDescription}
+      description={pageDescription}
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Bitropy - The Enterprise Layer for MCP`,
+          title: ogTitle,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Bitropy - Uncompromised AI. Built for what's next.",
+          alt: OG_IMAGE_ALT,
         },
       }}
       twitter={{
         card: "summary_large_image",
         site: "@bitropy",
-        title: "Bitropy - The Enterprise Layer for MCP",
-        description: siteDescription,
+        title: ogTitle,
+        description: pageDescription,
         image: resolvedImageWithDomain,
       }}
     />
@@ -72,8 +74,7 @@ const siteDescription = "Bitropy makes MCP (Model Context Protocol) safe, observ
         display: none;
       }
     </style>
-    <!-- Enable this if you want to use Astro ViewTransitions  -->
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <Navbar />

@@ -2,36 +2,109 @@
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
+
+const founders = [
+  {
+    name: "Marcin Mazurek",
+    role: "CEO & Co-Founder",
+    image: "/marcin.jpeg",
+    linkedin: "https://www.linkedin.com/in/mmazurek/",
+    bio: [
+      "Builder of large-scale technology platforms and enterprise systems.",
+      "Former VP of Technology at Allegro and board member at Autopay, one of the largest fintech companies in Poland.",
+      "Spent nearly two decades scaling infrastructure, products, and engineering organizations operating at massive scale.",
+      "Focused on the future of enterprise AI operations, governance, and secure adoption at scale.",
+    ],
+  },
+  {
+    name: "Darek Dwornikowski",
+    role: "CPTO & Co-Founder",
+    image: "/darek.jpeg",
+    linkedin: "https://www.linkedin.com/in/darekd/",
+    bio: [
+      "Infrastructure and systems architect focused on production-grade AI platforms, scalability, and enterprise reliability.",
+      "Former VP of Engineering and member of the global leadership team at Nordcloud, part of two nine-figure exits.",
+      "Built and operated complex engineering environments where security, observability, and operational control are critical from day one.",
+      "Focused on turning AI from fragmented experimentation into stable enterprise infrastructure.",
+    ],
+  },
+];
 ---
 
-<Layout title="The Team">
+<Layout
+  title="Team"
+  description="Built from real enterprise AI experience. The team behind Bitropy has spent years building and operating large-scale technology platforms in regulated and high-growth environments.">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">The Team</Fragment>
-      <Fragment slot="desc">Built by professionals who understand enterprise AI.</Fragment>
+      <Fragment slot="title">Built From Real Enterprise AI Experience</Fragment>
+      <Fragment slot="desc">The team behind Bitropy.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-6 mx-auto max-w-4xl mt-16">
-      <p class="text-lg leading-relaxed text-slate-500">
-        Bitropy is built by professionals with deep experience across enterprise software, AI engineering, security, and compliance.
+    <div class="flex flex-col gap-6 mx-auto max-w-3xl mt-12">
+      <p class="text-lg leading-relaxed text-slate-600">
+        The team behind Bitropy has spent years building and operating large-scale technology platforms in regulated and high-growth environments.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We've spent years working with complex, regulated environments — helping organizations scale technology without losing control, transparency, or trust.
+      <p class="text-lg leading-relaxed text-slate-600">
+        We saw the same pattern repeat everywhere:<br />
+        AI adoption accelerating faster than security, governance, and operational control.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        Our team understands AI from both sides: how leaders think about risk, cost, and accountability — and how engineers build, deploy, and operate systems in production.
+      <p class="text-lg leading-relaxed text-slate-600">
+        The result is fragmented systems, uncontrolled risk, and little visibility into how AI actually operates inside organizations.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We've seen firsthand where AI adoption breaks down: fragmented tooling, missing guardrails, unclear ownership, rising costs, and growing regulatory pressure.
+      <p class="text-lg leading-relaxed text-gray-900 font-semibold">
+        Bitropy was built to fix that.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        That experience shapes everything we build. Bitropy is designed by people who have operated real systems, supported real teams, and solved real problems — not just experimented with models.
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mx-auto max-w-5xl mt-20">
+      {
+        founders.map((person) => (
+          <div class="bg-slate-50 rounded-2xl p-8 flex flex-col">
+            <img
+              src={person.image}
+              alt={person.name}
+              class="w-56 h-56 rounded-full object-cover object-top ring-4 ring-white shadow-lg mb-6"
+            />
+            <a
+              href={person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group inline-flex items-center gap-2 hover:text-purple-600">
+              <h3 class="font-bold text-2xl text-gray-900 group-hover:text-purple-600">
+                {person.name}
+              </h3>
+              <Icon class="w-6 h-6 text-slate-400 group-hover:text-purple-600" name="bx:bxl-linkedin" />
+            </a>
+            <p class="text-purple-600 font-medium mt-1 mb-6">{person.role}</p>
+            <div class="space-y-3">
+              {person.bio.map((paragraph) => (
+                <p class="text-slate-600 leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mx-auto max-w-3xl mt-24 mb-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Join Us</h2>
+      <p class="mt-6 text-2xl font-semibold text-gray-800">
+        We're Building What Enterprise AI Is Missing
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We believe enterprises don't need more AI tools. They need a foundation they can trust.
-      </p>
-      <p class="text-lg leading-relaxed text-slate-600 font-medium">
-        That's why we're building Bitropy.
+      <div class="mt-6 text-lg text-slate-600 leading-relaxed">
+        <p>A small team.</p>
+        <p>A large problem.</p>
+        <p>Real production impact.</p>
+      </div>
+      <p class="mt-6 text-xl font-medium text-gray-900">Join Bitropy.</p>
+      <p class="mt-8 text-lg text-slate-600">
+        Apply at{" "}
+        <a
+          href="mailto:work@bitropy.io"
+          class="font-semibold text-purple-600 hover:text-purple-700">
+          work@bitropy.io
+        </a>
       </p>
     </div>
   </Container>
