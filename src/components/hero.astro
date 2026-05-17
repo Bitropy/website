@@ -7,14 +7,15 @@ import { Icon } from "astro-icon/components";
   <div id="grain-gradient-container" class="w-full h-full"></div>
 </div>
 
-<main class="grid lg:grid-cols-2 pt-8 pb-8 md:pt-16 md:pb-24 relative">
+<main class="grid lg:grid-cols-2 gap-10 pt-8 pb-8 md:pt-16 md:pb-24 relative items-center">
   <div class="relative z-10">
     <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter" style="text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);">
+      The
       <span class="relative inline-block align-baseline">
         <span
           class="rounded px-1"
           style="background: linear-gradient(90deg, #967deb26, #967deb1A)">
-          Uncompromised AI
+          Missing Control Layer
         </span>
         <svg
           aria-hidden="true"
@@ -30,25 +31,17 @@ import { Icon } from "astro-icon/components";
         </svg>
       </span>
       <br />
-      Built for what's next.
-      <br />
-      Bitropy.
+      for Enterprise AI.
     </h1>
     <div class="text-lg mt-6 text-slate-600 max-w-xl space-y-4" style="text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7);">
       <p>
-        AI assistants don't live in isolation. To be useful, they need to read from databases, create tickets, call APIs, send emails, and trigger internal tools.
+        AI is spreading across every enterprise. Bitropy makes it secure, observable, and controllable at scale.
       </p>
       <p>
-        Today this usually happens through custom integrations that are fragile, inconsistent, and hard to secure.
+        Gain full visibility into AI usage across teams, models and data and enforce security, cost and compliance in real time.
       </p>
-      <p>
-        MCP (Model Context Protocol) is emerging as a standard way for AI to talk to tools and data — like USB-C for AI systems.
-      </p>
-      <p>
-        Bitropy is the enterprise layer that makes MCP safe, observable, and manageable at scale.
-      </p>
-      <p>
-        We sit between your AI agents and your systems, acting as a secure gateway where access, data flow, and execution are controlled by design.
+      <p class="font-semibold text-gray-800 leading-tight">
+        One endpoint.<br />Full control.<br />No rewrite required.
       </p>
     </div>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
@@ -64,6 +57,17 @@ import { Icon } from "astro-icon/components";
         <Icon class="text-black w-4 h-4" name="bx:bxs-info-circle" />
         Learn More
       </Link>
+    </div>
+  </div>
+  <div class="relative z-10 w-full">
+    <div class="relative w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black" style="padding-top: 56.25%;">
+      <iframe
+        src="https://player.vimeo.com/video/1186511691?title=0&byline=0&portrait=0"
+        class="absolute inset-0 w-full h-full"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="Bitropy"></iframe>
     </div>
   </div>
 </main>

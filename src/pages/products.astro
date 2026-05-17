@@ -6,72 +6,74 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Centralized AI Control Plane",
-    subtitle: "One place to run and govern AI.",
-    description: "Bitropy provides a unified control plane for AI usage across teams, tools, and environments — covering models, prompts, agents, pipelines, and integrations.",
-    icon: "bx:bxs-dashboard",
+    title: "AI Runtime Control",
+    subtitle: "Control AI where decisions actually happen.",
+    description: "Bitropy enforces policies, permissions, and execution rules in real time across models, agents, prompts, and MCP workflows.",
+    icon: "bx:bxs-bolt-circle",
   },
   {
-    title: "AI Usage Logging & Traceability",
-    subtitle: "No blind spots.",
-    description: "We capture structured logs for AI interactions — including prompts, context, model calls, outputs, and metadata — enabling full traceability, auditability, and root-cause analysis.",
-    icon: "bx:bxs-file-find",
+    title: "Full AI Observability",
+    subtitle: "See how AI really operates inside your company.",
+    description: "Track prompts, model calls, tool usage, agents, costs, and data flows across every AI interaction and environment.",
+    icon: "bx:bxs-show",
   },
   {
-    title: "Policy Enforcement & Guardrails",
-    subtitle: "Rules enforced at runtime.",
-    description: "Bitropy enforces AI usage policies across code, tools, and teams — preventing unsafe data exposure, unauthorized model usage, and policy violations without blocking developers.",
-    icon: "bx:bxs-shield",
+    title: "Secure MCP Infrastructure",
+    subtitle: "Make AI-to-system access safe by design.",
+    description: "Bitropy secures MCP servers, APIs, internal tools, and enterprise systems with runtime isolation, access boundaries, and auditability.",
+    icon: "bx:bxs-shield-alt-2",
   },
   {
-    title: "AI Risk Intelligence",
-    subtitle: "Security, legal, and operational signals in one view.",
-    description: "The platform continuously analyzes AI activity to surface risks across security, compliance, and reputation — mapping your AI attack surface and detecting anomalous or unsafe behavior.",
-    icon: "bx:bxs-error",
+    title: "Enterprise AI Governance",
+    subtitle: "Governance that actually runs in production.",
+    description: "Move beyond policies in documents. Bitropy continuously enforces AI governance rules across teams, tools, and workflows.",
+    icon: "bx:bxs-buildings",
   },
   {
-    title: "Continuous Compliance by Design",
-    subtitle: "Compliance that runs continuously, not once a year.",
-    description: "Bitropy maps AI usage to regulatory and internal requirements — enabling ongoing alignment with the EU AI Act, GDPR, Data Act, DORA, and relevant ISO standards.",
-    icon: "bx:bxs-check-shield",
-  },
-  {
-    title: "AI Cost Control & FinOps",
-    subtitle: "Full visibility. Predictable spend.",
-    description: "Bitropy tracks AI usage and cost across models, teams, and workloads — enabling budgeting, cost allocation, anomaly detection, and optimization without sacrificing performance.",
+    title: "AI FinOps & Cost Visibility",
+    subtitle: "Know where AI spend comes from.",
+    description: "Monitor usage and costs across teams, models, applications, and agents with anomaly detection and allocation insights.",
     icon: "bx:bxs-dollar-circle",
   },
   {
-    title: "Multi-Model & Multi-Environment Support",
-    subtitle: "Freedom without lock-in.",
-    description: "Run and govern AI across multiple models, vendors, and environments — cloud, on-prem, or hybrid — while maintaining consistent controls and visibility.",
-    icon: "bx:bxs-cloud",
+    title: "AI Agent Security",
+    subtitle: "AI agents should not operate without boundaries.",
+    description: "Prevent unsafe actions, unauthorized tool access, sensitive data exposure, and uncontrolled automation in production environments.",
+    icon: "bx:bxs-lock-alt",
   },
   {
-    title: "Developer-First Integration",
-    subtitle: "Built for real engineering teams.",
-    description: "Bitropy integrates with existing codebases, SDKs, CI/CD pipelines, and developer tools — enabling adoption without rewriting systems or slowing delivery.",
-    icon: "bx:bxs-terminal",
+    title: "Sovereign AI Deployment",
+    subtitle: "Run AI on your terms.",
+    description: "Deploy fully on-premise or inside your VPC with complete control over infrastructure, models, data residency, and compliance.",
+    icon: "bx:bxs-server",
   },
   {
-    title: "From Audit to Operations",
-    subtitle: "Designed to close the loop.",
-    description: "Bitropy is the natural continuation of AI audits — transforming one-time assessments into continuous governance, monitoring, optimization, and improvement.",
-    icon: "bx:bxs-analyse",
+    title: "Multi-Model Orchestration",
+    subtitle: "One layer across every model.",
+    description: "Route, govern, and monitor OpenAI, Anthropic, Gemini, local models, and custom deployments through a unified enterprise layer.",
+    icon: "bx:bxs-network-chart",
+  },
+  {
+    title: "Continuous Compliance",
+    subtitle: "Compliance shouldn't happen once a year.",
+    description: "Bitropy continuously maps AI activity to internal policies and regulatory frameworks including GDPR, EU AI Act, DORA, and NIS2.",
+    icon: "bx:bxs-check-shield",
   },
 ];
 ---
 
-<Layout title="Products">
+<Layout
+  title="Platform"
+  description="Bitropy Platform — full control over enterprise AI. One layer to manage AI systems safely at scale: runtime control, observability, secure MCP, AI FinOps, agent security, sovereign deployment, multi-model orchestration and continuous compliance.">
   <Container>
     <Sectionhead>
       <Fragment slot="title">Bitropy Platform</Fragment>
-      <Fragment slot="desc">What We Offer</Fragment>
+      <Fragment slot="desc">Full Control Over Enterprise AI</Fragment>
     </Sectionhead>
 
     <div class="mx-auto max-w-4xl mt-12">
       <p class="text-xl text-center text-slate-600 leading-relaxed">
-        <span class="font-semibold text-gray-800">Uncompromised AI operations.</span> Bitropy is a sovereign AI platform for building, running, and governing AI systems in production — with full control, observability, continuous compliance, and cost transparency.
+        Bitropy gives organizations one layer to manage AI systems safely at scale — controlling access, monitoring usage, enforcing policies, and protecting sensitive data in real time.
       </p>
     </div>
 
