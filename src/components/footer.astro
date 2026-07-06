@@ -1,22 +1,63 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const { margin } = Astro.props;
+
+const nav = [
+  { title: "Products", path: "/products" },
+  { title: "About", path: "/about" },
+  { title: "Contact", path: "/contact" },
+  { title: "Terms", path: "/terms" },
+  { title: "Privacy", path: "/privacy" },
+];
 ---
 
 <footer
   class:list={[
-    "py-8 border-t border-slate-200",
+    "py-10 border-t border-slate-200",
     margin && "mt-20",
   ]}>
-  <div class="px-5">
-    <p class="text-center text-sm text-slate-600 [text-wrap:balance]">
-      Copyright © {new Date().getFullYear()} Bitropy. All rights reserved.
-    </p>
-    <p class="text-center text-xs text-slate-600 mt-2">
-      <a href="/terms" class="hover:text-emerald-600 transition"> Terms</a> ・ <a
-        href="/privacy"
-        class="hover:text-emerald-600 transition">
-        Privacy</a
-      >
-    </p>
+  <div class="max-w-(--breakpoint-xl) mx-auto px-5">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <p class="text-sm text-slate-600">
+          Copyright © {new Date().getFullYear()} Bitropy. All rights reserved.
+        </p>
+        <p class="text-xs text-slate-500 mt-1">
+          Bitropy sp. z o.o. · Hanny Malewskiej 24/1, 60-461 Poznań, Poland ·
+          <a href="mailto:contact@bitropy.io" class="hover:text-purple-600 transition">contact@bitropy.io</a>
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <nav class="flex flex-wrap justify-center gap-4 text-sm text-slate-600">
+          {
+            nav.map((item) => (
+              <a href={item.path} class="hover:text-purple-600 transition">
+                {item.title}
+              </a>
+            ))
+          }
+        </nav>
+        <div class="flex items-center gap-3">
+          <a
+            href="https://www.linkedin.com/company/bitropy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bitropy on LinkedIn"
+            class="text-slate-500 hover:text-purple-600 transition">
+            <Icon class="w-5 h-5" name="bx:bxl-linkedin" />
+          </a>
+          <a
+            href="https://github.com/orgs/Bitropy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bitropy on GitHub"
+            class="text-slate-500 hover:text-purple-600 transition">
+            <Icon class="w-5 h-5" name="bx:bxl-github" />
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>

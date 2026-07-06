@@ -8,9 +8,18 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://bitropy.io",
+  site: "https://www.bitropy.io",
   output: "server",
-  integrations: [mdx(), sitemap(), icon()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) =>
+        !["/blog/", "/features/", "/pricing/", "/integrations/", "/404/"].some(
+          (path) => new URL(page).pathname.startsWith(path),
+        ),
+    }),
+    icon(),
+  ],
 
   vite: {
     plugins: [tailwindcss()],

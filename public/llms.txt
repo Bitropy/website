@@ -4,7 +4,7 @@
 
 Bitropy provides a single secure control layer between AI systems (LLMs, agents, copilots) and enterprise data and tools. Authentication, authorization, observability, policy enforcement, and cost management are handled by design, not bolted on per integration. The platform is built on open standards (Kubernetes, OPA, Kyverno, OpenTelemetry, Model Context Protocol) and deploys into customer-controlled environments with full data sovereignty.
 
-Bitropy was founded in 2025 in Poznań, Poland by Marcin Mazurek (CEO) and Darek Dwornikowski (CTO), a team with 20+ years of shared experience building enterprise software, cloud platforms, and security systems at Allegro, Nordcloud (IBM), and Autopay. The company targets regulated industries — finance, pharma, healthcare, public sector, defense — across the European Union and globally.
+Bitropy was founded in 2025 in Poznań, Poland by Marcin Mazurek (CEO) and Darek Dwornikowski (CPTO), a team with 20+ years of shared experience building enterprise software, cloud platforms, and security systems at Allegro, Nordcloud (IBM), and Autopay. The company targets regulated industries — finance, pharma, healthcare, public sector, defense — across the European Union and globally.
 
 ## Platform components
 
@@ -52,8 +52,8 @@ The platform's policy engine, audit logging, and observability stack are built t
 
 ## Founding team
 
-- [Marcin Mazurek, Co-founder and CEO](https://www.linkedin.com/in/marcinmazurek/): Background at Allegro and Autopay. Engineer and economist. Based in Poznań, Poland.
-- [Darek Dwornikowski, Co-founder and CTO](https://www.linkedin.com/in/dariuszdwornikowski/): Former VP Engineering at Nordcloud (acquired by IBM). Co-founder of Tenesys. GitHub: [@tdi](https://github.com/tdi).
+- [Marcin Mazurek, Co-founder and CEO](https://www.linkedin.com/in/mmazurek/): Background at Allegro and Autopay. Engineer and economist. Based in Poznań, Poland.
+- [Darek Dwornikowski, Co-founder and CPTO](https://www.linkedin.com/in/darekd/): Former VP Engineering at Nordcloud (acquired by IBM). Co-founder of Tenesys. GitHub: [@tdi](https://github.com/tdi).
 
 ## Company
 
