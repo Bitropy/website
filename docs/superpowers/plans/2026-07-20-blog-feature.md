@@ -727,8 +727,8 @@ Run: `pnpm build`
 Expected: build succeeds.
 Run: `grep -rl "/blog/llm-router-failover" dist/sitemap-0.xml dist/sitemap-index.xml 2>/dev/null && echo IN_SITEMAP`
 Expected: `IN_SITEMAP` (the post URL is present in the generated sitemap; if the filename differs, check `dist/sitemap*.xml`).
-Run: `grep -c '"/blog"' dist/index.html`
-Expected: a number greater than `0` (navbar/footer link to `/blog` rendered on the homepage).
+Run: `grep -c '"/blog"' dist/blog/index.html`
+Expected: a number greater than `0` (navbar + footer both link to `/blog`, rendered on the prerendered blog index page). Note: the homepage is server-rendered under `output: "server"`, so there is no `dist/index.html` to grep — use a prerendered blog page, which carries the same navbar and footer.
 Run: `pnpm lint`
 Expected: passes (or reports only pre-existing, unrelated issues).
 
