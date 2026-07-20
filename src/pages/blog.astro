@@ -30,7 +30,7 @@ const posts = await getPublishedPosts();
       {
         posts.map((post) => (
           <a
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.id}/`}
             class="block bg-slate-50 rounded-xl p-6 hover:bg-slate-100 transition">
             <h2 class="text-2xl font-bold tracking-tight">{post.data.title}</h2>
             <p class="text-slate-600 leading-relaxed mt-2">
@@ -38,8 +38,8 @@ const posts = await getPublishedPosts();
             </p>
             <div class="flex gap-2 items-center text-sm text-slate-500 mt-4">
               <span>{post.data.author}</span>
-              <span>•</span>
-              <time datetime={new Date(post.data.publishDate).toISOString()}>
+              <span aria-hidden="true">•</span>
+              <time datetime={post.data.publishDate.toISOString()}>
                 {getFormattedDate(post.data.publishDate)}
               </time>
             </div>

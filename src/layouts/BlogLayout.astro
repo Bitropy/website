@@ -20,7 +20,7 @@ const publishDate = new Date(frontmatter.publishDate);
         </h1>
         <div class="flex gap-2 mt-4 items-center text-slate-500">
           <span>{frontmatter.author}</span>
-          <span>•</span>
+          <span aria-hidden="true">•</span>
           <time datetime={publishDate.toISOString()}>
             {getFormattedDate(publishDate)}
           </time>
