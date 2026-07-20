@@ -553,9 +553,9 @@ git rm "src/pages/blog/[...page].astro"
 
 Run: `pnpm build`
 Expected: build succeeds.
-Run: `test -f dist/blog/index.html && echo FOUND`
-Expected: `FOUND`.
-Run: `grep -c "/blog/llm-router-failover" dist/blog/index.html`
+Run: `test -f dist/client/blog/index.html && echo FOUND`
+Expected: `FOUND`. (The Vercel adapter emits prerendered pages under `dist/client/`, not `dist/`.)
+Run: `grep -c "/blog/llm-router-failover" dist/client/blog/index.html`
 Expected: a number greater than `0` (card links to the post).
 
 - [ ] **Step 4: Commit**
@@ -620,9 +620,9 @@ export async function GET(context: APIContext) {
 
 Run: `pnpm build`
 Expected: build succeeds.
-Run: `test -f dist/rss.xml && echo FOUND`
-Expected: `FOUND`.
-Run: `grep -c "llm-router-failover" dist/rss.xml`
+Run: `test -f dist/client/rss.xml && echo FOUND`
+Expected: `FOUND`. (Prerendered output lands under `dist/client/`.)
+Run: `grep -c "llm-router-failover" dist/client/rss.xml`
 Expected: a number greater than `0`.
 
 - [ ] **Step 4: Commit**
@@ -725,9 +725,9 @@ to (drop only `"/blog/"`):
 
 Run: `pnpm build`
 Expected: build succeeds.
-Run: `grep -rl "/blog/llm-router-failover" dist/sitemap-0.xml dist/sitemap-index.xml 2>/dev/null && echo IN_SITEMAP`
-Expected: `IN_SITEMAP` (the post URL is present in the generated sitemap; if the filename differs, check `dist/sitemap*.xml`).
-Run: `grep -c '"/blog"' dist/blog/index.html`
+Run: `grep -rl "/blog/llm-router-failover" dist/client/sitemap-0.xml dist/client/sitemap-index.xml 2>/dev/null && echo IN_SITEMAP`
+Expected: `IN_SITEMAP` (the post URL is present in the generated sitemap; if the filename differs, check `dist/client/sitemap*.xml`).
+Run: `grep -c '"/blog"' dist/client/blog/index.html`
 Expected: a number greater than `0` (navbar + footer both link to `/blog`, rendered on the prerendered blog index page). Note: the homepage is server-rendered under `output: "server"`, so there is no `dist/index.html` to grep — use a prerendered blog page, which carries the same navbar and footer.
 Run: `pnpm lint`
 Expected: passes (or reports only pre-existing, unrelated issues).
