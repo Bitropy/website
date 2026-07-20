@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/vercel": "^10.0.7",
     "@fontsource-variable/bricolage-grotesque": "^5.2.5",

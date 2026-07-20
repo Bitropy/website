@@ -14,7 +14,7 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) =>
-        !["/blog/", "/features/", "/pricing/", "/integrations/", "/404/"].some(
+        !["/features/", "/pricing/", "/integrations/", "/404/"].some(
           (path) => new URL(page).pathname.startsWith(path),
         ),
     }),

@@ -1,0 +1,102 @@
+---
+draft: false
+title: "When Your SOTA Provider Goes Down: Failover Routing in the Bitropy LLM Router"
+snippet: "Top-tier model providers have bad days too. Here is how same-model failover in the Bitropy router keeps your AI features answering, without silently dropping to a weaker model."
+publishDate: "2026-07-18"
+author: "Bitropy"
+---
+
+Every team building on frontier models eventually learns the same lesson: the
+provider hosting your best model is a dependency, and dependencies fail. A
+region degrades. A rollout goes sideways. Rate limits tighten without warning
+during a spike. When that happens, the naive setup does the worst possible
+thing: it returns errors to your users while your dashboards stay green,
+because the model itself is "fine" everywhere except the one endpoint you
+happen to be calling.
+
+The Bitropy LLM router treats a model as something you can reach through more
+than one door. When the door you are using jams, it walks you to another one
+that opens onto the same room.
+
+## Same model, different deployment
+
+The key idea is same-model failover. Most frontier models are available through
+more than one deployment: a first-party API, one or more cloud-hosted versions
+(for example the same model offered through a major cloud's managed AI service),
+and often multiple regions within each. These are the *same weights* producing
+the *same responses*. They just sit behind different endpoints, quotas, and
+failure domains.
+
+Bitropy lets you declare those deployments as a pool behind a single logical
+model name. Your application asks for one model; the router decides which
+concrete deployment actually serves each request. When the primary deployment
+starts failing, traffic shifts to a healthy sibling automatically, and the
+response your user gets is indistinguishable from the one they would have gotten
+on a normal day.
+
+This is deliberately different from falling back to a *weaker* model. Dropping
+from your top model to a smaller, cheaper one during an incident is a silent
+quality regression at the worst possible moment: your users are already
+frustrated, and now the answers get worse too. Same-model failover keeps the
+quality bar fixed and only changes the plumbing underneath.
+
+## What triggers a reroute
+
+The router does not wait for a human to notice. It reacts to the signals that
+actually predict a bad request:
+
+- **Hard errors:** 5xx responses, connection resets, and provider-side
+  "overloaded" or capacity errors mark a deployment as unhealthy.
+- **Timeouts:** requests that exceed a configured deadline are treated as
+  failures, not just slow successes.
+- **Latency drift:** sustained p95 latency well above a deployment's baseline
+  is an early warning that it is degrading before it starts returning errors.
+- **Rate limiting:** 429s route around the throttled deployment instead of
+  retrying into the same wall.
+
+Healthy deployments are preferred; unhealthy ones are taken out of rotation and
+periodically probed so they rejoin automatically once they recover. Retries are
+bounded so a single failing request cannot fan out into a storm.
+
+## A minimal configuration
+
+Declaring a resilient model is mostly a matter of listing its deployments in
+priority order:
+
+```yaml
+models:
+  gpt-frontier:
+    strategy: failover
+    deployments:
+      - name: primary-provider
+        endpoint: https://api.provider.example/v1
+        priority: 1
+      - name: cloud-region-eu
+        endpoint: https://eu.cloud.example/openai/v1
+        priority: 2
+      - name: cloud-region-us
+        endpoint: https://us.cloud.example/openai/v1
+        priority: 3
+    health:
+      timeout_ms: 20000
+      error_budget: 3      # consecutive failures before eviction
+      probe_interval_s: 30 # how often to re-test an evicted deployment
+```
+
+Your application keeps calling `gpt-frontier`. On a good day every request goes
+to `primary-provider`. During an incident, requests slide down to
+`cloud-region-eu`, then `cloud-region-us`, and back up again as each deployment
+recovers, with no code change and no redeploy on your side.
+
+## Why route this through Bitropy at all
+
+You could hand-roll this in every service that talks to a model, but then every
+service owns its own retry logic, its own health tracking, and its own blind
+spots. Centralizing it in the router means failover, observability, cost
+tracking, and policy all live in one place. When the next provider incident
+happens, the answer is not a frantic config change under pressure. It already
+happened, automatically, and the only evidence is a quiet line on a dashboard
+instead of a spike in your error rate.
+
+Resilience is not a feature you bolt on after the first outage. It is the
+default you want in place before it.

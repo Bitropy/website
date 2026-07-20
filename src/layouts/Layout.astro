@@ -11,6 +11,7 @@ export interface Props {
   title: string;
   description?: string;
   footerMargin?: boolean;
+  ogType?: string;
 }
 
 const DEFAULT_TITLE = "Bitropy — The Missing Control Layer for Enterprise AI";
@@ -24,7 +25,7 @@ const resolvedImageWithDomain = new URL(
   Astro.site
 ).toString();
 
-const { title, description, footerMargin = true } = Astro.props;
+const { title, description, footerMargin = true, ogType = "website" } = Astro.props;
 
 const makeTitle = title ? `${title} | Bitropy` : DEFAULT_TITLE;
 const pageDescription = description ?? DEFAULT_DESCRIPTION;
@@ -46,7 +47,7 @@ const ogTitle = title ? `${title} | Bitropy` : DEFAULT_TITLE;
       openGraph={{
         basic: {
           url: canonicalURL,
-          type: "website",
+          type: ogType,
           title: ogTitle,
           image: resolvedImageWithDomain,
         },
@@ -61,6 +62,12 @@ const ogTitle = title ? `${title} | Bitropy` : DEFAULT_TITLE;
         description: pageDescription,
         image: resolvedImageWithDomain,
       }}
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Bitropy Blog"
+      href="/rss.xml"
     />
     <style is:global>
       /* Improve Page speed */

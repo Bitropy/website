@@ -1,0 +1,22 @@
+---
+export const prerender = true;
+
+import { render } from "astro:content";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import { getPublishedPosts } from "@/utils/posts.ts";
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BlogLayout frontmatter={entry.data}>
+  <Content />
+</BlogLayout>
