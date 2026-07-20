@@ -1,49 +1,43 @@
 ---
+import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
-import { getFormattedDate } from "@/utils/all";
-import Layout from "./Layout.astro";
+import { getFormattedDate } from "@/utils/all.js";
 
 const { frontmatter } = Astro.props;
+const publishDate = new Date(frontmatter.publishDate);
 ---
 
-<Layout title={frontmatter.title}>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.snippet}
+  ogType="article">
   <Container>
-    <div class="mx-auto max-w-[735px] mt-14">
-      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-        {frontmatter.category}
-      </span>
-      <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
-        {frontmatter.title}
-      </h1>
-      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400">
-          {frontmatter.author}
-        </span>
-        <span class="text-gray-400">•</span>
-        <time class="text-gray-400" datetime={frontmatter.publishDate}>
-          {getFormattedDate(frontmatter.publishDate)}
-        </time>
-        <span class="text-gray-400 hidden md:block">•</span>
-        <div class="w-full md:w-auto flex flex-wrap gap-3">
-          {
-            frontmatter.tags.map((tag) => (
-              <span class="text-sm text-gray-500">#{tag}</span>
-            ))
-          }
+    <article class="mx-auto max-w-3xl mt-14">
+      <header>
+        <h1
+          class="text-4xl lg:text-5xl font-bold lg:tracking-tight lg:leading-tight">
+          {frontmatter.title}
+        </h1>
+        <div class="flex gap-2 mt-4 items-center text-slate-500">
+          <span>{frontmatter.author}</span>
+          <span>•</span>
+          <time datetime={publishDate.toISOString()}>
+            {getFormattedDate(publishDate)}
+          </time>
         </div>
-      </div>
-    </div>
+      </header>
 
-    <div class="mx-auto prose prose-lg mt-6">
-      <slot />
-    </div>
-    <div class="text-center mt-8">
-      <a
-        href="/blog"
-        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Back to Blog</a
-      >
-    </div>
+      <div class="prose prose-lg mt-8 max-w-none">
+        <slot />
+      </div>
+
+      <div class="mt-12">
+        <a
+          href="/blog"
+          class="text-purple-600 font-medium hover:text-purple-700 transition"
+          >← Back to Blog</a
+        >
+      </div>
+    </article>
   </Container>
 </Layout>
