@@ -7,14 +7,16 @@ const blogCollection = defineCollection({
     draft: z.boolean(),
     title: z.string(),
     snippet: z.string(),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
     publishDate: z.string().transform((str) => new Date(str)),
     author: z.string().default("Bitropy"),
-    category: z.string(),
-    tags: z.array(z.string()),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
