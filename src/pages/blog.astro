@@ -1,3 +1,51 @@
 ---
-return Astro.redirect("/");
+export const prerender = true;
+
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import { getFormattedDate } from "@/utils/all.js";
+import { getPublishedPosts } from "@/utils/posts.ts";
+
+const posts = await getPublishedPosts();
 ---
+
+<Layout
+  title="Blog"
+  description="Insights on enterprise AI operations, security, and reliability from the Bitropy team.">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Blog</Fragment>
+      <Fragment slot="desc">Insights on running AI in production.</Fragment>
+    </Sectionhead>
+
+    <div class="mx-auto max-w-3xl mt-12 flex flex-col gap-6">
+      {
+        posts.length === 0 && (
+          <p class="text-center text-slate-500">
+            No posts yet. Check back soon.
+          </p>
+        )
+      }
+      {
+        posts.map((post) => (
+          <a
+            href={`/blog/${post.id}`}
+            class="block bg-slate-50 rounded-xl p-6 hover:bg-slate-100 transition">
+            <h2 class="text-2xl font-bold tracking-tight">{post.data.title}</h2>
+            <p class="text-slate-600 leading-relaxed mt-2">
+              {post.data.snippet}
+            </p>
+            <div class="flex gap-2 items-center text-sm text-slate-500 mt-4">
+              <span>{post.data.author}</span>
+              <span>•</span>
+              <time datetime={new Date(post.data.publishDate).toISOString()}>
+                {getFormattedDate(post.data.publishDate)}
+              </time>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>
