@@ -22,13 +22,15 @@ Every task's requirements implicitly include these:
 
 ---
 
-### Task 1: Make schema fields optional
+### Task 1: Make schema fields optional and add the published-posts helper
 
 **Files:**
 - Modify: `src/content.config.ts`
+- Create: `src/utils/posts.ts`
 
 **Interfaces:**
 - Produces: the `blog` collection with `image`, `category`, `tags` optional; required fields `draft`, `title`, `snippet`, `publishDate` (→ `Date`), `author` (default `"Bitropy"`). All later tasks read `entry.data` with these fields.
+- Produces: `getPublishedPosts()` from `src/utils/posts.ts` — returns published (`!draft && publishDate <= now`) blog entries sorted by `publishDate` descending. Consumed by Tasks 5 (post `getStaticPaths`), 6 (index), and 7 (RSS).
 
 - [ ] **Step 1: Replace the schema**
 
@@ -62,19 +64,42 @@ export const collections = {
 };
 ```
 
-- [ ] **Step 2: Verify it builds**
+- [ ] **Step 2: Create the published-posts helper**
+
+Create `src/utils/posts.ts`:
+
+```ts
+import { getCollection } from "astro:content";
+
+/**
+ * Published blog posts (not draft, publish date in the past),
+ * newest first. Single source of truth for the index, post pages, and RSS.
+ */
+export async function getPublishedPosts() {
+  const posts = await getCollection(
+    "blog",
+    ({ data }) => !data.draft && data.publishDate <= new Date(),
+  );
+  return posts.sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  );
+}
+```
+
+- [ ] **Step 3: Verify it builds**
 
 Run: `pnpm build`
-Expected: build completes with no schema/collection errors (the collection is still empty, which is fine).
+Expected: build completes with no schema/collection/type errors (the collection is still empty, which is fine).
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
-git add src/content.config.ts
-git commit -m "Make blog cover image and taxonomy fields optional
+git add src/content.config.ts src/utils/posts.ts
+git commit -m "Make blog fields optional and add published-posts helper
 
-Covers and category/tag display are deferred out of the blog v1, so authors
-should not be forced to populate those fields."
+Covers and category/tag display are deferred out of blog v1, so authors are not
+forced to populate those fields. getPublishedPosts() centralizes the publish
+filter and sort shared by the index, post pages, and RSS feed."
 ```
 
 ---
@@ -398,7 +423,7 @@ Container, prose typography, and slate/purple tokens; passes ogType=article."
 - Modify: `src/pages/blog/[slug].astro`
 
 **Interfaces:**
-- Consumes: `BlogLayout` (Task 4) with `frontmatter={entry.data}`; the seed post (Task 2); the publish filter and content-layer API (Global Constraints).
+- Consumes: `BlogLayout` (Task 4) with `frontmatter={entry.data}`; the seed post (Task 2); `getPublishedPosts()` (Task 1); content-layer `render` (Global Constraints).
 - Produces: prerendered `/blog/<id>` routes.
 
 - [ ] **Step 1: Overwrite the page**
@@ -409,14 +434,12 @@ Overwrite `src/pages/blog/[slug].astro` with:
 ---
 export const prerender = true;
 
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import BlogLayout from "@/layouts/BlogLayout.astro";
+import { getPublishedPosts } from "@/utils/posts.ts";
 
 export async function getStaticPaths() {
-  const posts = await getCollection(
-    "blog",
-    ({ data }) => !data.draft && data.publishDate <= new Date(),
-  );
+  const posts = await getPublishedPosts();
   return posts.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -460,7 +483,7 @@ entry.id), prerendered and filtered to published posts."
 - Delete: `src/pages/blog/[...page].astro`
 
 **Interfaces:**
-- Consumes: the publish filter, `Sectionhead`, `Container`, `Layout`, `getFormattedDate`, and `post.id` for links.
+- Consumes: `getPublishedPosts()` (Task 1), `Sectionhead`, `Container`, `Layout`, `getFormattedDate`, and `post.id` for links.
 
 - [ ] **Step 1: Overwrite the index page**
 
@@ -473,15 +496,10 @@ export const prerender = true;
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
-import { getCollection } from "astro:content";
 import { getFormattedDate } from "@/utils/all.js";
+import { getPublishedPosts } from "@/utils/posts.ts";
 
-const posts = (
-  await getCollection(
-    "blog",
-    ({ data }) => !data.draft && data.publishDate <= new Date(),
-  )
-).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+const posts = await getPublishedPosts();
 ---
 
 <Layout
@@ -559,7 +577,7 @@ unused paginated route (no pagination in v1)."
 - Create: `src/pages/rss.xml.ts`
 
 **Interfaces:**
-- Consumes: the publish filter; `context.site` (from `astro.config.mjs` `site: "https://www.bitropy.io"`); `post.id` for links.
+- Consumes: `getPublishedPosts()` (Task 1); `context.site` (from `astro.config.mjs` `site: "https://www.bitropy.io"`); `post.id` for links.
 - Produces: `/rss.xml`.
 
 - [ ] **Step 1: Install the dependency**
@@ -577,16 +595,11 @@ Create `src/pages/rss.xml.ts`:
 export const prerender = true;
 
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
+import { getPublishedPosts } from "@/utils/posts.ts";
 
 export async function GET(context: APIContext) {
-  const posts = (
-    await getCollection(
-      "blog",
-      ({ data }) => !data.draft && data.publishDate <= new Date(),
-    )
-  ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+  const posts = await getPublishedPosts();
 
   return rss({
     title: "Bitropy Blog",
@@ -736,7 +749,7 @@ URLs from the generated sitemap."
 **Spec coverage:**
 - `/blog` index → Task 6. `/blog/<slug>` post → Task 5. `/rss.xml` → Task 7. Deleted `[...page].astro` → Task 6. ✓
 - Schema: `image`/`category`/`tags` optional → Task 1. ✓
-- Publish filtering (index, post paths, RSS) → Tasks 5, 6, 7 all use `!draft && publishDate <= now`. ✓
+- Publish filtering (index, post paths, RSS) → centralized in `getPublishedPosts()` (Task 1), consumed by Tasks 5, 6, 7. ✓
 - Prerender under `output: server` → set in Tasks 5, 6, 7. ✓
 - `BlogLayout` restyle + author/date byline → Task 4; index byline → Task 6. ✓
 - SEO `ogType="article"` + RSS head link → Tasks 3 (Layout) and 4 (BlogLayout passes it). ✓
@@ -747,4 +760,4 @@ URLs from the generated sitemap."
 
 **Placeholder scan:** No TBD/TODO/"handle edge cases" steps; every code step shows complete file content. ✓
 
-**Type consistency:** `entry.id` used for params (Task 5) and links (Tasks 6, 7) consistently — never `entry.slug`. `render(entry)` import matches usage. `frontmatter` prop shape produced by Task 5 (`entry.data`) matches what Task 4's `BlogLayout` reads (`title`, `snippet`, `author`, `publishDate`). `ogType` prop defined in Task 3 and consumed in Task 4. Publish-filter predicate identical across Tasks 5/6/7. ✓
+**Type consistency:** `entry.id` used for params (Task 5) and links (Tasks 6, 7) consistently — never `entry.slug`. `render(entry)` import matches usage. `frontmatter` prop shape produced by Task 5 (`entry.data`) matches what Task 4's `BlogLayout` reads (`title`, `snippet`, `author`, `publishDate`). `ogType` prop defined in Task 3 and consumed in Task 4. `getPublishedPosts()` defined in Task 1 and consumed unchanged in Tasks 5/6/7. ✓
