@@ -4,7 +4,7 @@
   "version": "3.0.0",
   "pnpm": {
     "overrides": {
-      "fontkitten": "1.0.0"
+      "fontkitten": "1.0.3"
     }
   },
   "scripts": {
